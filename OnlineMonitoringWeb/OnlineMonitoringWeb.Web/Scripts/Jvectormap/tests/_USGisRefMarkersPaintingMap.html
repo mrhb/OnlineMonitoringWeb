@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PaintingMap</title>
+    <link rel="stylesheet" media="all" href="../jquery-jvectormap.css" />
+    <link rel="stylesheet" media="all" href="jquery-ui.css" />
+
+
+    <script src="assets/jquery-1.8.2.js"></script>
+    <script src="../jquery-jvectormap.js"></script>
+    <script src="../lib/jquery-mousewheel.js"></script>
+    <script src="../src/jvectormap.js"></script>
+    <script src="../src/abstract-element.js"></script>
+    <script src="../src/abstract-canvas-element.js"></script>
+    <script src="../src/abstract-shape-element.js"></script>
+    <script src="../src/svg-element.js"></script>
+    <script src="../src/svg-group-element.js"></script>
+    <script src="../src/svg-canvas-element.js"></script>
+    <script src="../src/svg-shape-element.js"></script>
+    <script src="../src/svg-path-element.js"></script>
+    <script src="../src/svg-circle-element.js"></script>
+    <script src="../src/svg-image-element.js"></script>
+    <script src="../src/svg-text-element.js"></script>
+    <script src="../src/vml-element.js"></script>
+    <script src="../src/vml-group-element.js"></script>
+    <script src="../src/vml-canvas-element.js"></script>
+    <script src="../src/vml-shape-element.js"></script>
+    <script src="../src/vml-path-element.js"></script>
+    <script src="../src/vml-circle-element.js"></script>
+    <script src="../src/map-object.js"></script>
+    <script src="../src/region.js"></script>
+    <script src="../src/marker.js"></script>
+    <script src="../src/vector-canvas.js"></script>
+    <script src="../src/simple-scale.js"></script>
+    <script src="../src/numeric-scale.js"></script>
+    <script src="../src/ordinal-scale.js"></script>
+    <script src="../src/color-scale.js"></script>
+    <script src="../src/data-series.js"></script>
+    <script src="../src/proj.js"></script>
+    <script src="../src/map.js"></script>
+    <script src="../src/multimap.js"></script>
+    <script src="assets/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/jquery-jvectormap-data-us-lcc-en.js"></script>
+    <script src="assets/us/jquery-jvectormap-data-us-az-lcc-en.js"></script>
+
+    <script src="jquery-ui.js"></script>
+
+    <script>
+
+
+    $(function(){
+	    $.getJSON('data.json', function(data){
+
+		var val = 2009;
+            statesValues = jvm.values.apply({}, jvm.values(data.states)),
+            metroPopValues = Array.prototype.concat.apply([], jvm.values(data.metro.population)),
+            metroUnemplValues = Array.prototype.concat.apply([], jvm.values(data.metro.unemployment));
+
+
+	    var markerIndex = 0,
+            markersCoords = {};
+
+		var plants = [
+		   {name: 'VAK', coords: [33.234489635299184,-110.43359375], status: 'closed', offsets: [0, 2]},
+		   {name: 'ARIZ', coords: [33.712679, -112.949905], status: 'closed', offsets: [0, 2]},
+		   {name: 'AVR', coords: [30.789036751261136,48.69140624999999], status: 'closed'},
+		{ name: 'mashad', coords: [36.30184530368433, 59.600830078125], status: 'activeUntil2018' }
+		];
+
+
+			map=new jvm.MultiMap({
+				container: $('.map'),
+				maxLevel: 1,
+				mapUrlByCode: function(code, multiMap){
+				  return 'assets/us/jquery-jvectormap-data-'+'us-az'+'-'+multiMap.defaultProjection+'-en.js';
+				},
+				subMapsOptions: {
+				// // این بخ برای نمایش آیکن بر روی مارکر های نقشه های زیرمجموشعه است
+					//markers: plants.map(function(h){ return {name: h.name, latLng: h.coords} }),//موقعیت مارکر ها روی نقشه
+					//labels: {
+					//	markers: {
+					//		render: function(index){
+					//			return plants[index].name;
+					//		},
+					//		offsets: function(index){
+					//			var offset = plants[index]['offsets'] || [0, 0];
+					//
+					//			return [offset[0] - 7, offset[1] + 3];
+					//		}
+					//	}
+					//},
+					//series: {
+					//	markers: [{
+					//		attribute: 'image', // مارکر از نوع عکس بوده و عکس ها از مسیر های زیر برداشد میشود
+					//		scale: {
+					//			 'closed': 'assets/icon-np-1.png',
+					//			'activeUntil2018': 'assets/icon-np-2.png',
+					//			'activeUntil2022': 'assets/icon-np-3.png'
+					//		},
+					//		values: plants.reduce(function(p, c, i){ p[i] = c.status; return p }, {}),
+					//	}]
+					//},
+					//onRegionClick: function (event, code) { //نام ناحیه ای که کلیک شده است را برمیگرداند
+					//	console.log(code);
+					//},
+					//
+					//onMarkerClick: function(event, id){ //نام مارکری که کلیک شده را برمیگرداند
+					//	console.log(id); // در اینجا میتوان اکشن مورد نظر در هنگام کلیک روی مارکر را گذاشت
+					//}
+
+
+
+					markers: data.metro.coords,
+					series: {
+						markers: [{
+						  attribute: 'fill',
+						  scale: ['#FEE5D9', '#A50F15'],
+						  values: data.metro.unemployment[val],
+						  min: jvm.min(metroUnemplValues),
+						  max: jvm.max(metroUnemplValues)
+						},
+						{
+						  attribute: 'r',
+						  scale: [5, 20],
+						  values: data.metro.population[val],
+						  min: jvm.min(metroPopValues),
+						  max: jvm.max(metroPopValues)
+						}],
+						regions: [{
+							  scale: ['#DEEBF7', '#a1519C'],
+							  attribute: 'fill',
+							  values: data.states[val],
+							  min: jvm.min(statesValues),
+							  max: jvm.max(statesValues)
+							}]
+					},
+					onMarkerTipShow: function(event, label, index){
+						label.html(
+						  '<b>'+data.metro.names[index]+'</b><br/>'+
+						  '<b>Population: </b>'+data.metro.population[val][index]+'</br>'+
+						  '<b>Unemployment rate: </b>'+data.metro.unemployment[val][index]+'%'
+						);
+					},
+					onRegionTipShow: function(event, label, code){
+						label.html(
+						  '<b>'+label.html()+'</b></br>'+
+						  '<b>Unemployment rate: </b>'+data.states[val][code]+'%'
+						);
+					}
+				},
+				main: {
+				  map: 'us_lcc_en',
+				  onRegionOver: function(evt, code){
+				   console.log(code);
+					},
+				  //markers: plants.map(function(h){ return {name: h.name, latLng: h.coords} }),
+				  //labels: {
+					//	markers: {
+					//		render: function(index){
+					//			return plants[index].name;
+					//		},
+					//		offsets: function(index){
+					//			var offset = plants[index]['offsets'] || [0, 0];
+				  //
+					//			return [offset[0] - 7, offset[1] + 3];
+					//		}
+					//	}
+					//},
+					// series: {
+					//	markers: [{
+					//		attribute: 'image',
+					//		scale: {
+					//			'closed': 'assets/icon-np-1.png',
+					//			'activeUntil2018': 'assets/icon-np-2.png',
+					//			'activeUntil2022': 'assets/icon-np-3.png'
+					//		},
+					//		values: plants.reduce(function(p, c, i){ p[i] = c.status; return p }, {}),
+					//	}],
+					//	regions:['#DEEBF7', '#08519C'],
+					//},
+					markers: data.metro.coords,
+				  series: {
+					markers: [{
+					  attribute: 'fill',
+					  scale: ['#FEE5D9', '#A50F15'],
+					  values: data.metro.unemployment[val],
+					  min: jvm.min(metroUnemplValues),
+					  max: jvm.max(metroUnemplValues)
+					},
+					{
+					  attribute: 'r',
+					  scale: [5, 20],
+					  values: data.metro.population[val],
+					  min: jvm.min(metroPopValues),
+					  max: jvm.max(metroPopValues)
+					}],
+					regions: [{
+					  scale: ['#DEEBF7', '#a1519C'],
+					  attribute: 'fill',
+					  values: data.states[val],
+					  min: jvm.min(statesValues),
+					  max: jvm.max(statesValues)
+					}]
+				  },
+				  onMarkerTipShow: function(event, label, index){
+					label.html(
+					  '<b>'+data.metro.names[index]+'</b><br/>'+
+					  '<b>Population: </b>'+data.metro.population[val][index]+'</br>'+
+					  '<b>Unemployment rate: </b>'+data.metro.unemployment[val][index]+'%'
+					);
+				  },
+				  onRegionTipShow: function(event, label, code){
+					label.html(
+					  '<b>'+label.html()+'</b></br>'+
+					  '<b>Unemployment rate: </b>'+data.states[val][code]+'%'
+					);
+				  }
+
+				}
+			});
+
+
+
+
+			$(".slider").slider({
+
+
+				value: val,
+				min: 2005,
+				max: 2009,
+				step: 1,
+				slide: function( event, ui ) {
+				val = ui.value;
+				obj = $('.maps .jvectormap-container').data('mapObject');
+
+				obj.series.regions[0].setValues(data.states[ui.value]);
+				obj.series.markers[0].setValues(data.metro.unemployment[ui.value]);
+			    obj.series.markers[1].setValues(data.metro.population[ui.value]);
+				}
+			});
+	  	});
+    });
+    </script>
+</head>
+<body>
+    <p> UsGisRefMarkersPaintingMap</p>
+    <div class="map" style="width: 900px; height: 600px"></div>
+    <div class="slider" style="width: 280px; margin: 10px"></div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>drill-down-WithMarkers</title>
+  <link rel="stylesheet" media="all" href="../jquery-jvectormap.css"/>
+  <script src="assets/jquery-1.8.2.js"></script>
+  <script src="../jquery-jvectormap.js"></script>
+  <script src="../lib/jquery-mousewheel.js"></script>
+
+  <script src="../src/jvectormap.js"></script>
+
+  <script src="../src/abstract-element.js"></script>
+  <script src="../src/abstract-canvas-element.js"></script>
+  <script src="../src/abstract-shape-element.js"></script>
+
+  <script src="../src/svg-element.js"></script>
+  <script src="../src/svg-group-element.js"></script>
+  <script src="../src/svg-canvas-element.js"></script>
+  <script src="../src/svg-shape-element.js"></script>
+  <script src="../src/svg-path-element.js"></script>
+  <script src="../src/svg-circle-element.js"></script>
+  <script src="../src/svg-image-element.js"></script>
+  <script src="../src/svg-text-element.js"></script>
+
+  <script src="../src/vml-element.js"></script>
+  <script src="../src/vml-group-element.js"></script>
+  <script src="../src/vml-canvas-element.js"></script>
+  <script src="../src/vml-shape-element.js"></script>
+  <script src="../src/vml-path-element.js"></script>
+  <script src="../src/vml-circle-element.js"></script>
+
+  <script src="../src/map-object.js"></script>
+  <script src="../src/region.js"></script>
+  <script src="../src/marker.js"></script>
+
+  <script src="../src/vector-canvas.js"></script>
+  <script src="../src/simple-scale.js"></script>
+  <script src="../src/numeric-scale.js"></script>
+  <script src="../src/ordinal-scale.js"></script>
+  <script src="../src/color-scale.js"></script>
+  <script src="../src/data-series.js"></script>
+  <script src="../src/proj.js"></script>
+  <script src="../src/map.js"></script>
+  <script src="../src/multimap.js"></script>
+
+  <script src="assets/iran_regions_map.js"></script>
+ //   <script src="assets/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="assets/qw.js"></script>  
+
+  <script>
+    $(function(){
+	
+	  var map,
+          markerIndex = 0,
+          markersCoords = {};
+	 var plants = [
+		{name: 'VAK', coords: [47.234489635299184,-69.43359375], status: 'closed', offsets: [0, 2]},
+		{name: 'MZFR', coords: [36.901587303978474,53.909912109374986], status: 'closed', offsets: [0, 2]},
+		{name: 'AVR', coords: [30.789036751261136,48.69140624999999], status: 'closed'}
+	  ];  
+		  
+	 var mrk= [
+	 {latLng:  [39.56, -115], name: 'dcfsd'},
+	 {latLng: [39.45, -110], name: 'sdf'},
+	 {latLng: [38.9, -104], name: 'sdfsdf'},
+	 ];
+							
+		  map=  new jvm.MultiMap({
+						container: $('#map1'),
+						maxLevel: 2,
+						mapUrlByCode: function(code, multiMap){
+						  return 'assets/qw.js';//'assets/us/jquery-jvectormap-data-'+code.toLowerCase()+'-'+multiMap.defaultProjection+'-en.js';        
+						},
+						 mapNameByCode: function(code, multiMap){
+						   return 'qw';
+					    },
+				
+						subMapsOptions: {
+							markerStyle: {
+							initial: {
+								fill: 'red'
+								}
+							},
+							markers: plants.map(function(h){ return {name: h.name, latLng: h.coords} }),
+									labels: {
+										markers: {
+										  render: function(index){
+											return plants[index].name;
+										  },
+										  offsets: function(index){
+											var offset = plants[index]['offsets'] || [0, 0];
+
+											return [offset[0] - 7, offset[1] + 3];
+										  }
+										}
+									},
+									series: {
+								  markers: [{
+									attribute: 'image',
+									scale: {
+									  'closed': 'assets/icon-np-1.png',
+									  'activeUntil2018': 'assets/icon-np-2.png',
+									  'activeUntil2022': 'assets/icon-np-3.png'
+									},
+									values: plants.reduce(function(p, c, i){ p[i] = c.status; return p }, {}),
+								  }]
+								},
+							
+							onRegionClick: function (event, code) {
+								console.log(code);
+							},
+							
+							onMarkerClick: function(event, id){
+							   console.log(id);
+							}
+						},
+					    
+						main: {
+						  map: 'iran_Region_mill_en',
+								onMarkerClick: function(event, id){
+								 console.log(mrk[id].name);
+								},
+							   panOnDrag: true,
+        focusOn: {
+		region:'iran',
+        animate: true
+        },
+								markers: plants.map(function(h){ return {name: h.name, latLng: h.coords} }),
+									labels: {
+										markers: {
+										  render: function(index){
+											return plants[index].name;
+										  },
+										  offsets: function(index){
+											var offset = plants[index]['offsets'] || [0, 0];
+
+											return [offset[0] - 7, offset[1] + 3];
+										  }
+										}
+									},
+									series: {
+								  markers: [{
+									attribute: 'image',
+									scale: {
+									  'closed': 'assets/icon-np-1.png',
+									  'activeUntil2018': 'assets/icon-np-2.png',
+									  'activeUntil2022': 'assets/icon-np-3.png'
+									},
+									values: plants.reduce(function(p, c, i){ p[i] = c.status; return p }, {}),
+								  }]
+								}
+						},
+						
+					
+						
+		});
+
+		
+   
+	   $('#map').click(function(e){
+	  
+        
+			var x = e.pageX - map.container.offset().left,
+			y = e.pageY - map.container.offset().top,
+			latLng = map.pointToLatLng(x, y),
+			targetCls = $(e.target).attr('class');
+			
+			if (latLng && (!targetCls || targetCls.indexOf('jvectormap-marker') === -1)) {
+			markersCoords[markerIndex] = latLng;
+			map.addMarker(markerIndex, {latLng: [latLng.lat, latLng.lng]});
+			markerIndex += 1; 
+			}
+      });
+      $('#map').bind('');
+	  
+	  
+	  //https://stackoverflow.com/questions/49261476/trigger-jvectormap-drill-down-with-link-or-button
+	  
+    });
+  </script>
+</head>
+<body>
+  <div id="map1" style="width: 900px; height: 440.70631074413296px"></div>
+</body>
+</html>

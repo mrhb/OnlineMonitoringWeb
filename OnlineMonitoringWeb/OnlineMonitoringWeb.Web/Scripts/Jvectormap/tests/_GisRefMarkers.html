@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jVectorMap demo</title>
+  <link rel="stylesheet" media="all" href="../jquery-jvectormap.css"/>
+  <script src="assets/jquery-1.8.2.js"></script>
+  <script src="../jquery-jvectormap.js"></script>
+  <script src="../lib/jquery-mousewheel.js"></script>
+
+  <script src="../src/jvectormap.js"></script>
+
+  <script src="../src/abstract-element.js"></script>
+  <script src="../src/abstract-canvas-element.js"></script>
+  <script src="../src/abstract-shape-element.js"></script>
+
+  <script src="../src/svg-element.js"></script>
+  <script src="../src/svg-group-element.js"></script>
+  <script src="../src/svg-canvas-element.js"></script>
+  <script src="../src/svg-shape-element.js"></script>
+  <script src="../src/svg-path-element.js"></script>
+  <script src="../src/svg-circle-element.js"></script>
+  <script src="../src/svg-image-element.js"></script>
+  <script src="../src/svg-text-element.js"></script>
+
+  <script src="../src/vml-element.js"></script>
+  <script src="../src/vml-group-element.js"></script>
+  <script src="../src/vml-canvas-element.js"></script>
+  <script src="../src/vml-shape-element.js"></script>
+  <script src="../src/vml-path-element.js"></script>
+  <script src="../src/vml-circle-element.js"></script>
+
+  <script src="../src/map-object.js"></script>
+  <script src="../src/region.js"></script>
+  <script src="../src/marker.js"></script>
+
+  <script src="../src/vector-canvas.js"></script>
+  <script src="../src/simple-scale.js"></script>
+  <script src="../src/numeric-scale.js"></script>
+  <script src="../src/ordinal-scale.js"></script>
+  <script src="../src/color-scale.js"></script>
+  <script src="../src/data-series.js"></script>
+  <script src="../src/proj.js"></script>
+  <script src="../src/map.js"></script>
+  <script src="../src/multimap.js"></script>
+
+  <script src="assets/jquery-jvectormap-data-us-lcc-en.js"></script>  
+  <script src="assets/us/jquery-jvectormap-data-us-az-lcc-en.js"></script>
+  
+  <script>
+  
+  
+    $(function(){
+	
+	    var map,
+        markerIndex = 0,
+        markersCoords = {};
+    var plants = [
+       {name: 'VAK', coords: [35.234489635299184,-115.43359375], status: 'closed', offsets: [0, 2]},
+       {name: 'ARIZ', coords: [33.712679, -112.949905], status: 'closed', offsets: [0, 2]},
+       {name: 'AVR', coords: [30.789036751261136,48.69140624999999], status: 'closed'},
+    { name: 'mashad', coords: [36.30184530368433, 59.600830078125], status: 'activeUntil2018' }
+    ]; 
+	
+	
+           map=new jvm.MultiMap({
+        container: $('#map1'),
+        maxLevel: 1,
+        mapUrlByCode: function(code, multiMap){
+          return 'assets/us/jquery-jvectormap-data-'+'us-az'+'-'+multiMap.defaultProjection+'-en.js';
+        },
+	 subMapsOptions: { markers: plants.map(function(h){ return {name: h.name, latLng: h.coords} }),
+            labels: {
+                markers: {
+                    render: function(index){
+                        return plants[index].name;
+                    },
+                    offsets: function(index){
+                        var offset = plants[index]['offsets'] || [0, 0];
+
+                        return [offset[0] - 7, offset[1] + 3];
+                    }
+                }
+            },
+            series: {
+                markers: [{
+                    attribute: 'image',
+                    scale: {
+                         'closed': 'assets/icon-np-1.png',
+                        'activeUntil2018': 'assets/icon-np-2.png',
+                        'activeUntil2022': 'assets/icon-np-3.png'
+                    },
+                    values: plants.reduce(function(p, c, i){ p[i] = c.status; return p }, {}),
+                }]
+            },                							
+            onRegionClick: function (event, code) {
+                console.log(code);
+            },
+							
+            onMarkerClick: function(event, id){
+                console.log(id);
+            }
+        },
+        main: {
+          map: 'us_lcc_en',
+		  onRegionOver: function(evt, code){
+		   console.log(code);
+			},
+		   markers: plants.map(function(h){ return {name: h.name, latLng: h.coords} }),
+		   labels: {
+                markers: {
+                    render: function(index){
+                        return plants[index].name;
+                    },
+                    offsets: function(index){
+                        var offset = plants[index]['offsets'] || [0, 0];
+
+                        return [offset[0] - 7, offset[1] + 3];
+                    }
+                }
+            },
+			 series: {
+                markers: [{
+                    attribute: 'image',
+                    scale: {
+                        'closed': 'assets/icon-np-1.png',
+                        'activeUntil2018': 'assets/icon-np-2.png',
+                        'activeUntil2022': 'assets/icon-np-3.png'
+                    },
+                    values: plants.reduce(function(p, c, i){ p[i] = c.status; return p }, {}),
+                }]
+            },
+		
+        }
+      });
+	  	  
+    });
+  </script>
+</head>
+<body>
+  <div id="map1" style="width: 900px; height: 600px"></div>
+</body>
+</html>

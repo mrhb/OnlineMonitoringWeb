@@ -1,0 +1,81 @@
+﻿
+namespace OnlineMonitoringWeb.Hierarchy.Entities
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using Serenity.Data.Mapping;
+    using System;
+    using System.ComponentModel;
+    using System.IO;
+
+    [ConnectionKey("Default"), Module("Hierarchy"), TableName("[hier].[Unit]")]
+    [DisplayName("Unit"), InstanceName("Unit")]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
+    public sealed class UnitRow : Row, IIdRow, INameRow
+    {
+        [DisplayName("Unit Id"), Identity]
+        public Int32? UnitId
+        {
+            get { return Fields.UnitId[this]; }
+            set { Fields.UnitId[this] = value; }
+        }
+
+        [DisplayName("Name"), Size(100), NotNull, QuickSearch]
+        public String Name
+        {
+            get { return Fields.Name[this]; }
+            set { Fields.Name[this] = value; }
+        }
+
+        [DisplayName("Station"), Column("StationID"), NotNull, ForeignKey("[hier].[Station]", "StationId"), LeftJoin("jStation"), TextualField("StationName")]
+        [LookupEditor(typeof(StationRow))]
+        public Int32? StationId
+        {
+            get { return Fields.StationId[this]; }
+            set { Fields.StationId[this] = value; }
+        }
+
+        [DisplayName("Station Name"), Expression("jStation.[Name]")]
+        public String StationName
+        {
+            get { return Fields.StationName[this]; }
+            set { Fields.StationName[this] = value; }
+        }
+
+        [DisplayName("Station Area Id"), Expression("jStation.[AreaID]")]
+        public Int32? StationAreaId
+        {
+            get { return Fields.StationAreaId[this]; }
+            set { Fields.StationAreaId[this] = value; }
+        }
+
+        IIdField IIdRow.IdField
+        {
+            get { return Fields.UnitId; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.Name; }
+        }
+
+        public static readonly RowFields Fields = new RowFields().Init();
+
+        public UnitRow()
+            : base(Fields)
+        {
+        }
+
+        public class RowFields : RowFieldsBase
+        {
+            public Int32Field UnitId;
+            public StringField Name;
+            public Int32Field StationId;
+
+            public StringField StationName;
+            public Int32Field StationAreaId;
+        }
+    }
+}
