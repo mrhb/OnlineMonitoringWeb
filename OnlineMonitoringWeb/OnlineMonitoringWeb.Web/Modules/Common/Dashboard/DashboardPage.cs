@@ -4,20 +4,34 @@ namespace OnlineMonitoringWeb.Common.Pages
     using OnlineMonitoringWeb.Hierarchy.Entities;
     using Serenity;
     using Serenity.Data;
-    using System;
+    using System.Net;
     using System.Web.Mvc;
 
     using System.Linq;
     using System.Collections.Generic;
+ 
 
     [RoutePrefix("Dashboard"), Route("{action=index}")]
     public class DashboardController : Controller
     {
+       // private InfluxDBClient clientDb;
+
+        public DashboardController()
+        {
+            // API Address, Account, Password for Connecting Influx Db
+            var infuxUrl = "http://localhost:8086/";
+            var infuxUser = "admin";
+            var infuxPwd = "admin";
+
+            // Create an instance of Influx DbClient
+            //clientDb = new InfluxDBClient(infuxUrl, infuxUser, infuxPwd, InfluxDbVersion.Latest);
+        }
+
         [Authorize, HttpGet, Route("~/")]
         public ActionResult Index()
         {
 
-            hierarchyInfo hierarchyInfo = new hierarchyInfo(Authorization.UserId);
+            hierarchyInfo hierarchyInfo = new hierarchyInfo(Serenity.Authorization.UserId);
 
             return Overview(hierarchyInfo);
         }
@@ -36,7 +50,42 @@ namespace OnlineMonitoringWeb.Common.Pages
             return View(MVC.Views.Common.Dashboard.DashboardIndex, model);
         }
 
+        [Authorize, HttpGet, Route("~/createChartData")]
+        public ActionResult createChartData()
+        {
+
+            var users = data.Getdata();
+            return Json(users, JsonRequestBehavior.AllowGet);
+        }
+        class data
+        {
+            public   string y;
+            public int item1;
+            public int item2;
+
+            public static List<data> Getdata()
+            {
+                var usersList = new List<data>
+            {
+                new data{ y= "2011 Q1", item1= 2666, item2= 2666 },
+                new data{ y= "2011 Q2", item1= 2778, item2= 2294 },
+                new data{ y= "2011 Q3", item1= 4912, item2= 1969 },
+                new data{ y= "2011 Q4", item1= 3767, item2= 3597 },
+                new data{ y= "2012 Q1", item1= 6810, item2= 1914 },
+                new data{ y= "2012 Q2", item1= 5670, item2= 4293 },
+                new data{ y= "2012 Q3", item1= 4820, item2= 3795 },
+                new data{ y= "2012 Q4", item1= 15073, item2= 5967 },
+                new data{ y= "2013 Q1", item1= 10687, item2= 4460 },
+                new data{ y= "2013 Q2", item1= 8432, item2= 5713 }
+            };
+
+                return usersList;
+            }
+
+        }
+
     }
+
     public class hierarchyInfo
     {
        public List<UnitRow> SubdivisionUnits { get; set; }
