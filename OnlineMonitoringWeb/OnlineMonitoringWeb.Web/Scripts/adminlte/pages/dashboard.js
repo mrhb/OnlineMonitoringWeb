@@ -199,26 +199,32 @@ $(function () {
    
     /* Morris.js Charts */
     // Sales chart
-
-    $.ajax({
-        url: 'dbnames',
-        dataType: 'json',
-        success: function (dataFromUrl) {
+    function send(){
+        $.ajax({
+            url: 'dbnames',
+            dataType: 'json',
+            success: function (dataFromUrl) {
             
       
-    var area = new Morris.Area({
-        element: 'revenue-chart',
-        resize: true,
-        data: dataFromUrl,
-        xkey: 'y',
-        ykeys: ['item1', 'item2'],
-        labels: ['Item 1', 'Item 2'],
-        lineColors: ['#a0d0e0', '#3c8dbc'],
-        parseTime: false,
-        hideHover: 'auto'
-    });
-        }
-    });
+        var area = new Morris.Area({
+            element: 'revenue-chart',
+            resize: true,
+            data: dataFromUrl,
+            xkey: 'y',
+            ykeys: ['item1', 'item2'],
+            labels: ['Item 1', 'Item 2'],
+            lineColors: ['#a0d0e0', '#3c8dbc'],
+            parseTime: false,
+            hideHover: 'auto'
+        });
+        setTimeout(function () {
+            send();
+        }, 10000);
+            }
+        });
+
+    }
+    send();
     var line = new Morris.Line({
         element: 'line-chart',
         resize: true,
