@@ -1,19 +1,17 @@
 ﻿
-namespace OnlineMonitoringWeb.Hierarchy {
+namespace OnlineMonitoringWeb.Default {
     export class UnitForm extends Serenity.PrefixedContext {
-        static formKey = 'Hierarchy.Unit';
+        static formKey = 'Default.Unit';
     }
 
     export interface UnitForm {
         Name: Serenity.StringEditor;
         StationId: Serenity.IntegerEditor;
-        Capacity: Serenity.IntegerEditor;
     }
 
     [,
         ['Name', () => Serenity.StringEditor],
-        ['StationId', () => Serenity.IntegerEditor],
-        ['Capacity', () => Serenity.IntegerEditor]
+        ['StationId', () => Serenity.IntegerEditor]
     ].forEach(x => Object.defineProperty(UnitForm.prototype, <string>x[0], {
         get: function () {
             return this.w(x[0], (x[1] as any)());

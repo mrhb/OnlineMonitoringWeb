@@ -1,4 +1,5 @@
-﻿namespace OnlineMonitoringWeb.Hierarchy {
+﻿
+namespace OnlineMonitoringWeb.Hierarchy {
     export interface AreaRow {
         AreaId?: number;
         Name?: string;
@@ -11,23 +12,25 @@
         export const idProperty = 'AreaId';
         export const nameProperty = 'Name';
         export const localTextPrefix = 'Hierarchy.Area';
-        export const lookupKey = 'Default.Area';
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
 
-        export function getLookup(): Q.Lookup<AreaRow> {
-            return Q.getLookup<AreaRow>('Default.Area');
+        export namespace Fields {
+            export declare const AreaId;
+            export declare const Name;
+            export declare const DistributionId;
+            export declare const DistributionName;
+            export declare const DistributionRegionalId;
         }
-        export const deletePermission = 'Hierarchy:modify';
-        export const insertPermission = 'Hierarchy:modify';
-        export const readPermission = 'Hierarchy:view';
-        export const updatePermission = 'Hierarchy:modify';
 
-        export declare const enum Fields {
-            AreaId = "AreaId",
-            Name = "Name",
-            DistributionId = "DistributionId",
-            DistributionName = "DistributionName",
-            DistributionRegionalId = "DistributionRegionalId"
-        }
+        [
+            'AreaId',
+            'Name',
+            'DistributionId',
+            'DistributionName',
+            'DistributionRegionalId'
+        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
-

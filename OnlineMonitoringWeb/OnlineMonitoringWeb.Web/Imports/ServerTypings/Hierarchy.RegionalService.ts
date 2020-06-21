@@ -1,4 +1,5 @@
-﻿namespace OnlineMonitoringWeb.Hierarchy {
+﻿
+namespace OnlineMonitoringWeb.Hierarchy {
     export namespace RegionalService {
         export const baseUrl = 'Hierarchy/Regional';
 
@@ -8,12 +9,12 @@
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionalRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionalRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export declare const enum Methods {
-            Create = "Hierarchy/Regional/Create",
-            Update = "Hierarchy/Regional/Update",
-            Delete = "Hierarchy/Regional/Delete",
-            Retrieve = "Hierarchy/Regional/Retrieve",
-            List = "Hierarchy/Regional/List"
+        export namespace Methods {
+            export declare const Create: string;
+            export declare const Update: string;
+            export declare const Delete: string;
+            export declare const Retrieve: string;
+            export declare const List: string;
         }
 
         [
@@ -23,10 +24,10 @@
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>RegionalService)[x] = function (r, s, o) {
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
+            (<any>RegionalService)[x] = function (r, s, o) { 
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
             };
+            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
-

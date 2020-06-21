@@ -38,19 +38,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AdysTech.InfluxDB.Client.Net, Version=0.11.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AdysTech.InfluxDB.Client.Net.0.11.1\lib\net451\AdysTech.InfluxDB.Client.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="Vibrant.InfluxDB.Client">
-      <HintPath>..\OnlineMonitoringWeb\OnlineMonitoringWeb.Web\Bin\Vibrant.InfluxDB.Client.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -73,10 +62,6 @@
       <Project>{e298dc33-d240-4585-ac47-775575246780}</Project>
       <Name>OnlineMonitoringWeb.Web</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

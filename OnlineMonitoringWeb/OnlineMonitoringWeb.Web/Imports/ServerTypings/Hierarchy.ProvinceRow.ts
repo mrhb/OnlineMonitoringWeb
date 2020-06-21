@@ -1,4 +1,5 @@
-﻿namespace OnlineMonitoringWeb.Hierarchy {
+﻿
+namespace OnlineMonitoringWeb.Hierarchy {
     export interface ProvinceRow {
         ProvinceId?: number;
         Name?: string;
@@ -15,12 +16,18 @@
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export declare const enum Fields {
-            ProvinceId = "ProvinceId",
-            Name = "Name",
-            RegionalId = "RegionalId",
-            RegionalName = "RegionalName"
+        export namespace Fields {
+            export declare const ProvinceId;
+            export declare const Name;
+            export declare const RegionalId;
+            export declare const RegionalName;
         }
+
+        [
+            'ProvinceId',
+            'Name',
+            'RegionalId',
+            'RegionalName'
+        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
-

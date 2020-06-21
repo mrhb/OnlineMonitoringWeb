@@ -1,29 +1,22 @@
-﻿namespace OnlineMonitoringWeb.Hierarchy {
-    export interface DistributionForm {
-        Name: Serenity.StringEditor;
-        RegionalId: Serenity.LookupEditor;
-    }
-
+﻿
+namespace OnlineMonitoringWeb.Hierarchy {
     export class DistributionForm extends Serenity.PrefixedContext {
         static formKey = 'Hierarchy.Distribution';
-        private static init: boolean;
-
-        constructor(prefix: string) {
-            super(prefix);
-
-            if (!DistributionForm.init)  {
-                DistributionForm.init = true;
-
-                var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.LookupEditor;
-
-                Q.initFormType(DistributionForm, [
-                    'Name', w0,
-                    'RegionalId', w1
-                ]);
-            }
-        }
     }
-}
 
+    export interface DistributionForm {
+        Name: Serenity.StringEditor;
+        RegionalId: Serenity.IntegerEditor;
+    }
+
+    [,
+        ['Name', () => Serenity.StringEditor],
+        ['RegionalId', () => Serenity.IntegerEditor]
+    ].forEach(x => Object.defineProperty(DistributionForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

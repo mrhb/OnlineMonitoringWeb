@@ -1,29 +1,22 @@
-﻿namespace OnlineMonitoringWeb.Hierarchy {
-    export interface StationForm {
-        Name: Serenity.StringEditor;
-        AreaId: Serenity.LookupEditor;
-    }
-
+﻿
+namespace OnlineMonitoringWeb.Hierarchy {
     export class StationForm extends Serenity.PrefixedContext {
         static formKey = 'Hierarchy.Station';
-        private static init: boolean;
-
-        constructor(prefix: string) {
-            super(prefix);
-
-            if (!StationForm.init)  {
-                StationForm.init = true;
-
-                var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.LookupEditor;
-
-                Q.initFormType(StationForm, [
-                    'Name', w0,
-                    'AreaId', w1
-                ]);
-            }
-        }
     }
-}
 
+    export interface StationForm {
+        Name: Serenity.StringEditor;
+        AreaId: Serenity.IntegerEditor;
+    }
+
+    [,
+        ['Name', () => Serenity.StringEditor],
+        ['AreaId', () => Serenity.IntegerEditor]
+    ].forEach(x => Object.defineProperty(StationForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

@@ -1,7 +1,7 @@
 ﻿
-namespace OnlineMonitoringWeb.Hierarchy {
+namespace OnlineMonitoringWeb.Default {
     export namespace UnitService {
-        export const baseUrl = 'Hierarchy/Unit';
+        export const baseUrl = 'Default/Unit';
 
         export declare function Create(request: Serenity.SaveRequest<UnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Update(request: Serenity.SaveRequest<UnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
