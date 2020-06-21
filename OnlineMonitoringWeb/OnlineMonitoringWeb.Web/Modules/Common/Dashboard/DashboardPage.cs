@@ -4,34 +4,22 @@ namespace OnlineMonitoringWeb.Common.Pages
     using OnlineMonitoringWeb.Hierarchy.Entities;
     using Serenity;
     using Serenity.Data;
-    using System.Net;
+    using System;
     using System.Web.Mvc;
 
     using System.Linq;
     using System.Collections.Generic;
- 
+    using AdysTech.InfluxDB.Client.Net;
 
     [RoutePrefix("Dashboard"), Route("{action=index}")]
     public class DashboardController : Controller
     {
-       // private InfluxDBClient clientDb;
-
-        public DashboardController()
-        {
-            // API Address, Account, Password for Connecting Influx Db
-            var infuxUrl = "http://localhost:8086/";
-            var infuxUser = "admin";
-            var infuxPwd = "admin";
-
-            // Create an instance of Influx DbClient
-            //clientDb = new InfluxDBClient(infuxUrl, infuxUser, infuxPwd, InfluxDbVersion.Latest);
-        }
-
+     
         [Authorize, HttpGet, Route("~/")]
         public ActionResult Index()
         {
 
-            hierarchyInfo hierarchyInfo = new hierarchyInfo(Serenity.Authorization.UserId);
+            hierarchyInfo hierarchyInfo = new hierarchyInfo(Authorization.UserId);
 
             return Overview(hierarchyInfo);
         }
@@ -49,12 +37,46 @@ namespace OnlineMonitoringWeb.Common.Pages
           
             return View(MVC.Views.Common.Dashboard.DashboardIndex, model);
         }
+        [Authorize, HttpGet, Route("~/dbnames")]
+        public async System.Threading.Tasks.Task<ActionResult> dbNames()
+        {
+            var users =new List< data>();
+
+            InfluxDBClient client = new InfluxDBClient("http://localhost:8086", "", "");
+            //List<String> dbNames = await client.GetInfluxDBNamesAsync();
+            string sadf = "SELECT mean(\"Context_Switches_persec\") AS \"dadd\" FROM \"telegraf\".\"autogen\".\"win_system\" WHERE time > now() - 5m GROUP BY time(2500ms) FILL(null)";
+            //sadf="SHOW STATS";
+            var query = await client.QueryMultiSeriesAsync("telegraf", sadf);
+            
+            foreach(var entry in query.FirstOrDefault().Entries)
+            {
+               
+                try
+                {
+                    if (entry.Dadd != null)
+                    {
+                        var i1 = Convert.ToDouble(entry.Dadd);
+                        string time = entry.Time.ToString();
+                        users.Add(new data() { y = time, item1 = (int)i1 });
+                    }
+                }
+                catch
+                { }
+                  
+                   
+               
+            }
+
+            return Json(users, JsonRequestBehavior.AllowGet);
+        }
 
         [Authorize, HttpGet, Route("~/createChartData")]
         public ActionResult createChartData()
         {
-
             var users = data.Getdata();
+
+        
+
             return Json(users, JsonRequestBehavior.AllowGet);
         }
         class data
@@ -62,6 +84,7 @@ namespace OnlineMonitoringWeb.Common.Pages
             public   string y;
             public int item1;
             public int item2;
+
 
             public static List<data> Getdata()
             {
