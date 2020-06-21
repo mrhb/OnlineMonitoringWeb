@@ -1,5 +1,4 @@
-﻿
-namespace OnlineMonitoringWeb.Hierarchy {
+﻿namespace OnlineMonitoringWeb.Hierarchy {
     export interface RankInHierarchyRow {
         RankId?: number;
         UserId?: number;
@@ -41,70 +40,38 @@ namespace OnlineMonitoringWeb.Hierarchy {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const RankId;
-            export declare const UserId;
-            export declare const RegionalId;
-            export declare const DistributionId;
-            export declare const AreaId;
-            export declare const StationId;
-            export declare const UnitId;
-            export declare const UserUsername;
-            export declare const UserDisplayName;
-            export declare const UserEmail;
-            export declare const UserSource;
-            export declare const UserPasswordHash;
-            export declare const UserPasswordSalt;
-            export declare const UserLastDirectoryUpdate;
-            export declare const UserUserImage;
-            export declare const UserInsertDate;
-            export declare const UserInsertUserId;
-            export declare const UserUpdateDate;
-            export declare const UserUpdateUserId;
-            export declare const UserIsActive;
-            export declare const RegionalName;
-            export declare const DistributionName;
-            export declare const DistributionRegionalId;
-            export declare const AreaName;
-            export declare const AreaDistributionId;
-            export declare const StationName;
-            export declare const StationAreaId;
-            export declare const UnitName;
-            export declare const UnitStationId;
-            export declare const UnitCapacity;
+        export declare const enum Fields {
+            RankId = "RankId",
+            UserId = "UserId",
+            RegionalId = "RegionalId",
+            DistributionId = "DistributionId",
+            AreaId = "AreaId",
+            StationId = "StationId",
+            UnitId = "UnitId",
+            UserUsername = "UserUsername",
+            UserDisplayName = "UserDisplayName",
+            UserEmail = "UserEmail",
+            UserSource = "UserSource",
+            UserPasswordHash = "UserPasswordHash",
+            UserPasswordSalt = "UserPasswordSalt",
+            UserLastDirectoryUpdate = "UserLastDirectoryUpdate",
+            UserUserImage = "UserUserImage",
+            UserInsertDate = "UserInsertDate",
+            UserInsertUserId = "UserInsertUserId",
+            UserUpdateDate = "UserUpdateDate",
+            UserUpdateUserId = "UserUpdateUserId",
+            UserIsActive = "UserIsActive",
+            RegionalName = "RegionalName",
+            DistributionName = "DistributionName",
+            DistributionRegionalId = "DistributionRegionalId",
+            AreaName = "AreaName",
+            AreaDistributionId = "AreaDistributionId",
+            StationName = "StationName",
+            StationAreaId = "StationAreaId",
+            UnitName = "UnitName",
+            UnitStationId = "UnitStationId",
+            UnitCapacity = "UnitCapacity"
         }
-
-        [
-            'RankId',
-            'UserId',
-            'RegionalId',
-            'DistributionId',
-            'AreaId',
-            'StationId',
-            'UnitId',
-            'UserUsername',
-            'UserDisplayName',
-            'UserEmail',
-            'UserSource',
-            'UserPasswordHash',
-            'UserPasswordSalt',
-            'UserLastDirectoryUpdate',
-            'UserUserImage',
-            'UserInsertDate',
-            'UserInsertUserId',
-            'UserUpdateDate',
-            'UserUpdateUserId',
-            'UserIsActive',
-            'RegionalName',
-            'DistributionName',
-            'DistributionRegionalId',
-            'AreaName',
-            'AreaDistributionId',
-            'StationName',
-            'StationAreaId',
-            'UnitName',
-            'UnitStationId',
-            'UnitCapacity'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

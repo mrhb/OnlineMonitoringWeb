@@ -2,7 +2,7 @@
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var LanguageForm = (function (_super) {
+        var LanguageForm = /** @class */ (function (_super) {
             __extends(LanguageForm, _super);
             function LanguageForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -17,9 +17,9 @@
                 }
                 return _this;
             }
+            LanguageForm.formKey = 'Administration.Language';
             return LanguageForm;
         }(Serenity.PrefixedContext));
-        LanguageForm.formKey = 'Administration.Language';
         Administration.LanguageForm = LanguageForm;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -37,6 +37,10 @@ var OnlineMonitoringWeb;
                 return Q.getLookup('Administration.Language');
             }
             LanguageRow.getLookup = getLookup;
+            LanguageRow.deletePermission = 'Administration:Translation';
+            LanguageRow.insertPermission = 'Administration:Translation';
+            LanguageRow.readPermission = 'Administration:Translation';
+            LanguageRow.updatePermission = 'Administration:Translation';
         })(LanguageRow = Administration.LanguageRow || (Administration.LanguageRow = {}));
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -65,7 +69,13 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleForm = (function (_super) {
+    })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
+    var Administration;
+    (function (Administration) {
+        var RoleForm = /** @class */ (function (_super) {
             __extends(RoleForm, _super);
             function RoleForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -79,9 +89,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
+            RoleForm.formKey = 'Administration.Role';
             return RoleForm;
         }(Serenity.PrefixedContext));
-        RoleForm.formKey = 'Administration.Role';
         Administration.RoleForm = RoleForm;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -94,6 +104,10 @@ var OnlineMonitoringWeb;
             RolePermissionRow.idProperty = 'RolePermissionId';
             RolePermissionRow.nameProperty = 'PermissionKey';
             RolePermissionRow.localTextPrefix = 'Administration.RolePermission';
+            RolePermissionRow.deletePermission = 'Administration:Security';
+            RolePermissionRow.insertPermission = 'Administration:Security';
+            RolePermissionRow.readPermission = 'Administration:Security';
+            RolePermissionRow.updatePermission = 'Administration:Security';
         })(RolePermissionRow = Administration.RolePermissionRow || (Administration.RolePermissionRow = {}));
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -129,6 +143,10 @@ var OnlineMonitoringWeb;
                 return Q.getLookup('Administration.Role');
             }
             RoleRow.getLookup = getLookup;
+            RoleRow.deletePermission = 'Administration:Security';
+            RoleRow.insertPermission = 'Administration:Security';
+            RoleRow.readPermission = 'Administration:Security';
+            RoleRow.updatePermission = 'Administration:Security';
         })(RoleRow = Administration.RoleRow || (Administration.RoleRow = {}));
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -175,7 +193,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserForm = (function (_super) {
+        var UserForm = /** @class */ (function (_super) {
             __extends(UserForm, _super);
             function UserForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -198,9 +216,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
+            UserForm.formKey = 'Administration.User';
             return UserForm;
         }(Serenity.PrefixedContext));
-        UserForm.formKey = 'Administration.User';
         Administration.UserForm = UserForm;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -213,6 +231,10 @@ var OnlineMonitoringWeb;
             UserPermissionRow.idProperty = 'UserPermissionId';
             UserPermissionRow.nameProperty = 'PermissionKey';
             UserPermissionRow.localTextPrefix = 'Administration.UserPermission';
+            UserPermissionRow.deletePermission = 'Administration:Security';
+            UserPermissionRow.insertPermission = 'Administration:Security';
+            UserPermissionRow.readPermission = 'Administration:Security';
+            UserPermissionRow.updatePermission = 'Administration:Security';
         })(UserPermissionRow = Administration.UserPermissionRow || (Administration.UserPermissionRow = {}));
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -244,6 +266,10 @@ var OnlineMonitoringWeb;
         (function (UserRoleRow) {
             UserRoleRow.idProperty = 'UserRoleId';
             UserRoleRow.localTextPrefix = 'Administration.UserRole';
+            UserRoleRow.deletePermission = 'Administration:Security';
+            UserRoleRow.insertPermission = 'Administration:Security';
+            UserRoleRow.readPermission = 'Administration:Security';
+            UserRoleRow.updatePermission = 'Administration:Security';
         })(UserRoleRow = Administration.UserRoleRow || (Administration.UserRoleRow = {}));
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -280,6 +306,10 @@ var OnlineMonitoringWeb;
                 return Q.getLookup('Administration.User');
             }
             UserRow.getLookup = getLookup;
+            UserRow.deletePermission = 'Administration:Security';
+            UserRow.insertPermission = 'Administration:Security';
+            UserRow.readPermission = 'Administration:Security';
+            UserRow.updatePermission = 'Administration:Security';
         })(UserRow = Administration.UserRow || (Administration.UserRow = {}));
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -314,6 +344,10 @@ var OnlineMonitoringWeb;
             UserPreferenceRow.idProperty = 'UserPreferenceId';
             UserPreferenceRow.nameProperty = 'Name';
             UserPreferenceRow.localTextPrefix = 'Common.UserPreference';
+            UserPreferenceRow.deletePermission = '';
+            UserPreferenceRow.insertPermission = '';
+            UserPreferenceRow.readPermission = '';
+            UserPreferenceRow.updatePermission = '';
         })(UserPreferenceRow = Common.UserPreferenceRow || (Common.UserPreferenceRow = {}));
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -339,14 +373,14 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Default;
     (function (Default) {
-        var CityForm = (function (_super) {
+        var CityForm = /** @class */ (function (_super) {
             __extends(CityForm, _super);
             function CityForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            CityForm.formKey = 'Default.City';
             return CityForm;
         }(Serenity.PrefixedContext));
-        CityForm.formKey = 'Default.City';
         Default.CityForm = CityForm;
         [,
             ['Name', function () { return Serenity.StringEditor; }],
@@ -414,14 +448,14 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Default;
     (function (Default) {
-        var ProvinceForm = (function (_super) {
+        var ProvinceForm = /** @class */ (function (_super) {
             __extends(ProvinceForm, _super);
             function ProvinceForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ProvinceForm.formKey = 'Default.Province';
             return ProvinceForm;
         }(Serenity.PrefixedContext));
-        ProvinceForm.formKey = 'Default.Province';
         Default.ProvinceForm = ProvinceForm;
         [,
             ['Name', function () { return Serenity.StringEditor; }]
@@ -484,103 +518,28 @@ var OnlineMonitoringWeb;
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
-    var Default;
-    (function (Default) {
-        var UnitForm = (function (_super) {
-            __extends(UnitForm, _super);
-            function UnitForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
-            }
-            return UnitForm;
-        }(Serenity.PrefixedContext));
-        UnitForm.formKey = 'Default.Unit';
-        Default.UnitForm = UnitForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }],
-            ['StationId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(UnitForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
-    })(Default = OnlineMonitoringWeb.Default || (OnlineMonitoringWeb.Default = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
-    var Default;
-    (function (Default) {
-        var UnitRow;
-        (function (UnitRow) {
-            UnitRow.idProperty = 'UnitId';
-            UnitRow.nameProperty = 'Name';
-            UnitRow.localTextPrefix = 'Default.Unit';
-            UnitRow.deletePermission = 'Administration:General';
-            UnitRow.insertPermission = 'Administration:General';
-            UnitRow.readPermission = 'Administration:General';
-            UnitRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = UnitRow.Fields || (UnitRow.Fields = {}));
-            [
-                'UnitId',
-                'Name',
-                'StationId',
-                'StationName',
-                'StationAreaId'
-            ].forEach(function (x) { return Fields[x] = x; });
-        })(UnitRow = Default.UnitRow || (Default.UnitRow = {}));
-    })(Default = OnlineMonitoringWeb.Default || (OnlineMonitoringWeb.Default = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
-    var Default;
-    (function (Default) {
-        var UnitService;
-        (function (UnitService) {
-            UnitService.baseUrl = 'Default/Unit';
-            var Methods;
-            (function (Methods) {
-            })(Methods = UnitService.Methods || (UnitService.Methods = {}));
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                UnitService[x] = function (r, s, o) {
-                    return Q.serviceRequest(UnitService.baseUrl + '/' + x, r, s, o);
-                };
-                Methods[x] = UnitService.baseUrl + '/' + x;
-            });
-        })(UnitService = Default.UnitService || (Default.UnitService = {}));
-    })(Default = OnlineMonitoringWeb.Default || (OnlineMonitoringWeb.Default = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var AreaForm = (function (_super) {
+        var AreaForm = /** @class */ (function (_super) {
             __extends(AreaForm, _super);
-            function AreaForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function AreaForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!AreaForm.init) {
+                    AreaForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.LookupEditor;
+                    Q.initFormType(AreaForm, [
+                        'Name', w0,
+                        'DistributionId', w1
+                    ]);
+                }
+                return _this;
             }
+            AreaForm.formKey = 'Hierarchy.Area';
             return AreaForm;
         }(Serenity.PrefixedContext));
-        AreaForm.formKey = 'Hierarchy.Area';
         Hierarchy.AreaForm = AreaForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }],
-            ['DistributionId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(AreaForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
@@ -592,20 +551,15 @@ var OnlineMonitoringWeb;
             AreaRow.idProperty = 'AreaId';
             AreaRow.nameProperty = 'Name';
             AreaRow.localTextPrefix = 'Hierarchy.Area';
-            AreaRow.deletePermission = 'Administration:General';
-            AreaRow.insertPermission = 'Administration:General';
-            AreaRow.readPermission = 'Administration:General';
-            AreaRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = AreaRow.Fields || (AreaRow.Fields = {}));
-            [
-                'AreaId',
-                'Name',
-                'DistributionId',
-                'DistributionName',
-                'DistributionRegionalId'
-            ].forEach(function (x) { return Fields[x] = x; });
+            AreaRow.lookupKey = 'Default.Area';
+            function getLookup() {
+                return Q.getLookup('Default.Area');
+            }
+            AreaRow.getLookup = getLookup;
+            AreaRow.deletePermission = 'Hierarchy:modify';
+            AreaRow.insertPermission = 'Hierarchy:modify';
+            AreaRow.readPermission = 'Hierarchy:view';
+            AreaRow.updatePermission = 'Hierarchy:modify';
         })(AreaRow = Hierarchy.AreaRow || (Hierarchy.AreaRow = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -616,9 +570,6 @@ var OnlineMonitoringWeb;
         var AreaService;
         (function (AreaService) {
             AreaService.baseUrl = 'Hierarchy/Area';
-            var Methods;
-            (function (Methods) {
-            })(Methods = AreaService.Methods || (AreaService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -629,7 +580,6 @@ var OnlineMonitoringWeb;
                 AreaService[x] = function (r, s, o) {
                     return Q.serviceRequest(AreaService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = AreaService.baseUrl + '/' + x;
             });
         })(AreaService = Hierarchy.AreaService || (Hierarchy.AreaService = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
@@ -638,25 +588,26 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var DistributionForm = (function (_super) {
+        var DistributionForm = /** @class */ (function (_super) {
             __extends(DistributionForm, _super);
-            function DistributionForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function DistributionForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DistributionForm.init) {
+                    DistributionForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.LookupEditor;
+                    Q.initFormType(DistributionForm, [
+                        'Name', w0,
+                        'RegionalId', w1
+                    ]);
+                }
+                return _this;
             }
+            DistributionForm.formKey = 'Hierarchy.Distribution';
             return DistributionForm;
         }(Serenity.PrefixedContext));
-        DistributionForm.formKey = 'Hierarchy.Distribution';
         Hierarchy.DistributionForm = DistributionForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }],
-            ['RegionalId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(DistributionForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
@@ -668,19 +619,15 @@ var OnlineMonitoringWeb;
             DistributionRow.idProperty = 'DistributionId';
             DistributionRow.nameProperty = 'Name';
             DistributionRow.localTextPrefix = 'Hierarchy.Distribution';
+            DistributionRow.lookupKey = 'Default.Distribution';
+            function getLookup() {
+                return Q.getLookup('Default.Distribution');
+            }
+            DistributionRow.getLookup = getLookup;
             DistributionRow.deletePermission = 'Administration:General';
             DistributionRow.insertPermission = 'Administration:General';
             DistributionRow.readPermission = 'Administration:General';
             DistributionRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = DistributionRow.Fields || (DistributionRow.Fields = {}));
-            [
-                'DistributionId',
-                'Name',
-                'RegionalId',
-                'RegionalName'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(DistributionRow = Hierarchy.DistributionRow || (Hierarchy.DistributionRow = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -691,9 +638,6 @@ var OnlineMonitoringWeb;
         var DistributionService;
         (function (DistributionService) {
             DistributionService.baseUrl = 'Hierarchy/Distribution';
-            var Methods;
-            (function (Methods) {
-            })(Methods = DistributionService.Methods || (DistributionService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -704,7 +648,6 @@ var OnlineMonitoringWeb;
                 DistributionService[x] = function (r, s, o) {
                     return Q.serviceRequest(DistributionService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = DistributionService.baseUrl + '/' + x;
             });
         })(DistributionService = Hierarchy.DistributionService || (Hierarchy.DistributionService = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
@@ -713,25 +656,32 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var ProvinceForm = (function (_super) {
+    })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
+    var Hierarchy;
+    (function (Hierarchy) {
+        var ProvinceForm = /** @class */ (function (_super) {
             __extends(ProvinceForm, _super);
-            function ProvinceForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function ProvinceForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProvinceForm.init) {
+                    ProvinceForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.LookupEditor;
+                    Q.initFormType(ProvinceForm, [
+                        'Name', w0,
+                        'RegionalId', w1
+                    ]);
+                }
+                return _this;
             }
+            ProvinceForm.formKey = 'Hierarchy.Province';
             return ProvinceForm;
         }(Serenity.PrefixedContext));
-        ProvinceForm.formKey = 'Hierarchy.Province';
         Hierarchy.ProvinceForm = ProvinceForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }],
-            ['RegionalId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(ProvinceForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
@@ -747,15 +697,6 @@ var OnlineMonitoringWeb;
             ProvinceRow.insertPermission = 'Administration:General';
             ProvinceRow.readPermission = 'Administration:General';
             ProvinceRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = ProvinceRow.Fields || (ProvinceRow.Fields = {}));
-            [
-                'ProvinceId',
-                'Name',
-                'RegionalId',
-                'RegionalName'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(ProvinceRow = Hierarchy.ProvinceRow || (Hierarchy.ProvinceRow = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -766,9 +707,6 @@ var OnlineMonitoringWeb;
         var ProvinceService;
         (function (ProvinceService) {
             ProvinceService.baseUrl = 'Hierarchy/Province';
-            var Methods;
-            (function (Methods) {
-            })(Methods = ProvinceService.Methods || (ProvinceService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -779,7 +717,6 @@ var OnlineMonitoringWeb;
                 ProvinceService[x] = function (r, s, o) {
                     return Q.serviceRequest(ProvinceService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = ProvinceService.baseUrl + '/' + x;
             });
         })(ProvinceService = Hierarchy.ProvinceService || (Hierarchy.ProvinceService = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
@@ -788,29 +725,29 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RankInHierarchyForm = (function (_super) {
+        var RankInHierarchyForm = /** @class */ (function (_super) {
             __extends(RankInHierarchyForm, _super);
-            function RankInHierarchyForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function RankInHierarchyForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!RankInHierarchyForm.init) {
+                    RankInHierarchyForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.LookupEditor;
+                    Q.initFormType(RankInHierarchyForm, [
+                        'UserId', w0,
+                        'RegionalId', w0,
+                        'DistributionId', w0,
+                        'AreaId', w0,
+                        'StationId', w0,
+                        'UnitId', w0
+                    ]);
+                }
+                return _this;
             }
+            RankInHierarchyForm.formKey = 'Hierarchy.RankInHierarchy';
             return RankInHierarchyForm;
         }(Serenity.PrefixedContext));
-        RankInHierarchyForm.formKey = 'Hierarchy.RankInHierarchy';
         Hierarchy.RankInHierarchyForm = RankInHierarchyForm;
-        [,
-            ['UserId', function () { return Serenity.IntegerEditor; }],
-            ['RegionalId', function () { return Serenity.IntegerEditor; }],
-            ['DistributionId', function () { return Serenity.IntegerEditor; }],
-            ['AreaId', function () { return Serenity.IntegerEditor; }],
-            ['StationId', function () { return Serenity.IntegerEditor; }],
-            ['UnitId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(RankInHierarchyForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
@@ -825,41 +762,6 @@ var OnlineMonitoringWeb;
             RankInHierarchyRow.insertPermission = 'Administration:General';
             RankInHierarchyRow.readPermission = 'Administration:General';
             RankInHierarchyRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = RankInHierarchyRow.Fields || (RankInHierarchyRow.Fields = {}));
-            [
-                'RankId',
-                'UserId',
-                'RegionalId',
-                'DistributionId',
-                'AreaId',
-                'StationId',
-                'UnitId',
-                'UserUsername',
-                'UserDisplayName',
-                'UserEmail',
-                'UserSource',
-                'UserPasswordHash',
-                'UserPasswordSalt',
-                'UserLastDirectoryUpdate',
-                'UserUserImage',
-                'UserInsertDate',
-                'UserInsertUserId',
-                'UserUpdateDate',
-                'UserUpdateUserId',
-                'UserIsActive',
-                'RegionalName',
-                'DistributionName',
-                'DistributionRegionalId',
-                'AreaName',
-                'AreaDistributionId',
-                'StationName',
-                'StationAreaId',
-                'UnitName',
-                'UnitStationId',
-                'UnitCapacity'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(RankInHierarchyRow = Hierarchy.RankInHierarchyRow || (Hierarchy.RankInHierarchyRow = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -870,9 +772,6 @@ var OnlineMonitoringWeb;
         var RankInHierarchyService;
         (function (RankInHierarchyService) {
             RankInHierarchyService.baseUrl = 'Hierarchy/RankInHierarchy';
-            var Methods;
-            (function (Methods) {
-            })(Methods = RankInHierarchyService.Methods || (RankInHierarchyService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -883,7 +782,6 @@ var OnlineMonitoringWeb;
                 RankInHierarchyService[x] = function (r, s, o) {
                     return Q.serviceRequest(RankInHierarchyService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = RankInHierarchyService.baseUrl + '/' + x;
             });
         })(RankInHierarchyService = Hierarchy.RankInHierarchyService || (Hierarchy.RankInHierarchyService = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
@@ -892,24 +790,24 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RegionalForm = (function (_super) {
+        var RegionalForm = /** @class */ (function (_super) {
             __extends(RegionalForm, _super);
-            function RegionalForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function RegionalForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!RegionalForm.init) {
+                    RegionalForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(RegionalForm, [
+                        'Name', w0
+                    ]);
+                }
+                return _this;
             }
+            RegionalForm.formKey = 'Hierarchy.Regional';
             return RegionalForm;
         }(Serenity.PrefixedContext));
-        RegionalForm.formKey = 'Hierarchy.Regional';
         Hierarchy.RegionalForm = RegionalForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(RegionalForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
@@ -921,17 +819,15 @@ var OnlineMonitoringWeb;
             RegionalRow.idProperty = 'RegionalId';
             RegionalRow.nameProperty = 'Name';
             RegionalRow.localTextPrefix = 'Hierarchy.Regional';
+            RegionalRow.lookupKey = 'Default.Regional';
+            function getLookup() {
+                return Q.getLookup('Default.Regional');
+            }
+            RegionalRow.getLookup = getLookup;
             RegionalRow.deletePermission = 'Administration:General';
             RegionalRow.insertPermission = 'Administration:General';
             RegionalRow.readPermission = 'Administration:General';
             RegionalRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = RegionalRow.Fields || (RegionalRow.Fields = {}));
-            [
-                'RegionalId',
-                'Name'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(RegionalRow = Hierarchy.RegionalRow || (Hierarchy.RegionalRow = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -942,9 +838,6 @@ var OnlineMonitoringWeb;
         var RegionalService;
         (function (RegionalService) {
             RegionalService.baseUrl = 'Hierarchy/Regional';
-            var Methods;
-            (function (Methods) {
-            })(Methods = RegionalService.Methods || (RegionalService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -955,7 +848,6 @@ var OnlineMonitoringWeb;
                 RegionalService[x] = function (r, s, o) {
                     return Q.serviceRequest(RegionalService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = RegionalService.baseUrl + '/' + x;
             });
         })(RegionalService = Hierarchy.RegionalService || (Hierarchy.RegionalService = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
@@ -964,25 +856,26 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var StationForm = (function (_super) {
+        var StationForm = /** @class */ (function (_super) {
             __extends(StationForm, _super);
-            function StationForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function StationForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!StationForm.init) {
+                    StationForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.LookupEditor;
+                    Q.initFormType(StationForm, [
+                        'Name', w0,
+                        'AreaId', w1
+                    ]);
+                }
+                return _this;
             }
+            StationForm.formKey = 'Hierarchy.Station';
             return StationForm;
         }(Serenity.PrefixedContext));
-        StationForm.formKey = 'Hierarchy.Station';
         Hierarchy.StationForm = StationForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }],
-            ['AreaId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(StationForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
@@ -994,20 +887,15 @@ var OnlineMonitoringWeb;
             StationRow.idProperty = 'StationId';
             StationRow.nameProperty = 'Name';
             StationRow.localTextPrefix = 'Hierarchy.Station';
+            StationRow.lookupKey = 'Default.Station';
+            function getLookup() {
+                return Q.getLookup('Default.Station');
+            }
+            StationRow.getLookup = getLookup;
             StationRow.deletePermission = 'Administration:General';
             StationRow.insertPermission = 'Administration:General';
             StationRow.readPermission = 'Administration:General';
             StationRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = StationRow.Fields || (StationRow.Fields = {}));
-            [
-                'StationId',
-                'Name',
-                'AreaId',
-                'AreaName',
-                'AreaDistributionId'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(StationRow = Hierarchy.StationRow || (Hierarchy.StationRow = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1018,9 +906,6 @@ var OnlineMonitoringWeb;
         var StationService;
         (function (StationService) {
             StationService.baseUrl = 'Hierarchy/Station';
-            var Methods;
-            (function (Methods) {
-            })(Methods = StationService.Methods || (StationService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1031,7 +916,6 @@ var OnlineMonitoringWeb;
                 StationService[x] = function (r, s, o) {
                     return Q.serviceRequest(StationService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = StationService.baseUrl + '/' + x;
             });
         })(StationService = Hierarchy.StationService || (Hierarchy.StationService = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
@@ -1040,25 +924,28 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var UnitForm = (function (_super) {
+        var UnitForm = /** @class */ (function (_super) {
             __extends(UnitForm, _super);
-            function UnitForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function UnitForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!UnitForm.init) {
+                    UnitForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.LookupEditor;
+                    Q.initFormType(UnitForm, [
+                        'Name', w0,
+                        'Capacity', w1,
+                        'StationId', w2
+                    ]);
+                }
+                return _this;
             }
+            UnitForm.formKey = 'Hierarchy.Unit';
             return UnitForm;
         }(Serenity.PrefixedContext));
-        UnitForm.formKey = 'Hierarchy.Unit';
         Hierarchy.UnitForm = UnitForm;
-        [,
-            ['Name', function () { return Serenity.StringEditor; }],
-            ['StationId', function () { return Serenity.IntegerEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(UnitForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
@@ -1070,20 +957,15 @@ var OnlineMonitoringWeb;
             UnitRow.idProperty = 'UnitId';
             UnitRow.nameProperty = 'Name';
             UnitRow.localTextPrefix = 'Hierarchy.Unit';
+            UnitRow.lookupKey = 'Default.Unit';
+            function getLookup() {
+                return Q.getLookup('Default.Unit');
+            }
+            UnitRow.getLookup = getLookup;
             UnitRow.deletePermission = 'Administration:General';
             UnitRow.insertPermission = 'Administration:General';
             UnitRow.readPermission = 'Administration:General';
             UnitRow.updatePermission = 'Administration:General';
-            var Fields;
-            (function (Fields) {
-            })(Fields = UnitRow.Fields || (UnitRow.Fields = {}));
-            [
-                'UnitId',
-                'Name',
-                'StationId',
-                'StationName',
-                'StationAreaId'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(UnitRow = Hierarchy.UnitRow || (Hierarchy.UnitRow = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1094,9 +976,6 @@ var OnlineMonitoringWeb;
         var UnitService;
         (function (UnitService) {
             UnitService.baseUrl = 'Hierarchy/Unit';
-            var Methods;
-            (function (Methods) {
-            })(Methods = UnitService.Methods || (UnitService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1107,7 +986,6 @@ var OnlineMonitoringWeb;
                 UnitService[x] = function (r, s, o) {
                     return Q.serviceRequest(UnitService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = UnitService.baseUrl + '/' + x;
             });
         })(UnitService = Hierarchy.UnitService || (Hierarchy.UnitService = {}));
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
@@ -1116,7 +994,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ChangePasswordForm = (function (_super) {
+        var ChangePasswordForm = /** @class */ (function (_super) {
             __extends(ChangePasswordForm, _super);
             function ChangePasswordForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1132,9 +1010,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
+            ChangePasswordForm.formKey = 'Membership.ChangePassword';
             return ChangePasswordForm;
         }(Serenity.PrefixedContext));
-        ChangePasswordForm.formKey = 'Membership.ChangePassword';
         Membership.ChangePasswordForm = ChangePasswordForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1142,7 +1020,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ForgotPasswordForm = (function (_super) {
+        var ForgotPasswordForm = /** @class */ (function (_super) {
             __extends(ForgotPasswordForm, _super);
             function ForgotPasswordForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1156,9 +1034,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
+            ForgotPasswordForm.formKey = 'Membership.ForgotPassword';
             return ForgotPasswordForm;
         }(Serenity.PrefixedContext));
-        ForgotPasswordForm.formKey = 'Membership.ForgotPassword';
         Membership.ForgotPasswordForm = ForgotPasswordForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1166,7 +1044,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var LoginForm = (function (_super) {
+        var LoginForm = /** @class */ (function (_super) {
             __extends(LoginForm, _super);
             function LoginForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1182,9 +1060,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
+            LoginForm.formKey = 'Membership.Login';
             return LoginForm;
         }(Serenity.PrefixedContext));
-        LoginForm.formKey = 'Membership.Login';
         Membership.LoginForm = LoginForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1192,7 +1070,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ResetPasswordForm = (function (_super) {
+        var ResetPasswordForm = /** @class */ (function (_super) {
             __extends(ResetPasswordForm, _super);
             function ResetPasswordForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1207,9 +1085,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
+            ResetPasswordForm.formKey = 'Membership.ResetPassword';
             return ResetPasswordForm;
         }(Serenity.PrefixedContext));
-        ResetPasswordForm.formKey = 'Membership.ResetPassword';
         Membership.ResetPasswordForm = ResetPasswordForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1217,7 +1095,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var SignUpForm = (function (_super) {
+        var SignUpForm = /** @class */ (function (_super) {
             __extends(SignUpForm, _super);
             function SignUpForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1237,9 +1115,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
+            SignUpForm.formKey = 'Membership.SignUp';
             return SignUpForm;
         }(Serenity.PrefixedContext));
-        SignUpForm.formKey = 'Membership.SignUp';
         Membership.SignUpForm = SignUpForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1247,14 +1125,14 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Texts;
     (function (Texts) {
-        OnlineMonitoringWeb['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, DragDropSample: { Id: 1, ParentId: 1, Title: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
+        OnlineMonitoringWeb['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Hierarchy: { Area: { AreaId: 1, DistributionId: 1, DistributionName: 1, DistributionRegionalId: 1, Name: 1 }, Distribution: { DistributionId: 1, Name: 1, RegionalId: 1, RegionalName: 1 }, Province: { Name: 1, ProvinceId: 1, RegionalId: 1, RegionalName: 1 }, RankInHierarchy: { AreaDistributionId: 1, AreaId: 1, AreaName: 1, DistributionId: 1, DistributionName: 1, DistributionRegionalId: 1, RankId: 1, RegionalId: 1, RegionalName: 1, StationAreaId: 1, StationId: 1, StationName: 1, UnitCapacity: 1, UnitId: 1, UnitName: 1, UnitStationId: 1, UserDisplayName: 1, UserEmail: 1, UserId: 1, UserInsertDate: 1, UserInsertUserId: 1, UserIsActive: 1, UserLastDirectoryUpdate: 1, UserPasswordHash: 1, UserPasswordSalt: 1, UserSource: 1, UserUpdateDate: 1, UserUpdateUserId: 1, UserUserImage: 1, UserUsername: 1 }, Regional: { Name: 1, RegionalId: 1 }, Station: { AreaDistributionId: 1, AreaId: 1, AreaName: 1, Name: 1, StationId: 1 }, Unit: { Capacity: 1, Name: 1, StationAreaId: 1, StationId: 1, StationName: 1, UnitId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = OnlineMonitoringWeb.Texts || (OnlineMonitoringWeb.Texts = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var LanguageDialog = (function (_super) {
+        var LanguageDialog = /** @class */ (function (_super) {
             __extends(LanguageDialog, _super);
             function LanguageDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -1266,11 +1144,11 @@ var OnlineMonitoringWeb;
             LanguageDialog.prototype.getLocalTextPrefix = function () { return Administration.LanguageRow.localTextPrefix; };
             LanguageDialog.prototype.getNameProperty = function () { return Administration.LanguageRow.nameProperty; };
             LanguageDialog.prototype.getService = function () { return Administration.LanguageService.baseUrl; };
+            LanguageDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], LanguageDialog);
             return LanguageDialog;
         }(Serenity.EntityDialog));
-        LanguageDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], LanguageDialog);
         Administration.LanguageDialog = LanguageDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1278,7 +1156,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var LanguageGrid = (function (_super) {
+        var LanguageGrid = /** @class */ (function (_super) {
             __extends(LanguageGrid, _super);
             function LanguageGrid(container) {
                 return _super.call(this, container) || this;
@@ -1288,11 +1166,11 @@ var OnlineMonitoringWeb;
             LanguageGrid.prototype.getIdProperty = function () { return Administration.LanguageRow.idProperty; };
             LanguageGrid.prototype.getLocalTextPrefix = function () { return Administration.LanguageRow.localTextPrefix; };
             LanguageGrid.prototype.getService = function () { return Administration.LanguageService.baseUrl; };
+            LanguageGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], LanguageGrid);
             return LanguageGrid;
         }(Serenity.EntityGrid));
-        LanguageGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], LanguageGrid);
         Administration.LanguageGrid = LanguageGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1300,7 +1178,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleDialog = (function (_super) {
+        var RoleDialog = /** @class */ (function (_super) {
             __extends(RoleDialog, _super);
             function RoleDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -1332,11 +1210,11 @@ var OnlineMonitoringWeb;
                 _super.prototype.updateInterface.call(this);
                 this.toolbar.findButton("edit-permissions-button").toggleClass("disabled", this.isNewOrDeleted());
             };
+            RoleDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RoleDialog);
             return RoleDialog;
         }(Serenity.EntityDialog));
-        RoleDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RoleDialog);
         Administration.RoleDialog = RoleDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1344,7 +1222,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleGrid = (function (_super) {
+        var RoleGrid = /** @class */ (function (_super) {
             __extends(RoleGrid, _super);
             function RoleGrid(container) {
                 return _super.call(this, container) || this;
@@ -1354,11 +1232,11 @@ var OnlineMonitoringWeb;
             RoleGrid.prototype.getIdProperty = function () { return Administration.RoleRow.idProperty; };
             RoleGrid.prototype.getLocalTextPrefix = function () { return Administration.RoleRow.localTextPrefix; };
             RoleGrid.prototype.getService = function () { return Administration.RoleService.baseUrl; };
+            RoleGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RoleGrid);
             return RoleGrid;
         }(Serenity.EntityGrid));
-        RoleGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RoleGrid);
         Administration.RoleGrid = RoleGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1366,7 +1244,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RolePermissionDialog = (function (_super) {
+        var RolePermissionDialog = /** @class */ (function (_super) {
             __extends(RolePermissionDialog, _super);
             function RolePermissionDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -1411,11 +1289,11 @@ var OnlineMonitoringWeb;
             RolePermissionDialog.prototype.getTemplate = function () {
                 return '<div id="~_Permissions"></div>';
             };
+            RolePermissionDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RolePermissionDialog);
             return RolePermissionDialog;
         }(Serenity.TemplatedDialog));
-        RolePermissionDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RolePermissionDialog);
         Administration.RolePermissionDialog = RolePermissionDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1423,7 +1301,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var TranslationGrid = (function (_super) {
+        var TranslationGrid = /** @class */ (function (_super) {
             __extends(TranslationGrid, _super);
             function TranslationGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -1608,35 +1486,19 @@ var OnlineMonitoringWeb;
             TranslationGrid.prototype.usePager = function () {
                 return false;
             };
+            TranslationGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TranslationGrid);
             return TranslationGrid;
         }(Serenity.EntityGrid));
-        TranslationGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TranslationGrid);
         Administration.TranslationGrid = TranslationGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
-    var Authorization;
-    (function (Authorization) {
-        Object.defineProperty(Authorization, 'userDefinition', {
-            get: function () {
-                return Q.getRemoteData('UserData');
-            }
-        });
-        function hasPermission(permissionKey) {
-            var ud = Authorization.userDefinition;
-            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
-        }
-        Authorization.hasPermission = hasPermission;
-    })(Authorization = OnlineMonitoringWeb.Authorization || (OnlineMonitoringWeb.Authorization = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserDialog = (function (_super) {
+        var UserDialog = /** @class */ (function (_super) {
             __extends(UserDialog, _super);
             function UserDialog() {
                 var _this = _super.call(this) || this;
@@ -1697,11 +1559,11 @@ var OnlineMonitoringWeb;
                 this.form.PasswordConfirm.element.toggleClass('required', this.isNew())
                     .closest('.field').find('sup').toggle(this.isNew());
             };
+            UserDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserDialog);
             return UserDialog;
         }(Serenity.EntityDialog));
-        UserDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserDialog);
         Administration.UserDialog = UserDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1709,7 +1571,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserGrid = (function (_super) {
+        var UserGrid = /** @class */ (function (_super) {
             __extends(UserGrid, _super);
             function UserGrid(container) {
                 return _super.call(this, container) || this;
@@ -1720,19 +1582,35 @@ var OnlineMonitoringWeb;
             UserGrid.prototype.getIsActiveProperty = function () { return Administration.UserRow.isActiveProperty; };
             UserGrid.prototype.getLocalTextPrefix = function () { return Administration.UserRow.localTextPrefix; };
             UserGrid.prototype.getService = function () { return Administration.UserService.baseUrl; };
+            UserGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserGrid);
             return UserGrid;
         }(Serenity.EntityGrid));
-        UserGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserGrid);
         Administration.UserGrid = UserGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
+    var Authorization;
+    (function (Authorization) {
+        Object.defineProperty(Authorization, 'userDefinition', {
+            get: function () {
+                return Q.getRemoteData('UserData');
+            }
+        });
+        function hasPermission(permissionKey) {
+            var ud = Authorization.userDefinition;
+            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
+        }
+        Authorization.hasPermission = hasPermission;
+    })(Authorization = OnlineMonitoringWeb.Authorization || (OnlineMonitoringWeb.Authorization = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var PermissionCheckEditor = (function (_super) {
+        var PermissionCheckEditor = /** @class */ (function (_super) {
             __extends(PermissionCheckEditor, _super);
             function PermissionCheckEditor(container, opt) {
                 var _this = _super.call(this, container, opt) || this;
@@ -2040,11 +1918,11 @@ var OnlineMonitoringWeb;
                 enumerable: true,
                 configurable: true
             });
+            PermissionCheckEditor = __decorate([
+                Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue])
+            ], PermissionCheckEditor);
             return PermissionCheckEditor;
         }(Serenity.DataGrid));
-        PermissionCheckEditor = __decorate([
-            Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue])
-        ], PermissionCheckEditor);
         Administration.PermissionCheckEditor = PermissionCheckEditor;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2052,7 +1930,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserPermissionDialog = (function (_super) {
+        var UserPermissionDialog = /** @class */ (function (_super) {
             __extends(UserPermissionDialog, _super);
             function UserPermissionDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -2104,11 +1982,11 @@ var OnlineMonitoringWeb;
             UserPermissionDialog.prototype.getTemplate = function () {
                 return '<div id="~_Permissions"></div>';
             };
+            UserPermissionDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserPermissionDialog);
             return UserPermissionDialog;
         }(Serenity.TemplatedDialog));
-        UserPermissionDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserPermissionDialog);
         Administration.UserPermissionDialog = UserPermissionDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2116,7 +1994,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleCheckEditor = (function (_super) {
+        var RoleCheckEditor = /** @class */ (function (_super) {
             __extends(RoleCheckEditor, _super);
             function RoleCheckEditor(div) {
                 return _super.call(this, div) || this;
@@ -2144,11 +2022,11 @@ var OnlineMonitoringWeb;
                         Select2.util.stripDiacritics(item.text || '')
                             .toUpperCase().indexOf(this.searchText) >= 0);
             };
+            RoleCheckEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], RoleCheckEditor);
             return RoleCheckEditor;
         }(Serenity.CheckTreeEditor));
-        RoleCheckEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], RoleCheckEditor);
         Administration.RoleCheckEditor = RoleCheckEditor;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2156,7 +2034,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserRoleDialog = (function (_super) {
+        var UserRoleDialog = /** @class */ (function (_super) {
             __extends(UserRoleDialog, _super);
             function UserRoleDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -2192,17 +2070,49 @@ var OnlineMonitoringWeb;
             UserRoleDialog.prototype.getTemplate = function () {
                 return "<div id='~_Roles'></div>";
             };
+            UserRoleDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserRoleDialog);
             return UserRoleDialog;
         }(Serenity.TemplatedDialog));
-        UserRoleDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserRoleDialog);
         Administration.UserRoleDialog = UserRoleDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
-    var BasicProgressDialog = (function (_super) {
+    var LanguageList;
+    (function (LanguageList) {
+        function getValue() {
+            var result = [];
+            for (var _i = 0, _a = OnlineMonitoringWeb.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
+                var k = _a[_i];
+                if (k.LanguageId !== 'en') {
+                    result.push([k.Id.toString(), k.LanguageName]);
+                }
+            }
+            return result;
+        }
+        LanguageList.getValue = getValue;
+    })(LanguageList = OnlineMonitoringWeb.LanguageList || (OnlineMonitoringWeb.LanguageList = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+/// <reference path="../Common/Helpers/LanguageList.ts" />
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
+    var ScriptInitialization;
+    (function (ScriptInitialization) {
+        Q.Config.responsiveDialogs = true;
+        Q.Config.rootNamespaces.push('OnlineMonitoringWeb');
+        Serenity.EntityDialog.defaultLanguageList = OnlineMonitoringWeb.LanguageList.getValue;
+        if ($.fn['colorbox']) {
+            $.fn['colorbox'].settings.maxWidth = "95%";
+            $.fn['colorbox'].settings.maxHeight = "95%";
+        }
+        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
+    })(ScriptInitialization = OnlineMonitoringWeb.ScriptInitialization || (OnlineMonitoringWeb.ScriptInitialization = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
+    var BasicProgressDialog = /** @class */ (function (_super) {
         __extends(BasicProgressDialog, _super);
         function BasicProgressDialog() {
             var _this = _super.call(this) || this;
@@ -2284,7 +2194,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var BulkServiceAction = (function () {
+        var BulkServiceAction = /** @class */ (function () {
             function BulkServiceAction() {
             }
             BulkServiceAction.prototype.createProgressDialog = function () {
@@ -2463,7 +2373,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var EnumSelectFormatter = (function () {
+        var EnumSelectFormatter = /** @class */ (function () {
             function EnumSelectFormatter() {
                 this.allowClear = true;
             }
@@ -2488,20 +2398,20 @@ var OnlineMonitoringWeb;
                 sb += "</select>";
                 return sb;
             };
+            __decorate([
+                Serenity.Decorators.option()
+            ], EnumSelectFormatter.prototype, "enumKey", void 0);
+            __decorate([
+                Serenity.Decorators.option()
+            ], EnumSelectFormatter.prototype, "allowClear", void 0);
+            __decorate([
+                Serenity.Decorators.option()
+            ], EnumSelectFormatter.prototype, "emptyItemText", void 0);
+            EnumSelectFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], EnumSelectFormatter);
             return EnumSelectFormatter;
         }());
-        __decorate([
-            Serenity.Decorators.option()
-        ], EnumSelectFormatter.prototype, "enumKey", void 0);
-        __decorate([
-            Serenity.Decorators.option()
-        ], EnumSelectFormatter.prototype, "allowClear", void 0);
-        __decorate([
-            Serenity.Decorators.option()
-        ], EnumSelectFormatter.prototype, "emptyItemText", void 0);
-        EnumSelectFormatter = __decorate([
-            Serenity.Decorators.registerFormatter()
-        ], EnumSelectFormatter);
         Common.EnumSelectFormatter = EnumSelectFormatter;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2547,7 +2457,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var GridEditorBase = (function (_super) {
+        var GridEditorBase = /** @class */ (function (_super) {
             __extends(GridEditorBase, _super);
             function GridEditorBase(container) {
                 var _this = _super.call(this, container) || this;
@@ -2671,13 +2581,13 @@ var OnlineMonitoringWeb;
             };
             GridEditorBase.prototype.createQuickSearchInput = function () {
             };
+            GridEditorBase = __decorate([
+                Serenity.Decorators.registerClass([Serenity.IGetEditValue, Serenity.ISetEditValue]),
+                Serenity.Decorators.editor(),
+                Serenity.Decorators.element("<div/>")
+            ], GridEditorBase);
             return GridEditorBase;
         }(Serenity.EntityGrid));
-        GridEditorBase = __decorate([
-            Serenity.Decorators.registerClass([Serenity.IGetEditValue, Serenity.ISetEditValue]),
-            Serenity.Decorators.editor(),
-            Serenity.Decorators.element("<div/>")
-        ], GridEditorBase);
         Common.GridEditorBase = GridEditorBase;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2685,7 +2595,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var GridEditorDialog = (function (_super) {
+        var GridEditorDialog = /** @class */ (function (_super) {
             __extends(GridEditorDialog, _super);
             function GridEditorDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2709,30 +2619,13 @@ var OnlineMonitoringWeb;
             GridEditorDialog.prototype.deleteHandler = function (options, callback) {
                 this.onDelete && this.onDelete(options, callback);
             };
+            GridEditorDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GridEditorDialog);
             return GridEditorDialog;
         }(Serenity.EntityDialog));
-        GridEditorDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], GridEditorDialog);
         Common.GridEditorDialog = GridEditorDialog;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
-    var LanguageList;
-    (function (LanguageList) {
-        function getValue() {
-            var result = [];
-            for (var _i = 0, _a = OnlineMonitoringWeb.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
-                var k = _a[_i];
-                if (k.LanguageId !== 'en') {
-                    result.push([k.Id.toString(), k.LanguageName]);
-                }
-            }
-            return result;
-        }
-        LanguageList.getValue = getValue;
-    })(LanguageList = OnlineMonitoringWeb.LanguageList || (OnlineMonitoringWeb.LanguageList = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
@@ -2740,7 +2633,7 @@ var OnlineMonitoringWeb;
      * This is an editor widget but it only displays a text, not edits it.
      *
      */
-    var StaticTextBlock = (function (_super) {
+    var StaticTextBlock = /** @class */ (function (_super) {
         __extends(StaticTextBlock, _super);
         function StaticTextBlock(container, options) {
             var _this = _super.call(this, container, options) || this;
@@ -2771,19 +2664,19 @@ var OnlineMonitoringWeb;
                 this.updateElementContent();
             }
         };
+        StaticTextBlock = __decorate([
+            Serenity.Decorators.element("<div/>"),
+            Serenity.Decorators.registerEditor([Serenity.ISetEditValue])
+        ], StaticTextBlock);
         return StaticTextBlock;
     }(Serenity.Widget));
-    StaticTextBlock = __decorate([
-        Serenity.Decorators.element("<div/>"),
-        Serenity.Decorators.registerEditor([Serenity.ISetEditValue])
-    ], StaticTextBlock);
     OnlineMonitoringWeb.StaticTextBlock = StaticTextBlock;
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var LanguageSelection = (function (_super) {
+        var LanguageSelection = /** @class */ (function (_super) {
             __extends(LanguageSelection, _super);
             function LanguageSelection(select, currentLanguage) {
                 var _this = _super.call(this, select) || this;
@@ -2825,7 +2718,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var SidebarSearch = (function (_super) {
+        var SidebarSearch = /** @class */ (function (_super) {
             __extends(SidebarSearch, _super);
             function SidebarSearch(input, menuUL) {
                 var _this = _super.call(this, input) || this;
@@ -2878,7 +2771,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var ThemeSelection = (function (_super) {
+        var ThemeSelection = /** @class */ (function (_super) {
             __extends(ThemeSelection, _super);
             function ThemeSelection(select) {
                 var _this = _super.call(this, select) || this;
@@ -3142,7 +3035,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var ReportDialog = (function (_super) {
+        var ReportDialog = /** @class */ (function (_super) {
             __extends(ReportDialog, _super);
             function ReportDialog(options) {
                 var _this = _super.call(this, options) || this;
@@ -3262,7 +3155,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var ReportPage = (function (_super) {
+        var ReportPage = /** @class */ (function (_super) {
             __extends(ReportPage, _super);
             function ReportPage(element) {
                 var _this = _super.call(this, element) || this;
@@ -3329,26 +3222,11 @@ var OnlineMonitoringWeb;
         Common.ReportPage = ReportPage;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-/// <reference path="../Common/Helpers/LanguageList.ts" />
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
-    var ScriptInitialization;
-    (function (ScriptInitialization) {
-        Q.Config.responsiveDialogs = true;
-        Q.Config.rootNamespaces.push('OnlineMonitoringWeb');
-        Serenity.EntityDialog.defaultLanguageList = OnlineMonitoringWeb.LanguageList.getValue;
-        if ($.fn['colorbox']) {
-            $.fn['colorbox'].settings.maxWidth = "95%";
-            $.fn['colorbox'].settings.maxHeight = "95%";
-        }
-        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
-    })(ScriptInitialization = OnlineMonitoringWeb.ScriptInitialization || (OnlineMonitoringWeb.ScriptInitialization = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var UserPreferenceStorage = (function () {
+        var UserPreferenceStorage = /** @class */ (function () {
             function UserPreferenceStorage() {
             }
             UserPreferenceStorage.prototype.getItem = function (key) {
@@ -3377,7 +3255,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var AreaDialog = (function (_super) {
+        var AreaDialog = /** @class */ (function (_super) {
             __extends(AreaDialog, _super);
             function AreaDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3392,11 +3270,11 @@ var OnlineMonitoringWeb;
             AreaDialog.prototype.getDeletePermission = function () { return Hierarchy.AreaRow.deletePermission; };
             AreaDialog.prototype.getInsertPermission = function () { return Hierarchy.AreaRow.insertPermission; };
             AreaDialog.prototype.getUpdatePermission = function () { return Hierarchy.AreaRow.updatePermission; };
+            AreaDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AreaDialog);
             return AreaDialog;
         }(Serenity.EntityDialog));
-        AreaDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], AreaDialog);
         Hierarchy.AreaDialog = AreaDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3404,7 +3282,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var AreaGrid = (function (_super) {
+        var AreaGrid = /** @class */ (function (_super) {
             __extends(AreaGrid, _super);
             function AreaGrid(container) {
                 return _super.call(this, container) || this;
@@ -3415,11 +3293,11 @@ var OnlineMonitoringWeb;
             AreaGrid.prototype.getInsertPermission = function () { return Hierarchy.AreaRow.insertPermission; };
             AreaGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.AreaRow.localTextPrefix; };
             AreaGrid.prototype.getService = function () { return Hierarchy.AreaService.baseUrl; };
+            AreaGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AreaGrid);
             return AreaGrid;
         }(Serenity.EntityGrid));
-        AreaGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], AreaGrid);
         Hierarchy.AreaGrid = AreaGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3427,7 +3305,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var DistributionDialog = (function (_super) {
+        var DistributionDialog = /** @class */ (function (_super) {
             __extends(DistributionDialog, _super);
             function DistributionDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3442,11 +3320,11 @@ var OnlineMonitoringWeb;
             DistributionDialog.prototype.getDeletePermission = function () { return Hierarchy.DistributionRow.deletePermission; };
             DistributionDialog.prototype.getInsertPermission = function () { return Hierarchy.DistributionRow.insertPermission; };
             DistributionDialog.prototype.getUpdatePermission = function () { return Hierarchy.DistributionRow.updatePermission; };
+            DistributionDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DistributionDialog);
             return DistributionDialog;
         }(Serenity.EntityDialog));
-        DistributionDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], DistributionDialog);
         Hierarchy.DistributionDialog = DistributionDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3454,7 +3332,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var DistributionGrid = (function (_super) {
+        var DistributionGrid = /** @class */ (function (_super) {
             __extends(DistributionGrid, _super);
             function DistributionGrid(container) {
                 return _super.call(this, container) || this;
@@ -3465,11 +3343,11 @@ var OnlineMonitoringWeb;
             DistributionGrid.prototype.getInsertPermission = function () { return Hierarchy.DistributionRow.insertPermission; };
             DistributionGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.DistributionRow.localTextPrefix; };
             DistributionGrid.prototype.getService = function () { return Hierarchy.DistributionService.baseUrl; };
+            DistributionGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DistributionGrid);
             return DistributionGrid;
         }(Serenity.EntityGrid));
-        DistributionGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], DistributionGrid);
         Hierarchy.DistributionGrid = DistributionGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3477,7 +3355,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var ProvinceDialog = (function (_super) {
+        var ProvinceDialog = /** @class */ (function (_super) {
             __extends(ProvinceDialog, _super);
             function ProvinceDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3492,11 +3370,11 @@ var OnlineMonitoringWeb;
             ProvinceDialog.prototype.getDeletePermission = function () { return Hierarchy.ProvinceRow.deletePermission; };
             ProvinceDialog.prototype.getInsertPermission = function () { return Hierarchy.ProvinceRow.insertPermission; };
             ProvinceDialog.prototype.getUpdatePermission = function () { return Hierarchy.ProvinceRow.updatePermission; };
+            ProvinceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProvinceDialog);
             return ProvinceDialog;
         }(Serenity.EntityDialog));
-        ProvinceDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ProvinceDialog);
         Hierarchy.ProvinceDialog = ProvinceDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3504,7 +3382,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var ProvinceGrid = (function (_super) {
+        var ProvinceGrid = /** @class */ (function (_super) {
             __extends(ProvinceGrid, _super);
             function ProvinceGrid(container) {
                 return _super.call(this, container) || this;
@@ -3515,11 +3393,11 @@ var OnlineMonitoringWeb;
             ProvinceGrid.prototype.getInsertPermission = function () { return Hierarchy.ProvinceRow.insertPermission; };
             ProvinceGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.ProvinceRow.localTextPrefix; };
             ProvinceGrid.prototype.getService = function () { return Hierarchy.ProvinceService.baseUrl; };
+            ProvinceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProvinceGrid);
             return ProvinceGrid;
         }(Serenity.EntityGrid));
-        ProvinceGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ProvinceGrid);
         Hierarchy.ProvinceGrid = ProvinceGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3527,7 +3405,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RankInHierarchyDialog = (function (_super) {
+        var RankInHierarchyDialog = /** @class */ (function (_super) {
             __extends(RankInHierarchyDialog, _super);
             function RankInHierarchyDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3541,11 +3419,11 @@ var OnlineMonitoringWeb;
             RankInHierarchyDialog.prototype.getDeletePermission = function () { return Hierarchy.RankInHierarchyRow.deletePermission; };
             RankInHierarchyDialog.prototype.getInsertPermission = function () { return Hierarchy.RankInHierarchyRow.insertPermission; };
             RankInHierarchyDialog.prototype.getUpdatePermission = function () { return Hierarchy.RankInHierarchyRow.updatePermission; };
+            RankInHierarchyDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RankInHierarchyDialog);
             return RankInHierarchyDialog;
         }(Serenity.EntityDialog));
-        RankInHierarchyDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RankInHierarchyDialog);
         Hierarchy.RankInHierarchyDialog = RankInHierarchyDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3553,7 +3431,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RankInHierarchyGrid = (function (_super) {
+        var RankInHierarchyGrid = /** @class */ (function (_super) {
             __extends(RankInHierarchyGrid, _super);
             function RankInHierarchyGrid(container) {
                 return _super.call(this, container) || this;
@@ -3564,11 +3442,11 @@ var OnlineMonitoringWeb;
             RankInHierarchyGrid.prototype.getInsertPermission = function () { return Hierarchy.RankInHierarchyRow.insertPermission; };
             RankInHierarchyGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.RankInHierarchyRow.localTextPrefix; };
             RankInHierarchyGrid.prototype.getService = function () { return Hierarchy.RankInHierarchyService.baseUrl; };
+            RankInHierarchyGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RankInHierarchyGrid);
             return RankInHierarchyGrid;
         }(Serenity.EntityGrid));
-        RankInHierarchyGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RankInHierarchyGrid);
         Hierarchy.RankInHierarchyGrid = RankInHierarchyGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3576,7 +3454,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RegionalDialog = (function (_super) {
+        var RegionalDialog = /** @class */ (function (_super) {
             __extends(RegionalDialog, _super);
             function RegionalDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3591,11 +3469,11 @@ var OnlineMonitoringWeb;
             RegionalDialog.prototype.getDeletePermission = function () { return Hierarchy.RegionalRow.deletePermission; };
             RegionalDialog.prototype.getInsertPermission = function () { return Hierarchy.RegionalRow.insertPermission; };
             RegionalDialog.prototype.getUpdatePermission = function () { return Hierarchy.RegionalRow.updatePermission; };
+            RegionalDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionalDialog);
             return RegionalDialog;
         }(Serenity.EntityDialog));
-        RegionalDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RegionalDialog);
         Hierarchy.RegionalDialog = RegionalDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3603,7 +3481,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RegionalGrid = (function (_super) {
+        var RegionalGrid = /** @class */ (function (_super) {
             __extends(RegionalGrid, _super);
             function RegionalGrid(container) {
                 return _super.call(this, container) || this;
@@ -3614,11 +3492,11 @@ var OnlineMonitoringWeb;
             RegionalGrid.prototype.getInsertPermission = function () { return Hierarchy.RegionalRow.insertPermission; };
             RegionalGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.RegionalRow.localTextPrefix; };
             RegionalGrid.prototype.getService = function () { return Hierarchy.RegionalService.baseUrl; };
+            RegionalGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionalGrid);
             return RegionalGrid;
         }(Serenity.EntityGrid));
-        RegionalGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RegionalGrid);
         Hierarchy.RegionalGrid = RegionalGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3626,7 +3504,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var StationDialog = (function (_super) {
+        var StationDialog = /** @class */ (function (_super) {
             __extends(StationDialog, _super);
             function StationDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3641,11 +3519,11 @@ var OnlineMonitoringWeb;
             StationDialog.prototype.getDeletePermission = function () { return Hierarchy.StationRow.deletePermission; };
             StationDialog.prototype.getInsertPermission = function () { return Hierarchy.StationRow.insertPermission; };
             StationDialog.prototype.getUpdatePermission = function () { return Hierarchy.StationRow.updatePermission; };
+            StationDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], StationDialog);
             return StationDialog;
         }(Serenity.EntityDialog));
-        StationDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], StationDialog);
         Hierarchy.StationDialog = StationDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3653,7 +3531,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var StationGrid = (function (_super) {
+        var StationGrid = /** @class */ (function (_super) {
             __extends(StationGrid, _super);
             function StationGrid(container) {
                 return _super.call(this, container) || this;
@@ -3664,11 +3542,11 @@ var OnlineMonitoringWeb;
             StationGrid.prototype.getInsertPermission = function () { return Hierarchy.StationRow.insertPermission; };
             StationGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.StationRow.localTextPrefix; };
             StationGrid.prototype.getService = function () { return Hierarchy.StationService.baseUrl; };
+            StationGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], StationGrid);
             return StationGrid;
         }(Serenity.EntityGrid));
-        StationGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], StationGrid);
         Hierarchy.StationGrid = StationGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3676,7 +3554,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var UnitDialog = (function (_super) {
+        var UnitDialog = /** @class */ (function (_super) {
             __extends(UnitDialog, _super);
             function UnitDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3691,11 +3569,11 @@ var OnlineMonitoringWeb;
             UnitDialog.prototype.getDeletePermission = function () { return Hierarchy.UnitRow.deletePermission; };
             UnitDialog.prototype.getInsertPermission = function () { return Hierarchy.UnitRow.insertPermission; };
             UnitDialog.prototype.getUpdatePermission = function () { return Hierarchy.UnitRow.updatePermission; };
+            UnitDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UnitDialog);
             return UnitDialog;
         }(Serenity.EntityDialog));
-        UnitDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UnitDialog);
         Hierarchy.UnitDialog = UnitDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3703,7 +3581,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var UnitGrid = (function (_super) {
+        var UnitGrid = /** @class */ (function (_super) {
             __extends(UnitGrid, _super);
             function UnitGrid(container) {
                 return _super.call(this, container) || this;
@@ -3714,11 +3592,11 @@ var OnlineMonitoringWeb;
             UnitGrid.prototype.getInsertPermission = function () { return Hierarchy.UnitRow.insertPermission; };
             UnitGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.UnitRow.localTextPrefix; };
             UnitGrid.prototype.getService = function () { return Hierarchy.UnitService.baseUrl; };
+            UnitGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UnitGrid);
             return UnitGrid;
         }(Serenity.EntityGrid));
-        UnitGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UnitGrid);
         Hierarchy.UnitGrid = UnitGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3726,7 +3604,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ChangePasswordPanel = (function (_super) {
+        var ChangePasswordPanel = /** @class */ (function (_super) {
             __extends(ChangePasswordPanel, _super);
             function ChangePasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3760,11 +3638,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             ChangePasswordPanel.prototype.getFormKey = function () { return Membership.ChangePasswordForm.formKey; };
+            ChangePasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ChangePasswordPanel);
             return ChangePasswordPanel;
         }(Serenity.PropertyPanel));
-        ChangePasswordPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ChangePasswordPanel);
         Membership.ChangePasswordPanel = ChangePasswordPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3772,7 +3650,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ForgotPasswordPanel = (function (_super) {
+        var ForgotPasswordPanel = /** @class */ (function (_super) {
             __extends(ForgotPasswordPanel, _super);
             function ForgotPasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3796,11 +3674,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             ForgotPasswordPanel.prototype.getFormKey = function () { return Membership.ForgotPasswordForm.formKey; };
+            ForgotPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ForgotPasswordPanel);
             return ForgotPasswordPanel;
         }(Serenity.PropertyPanel));
-        ForgotPasswordPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ForgotPasswordPanel);
         Membership.ForgotPasswordPanel = ForgotPasswordPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3808,7 +3686,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ResetPasswordPanel = (function (_super) {
+        var ResetPasswordPanel = /** @class */ (function (_super) {
             __extends(ResetPasswordPanel, _super);
             function ResetPasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3843,11 +3721,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             ResetPasswordPanel.prototype.getFormKey = function () { return Membership.ResetPasswordForm.formKey; };
+            ResetPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResetPasswordPanel);
             return ResetPasswordPanel;
         }(Serenity.PropertyPanel));
-        ResetPasswordPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ResetPasswordPanel);
         Membership.ResetPasswordPanel = ResetPasswordPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3855,7 +3733,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var SignUpPanel = (function (_super) {
+        var SignUpPanel = /** @class */ (function (_super) {
             __extends(SignUpPanel, _super);
             function SignUpPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3892,11 +3770,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             SignUpPanel.prototype.getFormKey = function () { return Membership.SignUpForm.formKey; };
+            SignUpPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SignUpPanel);
             return SignUpPanel;
         }(Serenity.PropertyPanel));
-        SignUpPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], SignUpPanel);
         Membership.SignUpPanel = SignUpPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
