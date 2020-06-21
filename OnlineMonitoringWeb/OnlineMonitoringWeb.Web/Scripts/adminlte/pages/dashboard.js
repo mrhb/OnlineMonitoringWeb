@@ -201,7 +201,7 @@ $(function () {
     // Sales chart
 
     $.ajax({
-        url: 'dbnames',
+        url: 'createChartData',
         dataType: 'json',
         success: function (dataFromUrl) {
             
@@ -214,7 +214,6 @@ $(function () {
         ykeys: ['item1', 'item2'],
         labels: ['Item 1', 'Item 2'],
         lineColors: ['#a0d0e0', '#3c8dbc'],
-        parseTime: false,
         hideHover: 'auto'
     });
         }
