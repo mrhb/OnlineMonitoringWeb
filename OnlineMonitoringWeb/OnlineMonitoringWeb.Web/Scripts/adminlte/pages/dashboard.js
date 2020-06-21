@@ -196,29 +196,37 @@ $(function () {
     $('#chat-box').slimScroll({
         height: '250px'
     });
-   
+
+
+  
     /* Morris.js Charts */
     // Sales chart
-
-    $.ajax({
-        url: 'dbnames',
-        dataType: 'json',
-        success: function (dataFromUrl) {
-            
-      
     var area = new Morris.Area({
-        element: 'revenue-chart',
-        resize: true,
-        data: dataFromUrl,
-        xkey: 'y',
-        ykeys: ['item1', 'item2'],
-        labels: ['Item 1', 'Item 2'],
-        lineColors: ['#a0d0e0', '#3c8dbc'],
-        parseTime: false,
-        hideHover: 'auto'
-    });
-        }
-    });
+                            element: 'revenue-chart',
+                            resize: true,
+                            data: [],
+                            xkey: 'y',
+                            ykeys: ['item1', 'item2'],
+                            labels: ['Power', 'Energy'],
+                            lineColors: ['#a0d0e0', '#3c8dbc'],
+                            parseTime: false,
+                            hideHover: 'auto'
+                        });
+    Refresh();
+    function Refresh(){
+        $.ajax({
+            url: 'dbnames',
+            dataType: 'json',
+            success: function (dataFromUrl) {
+                area.setData(dataFromUrl);
+        setTimeout(function () {
+            Refresh();
+        }, 10000);
+            }
+        });
+
+    }
+   
     var line = new Morris.Line({
         element: 'line-chart',
         resize: true,
