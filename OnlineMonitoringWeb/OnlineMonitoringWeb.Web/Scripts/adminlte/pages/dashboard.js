@@ -210,7 +210,29 @@ $(function () {
                             labels: ['Power', 'Energy'],
                             lineColors: ['#a0d0e0', '#3c8dbc'],
                             parseTime: false,
-                            hideHover: 'auto'
+                            hideHover: 'auto',
+
+                            xLabels: 'minute',
+                            xLabelAngle: 45,
+                            xLabelFormat: function (x) {
+                             
+                                var weekdays = new Array(7);
+                                weekdays[0] = "SUN";
+                                weekdays[1] = "MON";
+                                weekdays[2] = "TUE";
+                                weekdays[3] = "WED";
+                                weekdays[4] = "THU";
+                                weekdays[5] = "FRI";
+                                weekdays[6] = "SAT";
+
+                                var jsonDate =  x.label;
+                                var d = new Date(parseInt(jsonDate.substr(6)));
+
+                                return weekdays[d.getDay()] + '-' +
+                                        ("0" + (d.getMonth() + 1)).slice(-2) + '-' +
+                                        ("0" + (d.getDate())).slice(-2);
+                            }
+                           
                         });
     Refresh();
     function Refresh(){

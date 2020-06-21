@@ -56,7 +56,7 @@ namespace OnlineMonitoringWeb.Common.Pages
                     if (entry.Dadd != null)
                     {
                         var i1 = Convert.ToDouble(entry.Dadd);
-                        string time = entry.Time.ToString();
+                        DateTime time = entry.Time;
                         users.Add(new data() { y = time, item1 = (int)i1 });
                     }
                 }
@@ -70,41 +70,11 @@ namespace OnlineMonitoringWeb.Common.Pages
             return Json(users, JsonRequestBehavior.AllowGet);
         }
 
-        [Authorize, HttpGet, Route("~/createChartData")]
-        public ActionResult createChartData()
-        {
-            var users = data.Getdata();
-
-        
-
-            return Json(users, JsonRequestBehavior.AllowGet);
-        }
         class data
         {
-            public   string y;
+            public   DateTime y;
             public int item1;
             public int item2;
-
-
-            public static List<data> Getdata()
-            {
-                var usersList = new List<data>
-            {
-                new data{ y= "2011 Q1", item1= 2666, item2= 2666 },
-                new data{ y= "2011 Q2", item1= 2778, item2= 2294 },
-                new data{ y= "2011 Q3", item1= 4912, item2= 1969 },
-                new data{ y= "2011 Q4", item1= 3767, item2= 3597 },
-                new data{ y= "2012 Q1", item1= 6810, item2= 1914 },
-                new data{ y= "2012 Q2", item1= 5670, item2= 4293 },
-                new data{ y= "2012 Q3", item1= 4820, item2= 3795 },
-                new data{ y= "2012 Q4", item1= 15073, item2= 5967 },
-                new data{ y= "2013 Q1", item1= 10687, item2= 4460 },
-                new data{ y= "2013 Q2", item1= 8432, item2= 5713 }
-            };
-
-                return usersList;
-            }
-
         }
 
     }
