@@ -25,10 +25,14 @@ declare namespace OnlineMonitoringWeb.Administration {
         const localTextPrefix = "Administration.Language";
         const lookupKey = "Administration.Language";
         function getLookup(): Q.Lookup<LanguageRow>;
+        const deletePermission = "Administration:Translation";
+        const insertPermission = "Administration:Translation";
+        const readPermission = "Administration:Translation";
+        const updatePermission = "Administration:Translation";
         const enum Fields {
-            Id,
-            LanguageId,
-            LanguageName,
+            Id = "Id",
+            LanguageId = "LanguageId",
+            LanguageName = "LanguageName"
         }
     }
 }
@@ -41,13 +45,15 @@ declare namespace OnlineMonitoringWeb.Administration {
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<LanguageRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<LanguageRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Create,
-            Update,
-            Delete,
-            Retrieve,
-            List,
+            Create = "Administration/Language/Create",
+            Update = "Administration/Language/Update",
+            Delete = "Administration/Language/Delete",
+            Retrieve = "Administration/Language/Retrieve",
+            List = "Administration/Language/List"
         }
     }
+}
+declare namespace OnlineMonitoringWeb.Administration {
 }
 declare namespace OnlineMonitoringWeb.Administration {
 }
@@ -83,11 +89,15 @@ declare namespace OnlineMonitoringWeb.Administration {
         const idProperty = "RolePermissionId";
         const nameProperty = "PermissionKey";
         const localTextPrefix = "Administration.RolePermission";
+        const deletePermission = "Administration:Security";
+        const insertPermission = "Administration:Security";
+        const readPermission = "Administration:Security";
+        const updatePermission = "Administration:Security";
         const enum Fields {
-            RolePermissionId,
-            RoleId,
-            PermissionKey,
-            RoleRoleName,
+            RolePermissionId = "RolePermissionId",
+            RoleId = "RoleId",
+            PermissionKey = "PermissionKey",
+            RoleRoleName = "RoleRoleName"
         }
     }
 }
@@ -97,8 +107,8 @@ declare namespace OnlineMonitoringWeb.Administration {
         function Update(request: RolePermissionUpdateRequest, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: RolePermissionListRequest, onSuccess?: (response: RolePermissionListResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Update,
-            List,
+            Update = "Administration/RolePermission/Update",
+            List = "Administration/RolePermission/List"
         }
     }
 }
@@ -121,9 +131,13 @@ declare namespace OnlineMonitoringWeb.Administration {
         const localTextPrefix = "Administration.Role";
         const lookupKey = "Administration.Role";
         function getLookup(): Q.Lookup<RoleRow>;
+        const deletePermission = "Administration:Security";
+        const insertPermission = "Administration:Security";
+        const readPermission = "Administration:Security";
+        const updatePermission = "Administration:Security";
         const enum Fields {
-            RoleId,
-            RoleName,
+            RoleId = "RoleId",
+            RoleName = "RoleName"
         }
     }
 }
@@ -136,11 +150,11 @@ declare namespace OnlineMonitoringWeb.Administration {
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RoleRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RoleRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Create,
-            Update,
-            Delete,
-            Retrieve,
-            List,
+            Create = "Administration/Role/Create",
+            Update = "Administration/Role/Update",
+            Delete = "Administration/Role/Delete",
+            Retrieve = "Administration/Role/Retrieve",
+            List = "Administration/Role/List"
         }
     }
 }
@@ -164,8 +178,8 @@ declare namespace OnlineMonitoringWeb.Administration {
         function List(request: TranslationListRequest, onSuccess?: (response: Serenity.ListResponse<TranslationItem>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: TranslationUpdateRequest, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            List,
-            Update,
+            List = "Administration/Translation/List",
+            Update = "Administration/Translation/Update"
         }
     }
 }
@@ -215,13 +229,17 @@ declare namespace OnlineMonitoringWeb.Administration {
         const idProperty = "UserPermissionId";
         const nameProperty = "PermissionKey";
         const localTextPrefix = "Administration.UserPermission";
+        const deletePermission = "Administration:Security";
+        const insertPermission = "Administration:Security";
+        const readPermission = "Administration:Security";
+        const updatePermission = "Administration:Security";
         const enum Fields {
-            UserPermissionId,
-            UserId,
-            PermissionKey,
-            Granted,
-            Username,
-            User,
+            UserPermissionId = "UserPermissionId",
+            UserId = "UserId",
+            PermissionKey = "PermissionKey",
+            Granted = "Granted",
+            Username = "Username",
+            User = "User"
         }
     }
 }
@@ -233,10 +251,10 @@ declare namespace OnlineMonitoringWeb.Administration {
         function ListRolePermissions(request: UserPermissionListRequest, onSuccess?: (response: Serenity.ListResponse<string>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function ListPermissionKeys(request: Serenity.ServiceRequest, onSuccess?: (response: Serenity.ListResponse<string>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Update,
-            List,
-            ListRolePermissions,
-            ListPermissionKeys,
+            Update = "Administration/UserPermission/Update",
+            List = "Administration/UserPermission/List",
+            ListRolePermissions = "Administration/UserPermission/ListRolePermissions",
+            ListPermissionKeys = "Administration/UserPermission/ListPermissionKeys"
         }
     }
 }
@@ -268,12 +286,16 @@ declare namespace OnlineMonitoringWeb.Administration {
     namespace UserRoleRow {
         const idProperty = "UserRoleId";
         const localTextPrefix = "Administration.UserRole";
+        const deletePermission = "Administration:Security";
+        const insertPermission = "Administration:Security";
+        const readPermission = "Administration:Security";
+        const updatePermission = "Administration:Security";
         const enum Fields {
-            UserRoleId,
-            UserId,
-            RoleId,
-            Username,
-            User,
+            UserRoleId = "UserRoleId",
+            UserId = "UserId",
+            RoleId = "RoleId",
+            Username = "Username",
+            User = "User"
         }
     }
 }
@@ -283,8 +305,8 @@ declare namespace OnlineMonitoringWeb.Administration {
         function Update(request: UserRoleUpdateRequest, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: UserRoleListRequest, onSuccess?: (response: UserRoleListResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Update,
-            List,
+            Update = "Administration/UserRole/Update",
+            List = "Administration/UserRole/List"
         }
     }
 }
@@ -320,23 +342,27 @@ declare namespace OnlineMonitoringWeb.Administration {
         const localTextPrefix = "Administration.User";
         const lookupKey = "Administration.User";
         function getLookup(): Q.Lookup<UserRow>;
+        const deletePermission = "Administration:Security";
+        const insertPermission = "Administration:Security";
+        const readPermission = "Administration:Security";
+        const updatePermission = "Administration:Security";
         const enum Fields {
-            UserId,
-            Username,
-            Source,
-            PasswordHash,
-            PasswordSalt,
-            DisplayName,
-            Email,
-            UserImage,
-            LastDirectoryUpdate,
-            IsActive,
-            Password,
-            PasswordConfirm,
-            InsertUserId,
-            InsertDate,
-            UpdateUserId,
-            UpdateDate,
+            UserId = "UserId",
+            Username = "Username",
+            Source = "Source",
+            PasswordHash = "PasswordHash",
+            PasswordSalt = "PasswordSalt",
+            DisplayName = "DisplayName",
+            Email = "Email",
+            UserImage = "UserImage",
+            LastDirectoryUpdate = "LastDirectoryUpdate",
+            IsActive = "IsActive",
+            Password = "Password",
+            PasswordConfirm = "PasswordConfirm",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -350,12 +376,12 @@ declare namespace OnlineMonitoringWeb.Administration {
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Create,
-            Update,
-            Delete,
-            Undelete,
-            Retrieve,
-            List,
+            Create = "Administration/User/Create",
+            Update = "Administration/User/Update",
+            Delete = "Administration/User/Delete",
+            Undelete = "Administration/User/Undelete",
+            Retrieve = "Administration/User/Retrieve",
+            List = "Administration/User/List"
         }
     }
 }
@@ -382,12 +408,16 @@ declare namespace OnlineMonitoringWeb.Common {
         const idProperty = "UserPreferenceId";
         const nameProperty = "Name";
         const localTextPrefix = "Common.UserPreference";
+        const deletePermission = "";
+        const insertPermission = "";
+        const readPermission = "";
+        const updatePermission = "";
         const enum Fields {
-            UserPreferenceId,
-            UserId,
-            PreferenceType,
-            Name,
-            Value,
+            UserPreferenceId = "UserPreferenceId",
+            UserId = "UserId",
+            PreferenceType = "PreferenceType",
+            Name = "Name",
+            Value = "Value"
         }
     }
 }
@@ -397,8 +427,8 @@ declare namespace OnlineMonitoringWeb.Common {
         function Update(request: UserPreferenceUpdateRequest, onSuccess?: (response: Serenity.ServiceResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: UserPreferenceRetrieveRequest, onSuccess?: (response: UserPreferenceRetrieveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Update,
-            Retrieve,
+            Update = "Common/UserPreference/Update",
+            Retrieve = "Common/UserPreference/Retrieve"
         }
     }
 }
@@ -502,57 +532,6 @@ declare namespace OnlineMonitoringWeb.Default {
         }
     }
 }
-declare namespace OnlineMonitoringWeb.Default {
-    class UnitForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
-    interface UnitForm {
-        Name: Serenity.StringEditor;
-        StationId: Serenity.IntegerEditor;
-    }
-}
-declare namespace OnlineMonitoringWeb.Default {
-    interface UnitRow {
-        UnitId?: number;
-        Name?: string;
-        StationId?: number;
-        StationName?: string;
-        StationAreaId?: number;
-    }
-    namespace UnitRow {
-        const idProperty = "UnitId";
-        const nameProperty = "Name";
-        const localTextPrefix = "Default.Unit";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
-        namespace Fields {
-            const UnitId: any;
-            const Name: any;
-            const StationId: any;
-            const StationName: any;
-            const StationAreaId: any;
-        }
-    }
-}
-declare namespace OnlineMonitoringWeb.Default {
-    namespace UnitService {
-        const baseUrl = "Default/Unit";
-        function Create(request: Serenity.SaveRequest<UnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<UnitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
-        }
-    }
-}
 declare namespace OnlineMonitoringWeb {
     interface ExcelImportRequest extends Serenity.ServiceRequest {
         FileName?: string;
@@ -578,12 +557,16 @@ declare namespace OnlineMonitoringWeb {
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
-    class AreaForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
     interface AreaForm {
         Name: Serenity.StringEditor;
-        DistributionId: Serenity.IntegerEditor;
+        DistributionId: Serenity.LookupEditor;
+    }
+    class AreaForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
@@ -598,16 +581,18 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         const idProperty = "AreaId";
         const nameProperty = "Name";
         const localTextPrefix = "Hierarchy.Area";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
-        namespace Fields {
-            const AreaId: any;
-            const Name: any;
-            const DistributionId: any;
-            const DistributionName: any;
-            const DistributionRegionalId: any;
+        const lookupKey = "Default.Area";
+        function getLookup(): Q.Lookup<AreaRow>;
+        const deletePermission = "Hierarchy:modify";
+        const insertPermission = "Hierarchy:modify";
+        const readPermission = "Hierarchy:view";
+        const updatePermission = "Hierarchy:modify";
+        const enum Fields {
+            AreaId = "AreaId",
+            Name = "Name",
+            DistributionId = "DistributionId",
+            DistributionName = "DistributionName",
+            DistributionRegionalId = "DistributionRegionalId"
         }
     }
 }
@@ -619,22 +604,26 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AreaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AreaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Hierarchy/Area/Create",
+            Update = "Hierarchy/Area/Update",
+            Delete = "Hierarchy/Area/Delete",
+            Retrieve = "Hierarchy/Area/Retrieve",
+            List = "Hierarchy/Area/List"
         }
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
-    class DistributionForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
     interface DistributionForm {
         Name: Serenity.StringEditor;
-        RegionalId: Serenity.IntegerEditor;
+        RegionalId: Serenity.LookupEditor;
+    }
+    class DistributionForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
@@ -648,15 +637,17 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         const idProperty = "DistributionId";
         const nameProperty = "Name";
         const localTextPrefix = "Hierarchy.Distribution";
+        const lookupKey = "Default.Distribution";
+        function getLookup(): Q.Lookup<DistributionRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
         const updatePermission = "Administration:General";
-        namespace Fields {
-            const DistributionId: any;
-            const Name: any;
-            const RegionalId: any;
-            const RegionalName: any;
+        const enum Fields {
+            DistributionId = "DistributionId",
+            Name = "Name",
+            RegionalId = "RegionalId",
+            RegionalName = "RegionalName"
         }
     }
 }
@@ -668,22 +659,28 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DistributionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DistributionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Hierarchy/Distribution/Create",
+            Update = "Hierarchy/Distribution/Update",
+            Delete = "Hierarchy/Distribution/Delete",
+            Retrieve = "Hierarchy/Distribution/Retrieve",
+            List = "Hierarchy/Distribution/List"
         }
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
-    class ProvinceForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
     interface ProvinceForm {
         Name: Serenity.StringEditor;
-        RegionalId: Serenity.IntegerEditor;
+        RegionalId: Serenity.LookupEditor;
+    }
+    class ProvinceForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
@@ -701,11 +698,11 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
         const updatePermission = "Administration:General";
-        namespace Fields {
-            const ProvinceId: any;
-            const Name: any;
-            const RegionalId: any;
-            const RegionalName: any;
+        const enum Fields {
+            ProvinceId = "ProvinceId",
+            Name = "Name",
+            RegionalId = "RegionalId",
+            RegionalName = "RegionalName"
         }
     }
 }
@@ -717,26 +714,30 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProvinceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProvinceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Hierarchy/Province/Create",
+            Update = "Hierarchy/Province/Update",
+            Delete = "Hierarchy/Province/Delete",
+            Retrieve = "Hierarchy/Province/Retrieve",
+            List = "Hierarchy/Province/List"
         }
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
+    interface RankInHierarchyForm {
+        UserId: Serenity.LookupEditor;
+        RegionalId: Serenity.LookupEditor;
+        DistributionId: Serenity.LookupEditor;
+        AreaId: Serenity.LookupEditor;
+        StationId: Serenity.LookupEditor;
+        UnitId: Serenity.LookupEditor;
+    }
     class RankInHierarchyForm extends Serenity.PrefixedContext {
         static formKey: string;
-    }
-    interface RankInHierarchyForm {
-        UserId: Serenity.IntegerEditor;
-        RegionalId: Serenity.IntegerEditor;
-        DistributionId: Serenity.IntegerEditor;
-        AreaId: Serenity.IntegerEditor;
-        StationId: Serenity.IntegerEditor;
-        UnitId: Serenity.IntegerEditor;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
@@ -779,37 +780,37 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
         const updatePermission = "Administration:General";
-        namespace Fields {
-            const RankId: any;
-            const UserId: any;
-            const RegionalId: any;
-            const DistributionId: any;
-            const AreaId: any;
-            const StationId: any;
-            const UnitId: any;
-            const UserUsername: any;
-            const UserDisplayName: any;
-            const UserEmail: any;
-            const UserSource: any;
-            const UserPasswordHash: any;
-            const UserPasswordSalt: any;
-            const UserLastDirectoryUpdate: any;
-            const UserUserImage: any;
-            const UserInsertDate: any;
-            const UserInsertUserId: any;
-            const UserUpdateDate: any;
-            const UserUpdateUserId: any;
-            const UserIsActive: any;
-            const RegionalName: any;
-            const DistributionName: any;
-            const DistributionRegionalId: any;
-            const AreaName: any;
-            const AreaDistributionId: any;
-            const StationName: any;
-            const StationAreaId: any;
-            const UnitName: any;
-            const UnitStationId: any;
-            const UnitCapacity: any;
+        const enum Fields {
+            RankId = "RankId",
+            UserId = "UserId",
+            RegionalId = "RegionalId",
+            DistributionId = "DistributionId",
+            AreaId = "AreaId",
+            StationId = "StationId",
+            UnitId = "UnitId",
+            UserUsername = "UserUsername",
+            UserDisplayName = "UserDisplayName",
+            UserEmail = "UserEmail",
+            UserSource = "UserSource",
+            UserPasswordHash = "UserPasswordHash",
+            UserPasswordSalt = "UserPasswordSalt",
+            UserLastDirectoryUpdate = "UserLastDirectoryUpdate",
+            UserUserImage = "UserUserImage",
+            UserInsertDate = "UserInsertDate",
+            UserInsertUserId = "UserInsertUserId",
+            UserUpdateDate = "UserUpdateDate",
+            UserUpdateUserId = "UserUpdateUserId",
+            UserIsActive = "UserIsActive",
+            RegionalName = "RegionalName",
+            DistributionName = "DistributionName",
+            DistributionRegionalId = "DistributionRegionalId",
+            AreaName = "AreaName",
+            AreaDistributionId = "AreaDistributionId",
+            StationName = "StationName",
+            StationAreaId = "StationAreaId",
+            UnitName = "UnitName",
+            UnitStationId = "UnitStationId",
+            UnitCapacity = "UnitCapacity"
         }
     }
 }
@@ -821,21 +822,25 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RankInHierarchyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RankInHierarchyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Hierarchy/RankInHierarchy/Create",
+            Update = "Hierarchy/RankInHierarchy/Update",
+            Delete = "Hierarchy/RankInHierarchy/Delete",
+            Retrieve = "Hierarchy/RankInHierarchy/Retrieve",
+            List = "Hierarchy/RankInHierarchy/List"
         }
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
-    class RegionalForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
     interface RegionalForm {
         Name: Serenity.StringEditor;
+    }
+    class RegionalForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
@@ -847,13 +852,15 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         const idProperty = "RegionalId";
         const nameProperty = "Name";
         const localTextPrefix = "Hierarchy.Regional";
+        const lookupKey = "Default.Regional";
+        function getLookup(): Q.Lookup<RegionalRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
         const updatePermission = "Administration:General";
-        namespace Fields {
-            const RegionalId: any;
-            const Name: any;
+        const enum Fields {
+            RegionalId = "RegionalId",
+            Name = "Name"
         }
     }
 }
@@ -865,22 +872,26 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionalRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionalRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Hierarchy/Regional/Create",
+            Update = "Hierarchy/Regional/Update",
+            Delete = "Hierarchy/Regional/Delete",
+            Retrieve = "Hierarchy/Regional/Retrieve",
+            List = "Hierarchy/Regional/List"
         }
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
-    class StationForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
     interface StationForm {
         Name: Serenity.StringEditor;
-        AreaId: Serenity.IntegerEditor;
+        AreaId: Serenity.LookupEditor;
+    }
+    class StationForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
@@ -895,16 +906,18 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         const idProperty = "StationId";
         const nameProperty = "Name";
         const localTextPrefix = "Hierarchy.Station";
+        const lookupKey = "Default.Station";
+        function getLookup(): Q.Lookup<StationRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
         const updatePermission = "Administration:General";
-        namespace Fields {
-            const StationId: any;
-            const Name: any;
-            const AreaId: any;
-            const AreaName: any;
-            const AreaDistributionId: any;
+        const enum Fields {
+            StationId = "StationId",
+            Name = "Name",
+            AreaId = "AreaId",
+            AreaName = "AreaName",
+            AreaDistributionId = "AreaDistributionId"
         }
     }
 }
@@ -916,28 +929,34 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<StationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<StationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Hierarchy/Station/Create",
+            Update = "Hierarchy/Station/Update",
+            Delete = "Hierarchy/Station/Delete",
+            Retrieve = "Hierarchy/Station/Retrieve",
+            List = "Hierarchy/Station/List"
         }
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
-    class UnitForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace OnlineMonitoringWeb.Hierarchy {
     interface UnitForm {
         Name: Serenity.StringEditor;
-        StationId: Serenity.IntegerEditor;
+        Capacity: Serenity.IntegerEditor;
+        StationId: Serenity.LookupEditor;
+    }
+    class UnitForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace OnlineMonitoringWeb.Hierarchy {
     interface UnitRow {
         UnitId?: number;
         Name?: string;
+        Capacity?: number;
         StationId?: number;
         StationName?: string;
         StationAreaId?: number;
@@ -946,16 +965,19 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         const idProperty = "UnitId";
         const nameProperty = "Name";
         const localTextPrefix = "Hierarchy.Unit";
+        const lookupKey = "Default.Unit";
+        function getLookup(): Q.Lookup<UnitRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
         const updatePermission = "Administration:General";
-        namespace Fields {
-            const UnitId: any;
-            const Name: any;
-            const StationId: any;
-            const StationName: any;
-            const StationAreaId: any;
+        const enum Fields {
+            UnitId = "UnitId",
+            Name = "Name",
+            Capacity = "Capacity",
+            StationId = "StationId",
+            StationName = "StationName",
+            StationAreaId = "StationAreaId"
         }
     }
 }
@@ -967,12 +989,12 @@ declare namespace OnlineMonitoringWeb.Hierarchy {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "Hierarchy/Unit/Create",
+            Update = "Hierarchy/Unit/Update",
+            Delete = "Hierarchy/Unit/Delete",
+            Retrieve = "Hierarchy/Unit/Retrieve",
+            List = "Hierarchy/Unit/List"
         }
     }
 }
@@ -1154,10 +1176,6 @@ declare namespace OnlineMonitoringWeb.Administration {
         protected usePager(): boolean;
     }
 }
-declare namespace OnlineMonitoringWeb.Authorization {
-    let userDefinition: ScriptUserDefinition;
-    function hasPermission(permissionKey: string): boolean;
-}
 declare namespace OnlineMonitoringWeb.Administration {
     class UserDialog extends Serenity.EntityDialog<UserRow, any> {
         protected getFormKey(): string;
@@ -1184,26 +1202,30 @@ declare namespace OnlineMonitoringWeb.Administration {
         constructor(container: JQuery);
     }
 }
+declare namespace OnlineMonitoringWeb.Authorization {
+    let userDefinition: ScriptUserDefinition;
+    function hasPermission(permissionKey: string): boolean;
+}
 declare namespace OnlineMonitoringWeb.Administration {
     class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
         protected getIdProperty(): string;
         private searchText;
         private byParentKey;
         constructor(container: JQuery, opt: PermissionCheckEditorOptions);
-        private getItemGrantRevokeClass(item, grant);
-        private roleOrImplicit(key);
-        private getItemEffectiveClass(item);
+        private getItemGrantRevokeClass;
+        private roleOrImplicit;
+        private getItemEffectiveClass;
         protected getColumns(): Slick.Column[];
         setItems(items: PermissionCheckItem[]): void;
         protected onViewSubmit(): boolean;
         protected onViewFilter(item: PermissionCheckItem): boolean;
-        private matchContains(item);
-        private getDescendants(item, excludeGroups);
+        private matchContains;
+        private getDescendants;
         protected onClick(e: any, row: any, cell: any): void;
-        private getParentKey(key);
+        private getParentKey;
         protected getButtons(): Serenity.ToolButton[];
         protected createToolbarExtensions(): void;
-        private getSortedGroupAndPermissionKeys(titleByKey);
+        private getSortedGroupAndPermissionKeys;
         value: UserPermissionRow[];
         private _rolePermissions;
         rolePermissions: string[];
@@ -1254,6 +1276,11 @@ declare namespace OnlineMonitoringWeb.Administration {
         userID: number;
         username: string;
     }
+}
+declare namespace OnlineMonitoringWeb.LanguageList {
+    function getValue(): string[][];
+}
+declare namespace OnlineMonitoringWeb.ScriptInitialization {
 }
 declare namespace OnlineMonitoringWeb {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
@@ -1366,9 +1393,6 @@ declare namespace OnlineMonitoringWeb.Common {
         protected deleteHandler(options: Serenity.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void): void;
     }
 }
-declare namespace OnlineMonitoringWeb.LanguageList {
-    function getValue(): string[][];
-}
 declare namespace OnlineMonitoringWeb {
     /**
      * This is an editor widget but it only displays a text, not edits it.
@@ -1377,7 +1401,7 @@ declare namespace OnlineMonitoringWeb {
     class StaticTextBlock extends Serenity.Widget<StaticTextBlockOptions> implements Serenity.ISetEditValue {
         private value;
         constructor(container: JQuery, options: StaticTextBlockOptions);
-        private updateElementContent();
+        private updateElementContent;
         /**
          * By implementing ISetEditValue interface, we allow this editor to display its field value.
          * But only do this when our text content is not explicitly set in options
@@ -1488,8 +1512,6 @@ declare namespace OnlineMonitoringWeb.Common {
         protected categoryClick(e: any): void;
         protected reportLinkClick(e: any): void;
     }
-}
-declare namespace OnlineMonitoringWeb.ScriptInitialization {
 }
 declare namespace OnlineMonitoringWeb.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {

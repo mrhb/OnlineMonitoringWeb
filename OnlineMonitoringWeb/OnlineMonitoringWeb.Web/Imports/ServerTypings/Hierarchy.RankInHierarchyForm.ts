@@ -1,30 +1,36 @@
-﻿
-namespace OnlineMonitoringWeb.Hierarchy {
+﻿namespace OnlineMonitoringWeb.Hierarchy {
+    export interface RankInHierarchyForm {
+        UserId: Serenity.LookupEditor;
+        RegionalId: Serenity.LookupEditor;
+        DistributionId: Serenity.LookupEditor;
+        AreaId: Serenity.LookupEditor;
+        StationId: Serenity.LookupEditor;
+        UnitId: Serenity.LookupEditor;
+    }
+
     export class RankInHierarchyForm extends Serenity.PrefixedContext {
         static formKey = 'Hierarchy.RankInHierarchy';
-    }
+        private static init: boolean;
 
-    export interface RankInHierarchyForm {
-        UserId: Serenity.IntegerEditor;
-        RegionalId: Serenity.IntegerEditor;
-        DistributionId: Serenity.IntegerEditor;
-        AreaId: Serenity.IntegerEditor;
-        StationId: Serenity.IntegerEditor;
-        UnitId: Serenity.IntegerEditor;
-    }
+        constructor(prefix: string) {
+            super(prefix);
 
-    [,
-        ['UserId', () => Serenity.IntegerEditor],
-        ['RegionalId', () => Serenity.IntegerEditor],
-        ['DistributionId', () => Serenity.IntegerEditor],
-        ['AreaId', () => Serenity.IntegerEditor],
-        ['StationId', () => Serenity.IntegerEditor],
-        ['UnitId', () => Serenity.IntegerEditor]
-    ].forEach(x => Object.defineProperty(RankInHierarchyForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+            if (!RankInHierarchyForm.init)  {
+                RankInHierarchyForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.LookupEditor;
+
+                Q.initFormType(RankInHierarchyForm, [
+                    'UserId', w0,
+                    'RegionalId', w0,
+                    'DistributionId', w0,
+                    'AreaId', w0,
+                    'StationId', w0,
+                    'UnitId', w0
+                ]);
+            }
+        }
+    }
 }
+
