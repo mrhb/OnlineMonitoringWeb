@@ -2,7 +2,7 @@
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var LanguageForm = /** @class */ (function (_super) {
+        var LanguageForm = (function (_super) {
             __extends(LanguageForm, _super);
             function LanguageForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -17,9 +17,9 @@
                 }
                 return _this;
             }
-            LanguageForm.formKey = 'Administration.Language';
             return LanguageForm;
         }(Serenity.PrefixedContext));
+        LanguageForm.formKey = 'Administration.Language';
         Administration.LanguageForm = LanguageForm;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -75,7 +75,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleForm = /** @class */ (function (_super) {
+        var RoleForm = (function (_super) {
             __extends(RoleForm, _super);
             function RoleForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -89,9 +89,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            RoleForm.formKey = 'Administration.Role';
             return RoleForm;
         }(Serenity.PrefixedContext));
+        RoleForm.formKey = 'Administration.Role';
         Administration.RoleForm = RoleForm;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -193,7 +193,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserForm = /** @class */ (function (_super) {
+        var UserForm = (function (_super) {
             __extends(UserForm, _super);
             function UserForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -216,9 +216,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            UserForm.formKey = 'Administration.User';
             return UserForm;
         }(Serenity.PrefixedContext));
+        UserForm.formKey = 'Administration.User';
         Administration.UserForm = UserForm;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -373,14 +373,14 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Default;
     (function (Default) {
-        var CityForm = /** @class */ (function (_super) {
+        var CityForm = (function (_super) {
             __extends(CityForm, _super);
             function CityForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            CityForm.formKey = 'Default.City';
             return CityForm;
         }(Serenity.PrefixedContext));
+        CityForm.formKey = 'Default.City';
         Default.CityForm = CityForm;
         [,
             ['Name', function () { return Serenity.StringEditor; }],
@@ -448,14 +448,14 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Default;
     (function (Default) {
-        var ProvinceForm = /** @class */ (function (_super) {
+        var ProvinceForm = (function (_super) {
             __extends(ProvinceForm, _super);
             function ProvinceForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            ProvinceForm.formKey = 'Default.Province';
             return ProvinceForm;
         }(Serenity.PrefixedContext));
+        ProvinceForm.formKey = 'Default.Province';
         Default.ProvinceForm = ProvinceForm;
         [,
             ['Name', function () { return Serenity.StringEditor; }]
@@ -520,7 +520,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var AreaForm = /** @class */ (function (_super) {
+        var AreaForm = (function (_super) {
             __extends(AreaForm, _super);
             function AreaForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -536,9 +536,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            AreaForm.formKey = 'Hierarchy.Area';
             return AreaForm;
         }(Serenity.PrefixedContext));
+        AreaForm.formKey = 'Hierarchy.Area';
         Hierarchy.AreaForm = AreaForm;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -588,7 +588,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var DistributionForm = /** @class */ (function (_super) {
+        var DistributionForm = (function (_super) {
             __extends(DistributionForm, _super);
             function DistributionForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -604,9 +604,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            DistributionForm.formKey = 'Hierarchy.Distribution';
             return DistributionForm;
         }(Serenity.PrefixedContext));
+        DistributionForm.formKey = 'Hierarchy.Distribution';
         Hierarchy.DistributionForm = DistributionForm;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -662,7 +662,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var ProvinceForm = /** @class */ (function (_super) {
+        var ProvinceForm = (function (_super) {
             __extends(ProvinceForm, _super);
             function ProvinceForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -678,9 +678,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            ProvinceForm.formKey = 'Hierarchy.Province';
             return ProvinceForm;
         }(Serenity.PrefixedContext));
+        ProvinceForm.formKey = 'Hierarchy.Province';
         Hierarchy.ProvinceForm = ProvinceForm;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -725,7 +725,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RankInHierarchyForm = /** @class */ (function (_super) {
+        var RankInHierarchyForm = (function (_super) {
             __extends(RankInHierarchyForm, _super);
             function RankInHierarchyForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -744,9 +744,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            RankInHierarchyForm.formKey = 'Hierarchy.RankInHierarchy';
             return RankInHierarchyForm;
         }(Serenity.PrefixedContext));
+        RankInHierarchyForm.formKey = 'Hierarchy.RankInHierarchy';
         Hierarchy.RankInHierarchyForm = RankInHierarchyForm;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -790,7 +790,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RegionalForm = /** @class */ (function (_super) {
+        var RegionalForm = (function (_super) {
             __extends(RegionalForm, _super);
             function RegionalForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -804,9 +804,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            RegionalForm.formKey = 'Hierarchy.Regional';
             return RegionalForm;
         }(Serenity.PrefixedContext));
+        RegionalForm.formKey = 'Hierarchy.Regional';
         Hierarchy.RegionalForm = RegionalForm;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -856,7 +856,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var StationForm = /** @class */ (function (_super) {
+        var StationForm = (function (_super) {
             __extends(StationForm, _super);
             function StationForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -872,9 +872,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            StationForm.formKey = 'Hierarchy.Station';
             return StationForm;
         }(Serenity.PrefixedContext));
+        StationForm.formKey = 'Hierarchy.Station';
         Hierarchy.StationForm = StationForm;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -924,7 +924,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var UnitForm = /** @class */ (function (_super) {
+        var UnitForm = (function (_super) {
             __extends(UnitForm, _super);
             function UnitForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -942,9 +942,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            UnitForm.formKey = 'Hierarchy.Unit';
             return UnitForm;
         }(Serenity.PrefixedContext));
+        UnitForm.formKey = 'Hierarchy.Unit';
         Hierarchy.UnitForm = UnitForm;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -994,7 +994,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ChangePasswordForm = /** @class */ (function (_super) {
+        var ChangePasswordForm = (function (_super) {
             __extends(ChangePasswordForm, _super);
             function ChangePasswordForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1010,9 +1010,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            ChangePasswordForm.formKey = 'Membership.ChangePassword';
             return ChangePasswordForm;
         }(Serenity.PrefixedContext));
+        ChangePasswordForm.formKey = 'Membership.ChangePassword';
         Membership.ChangePasswordForm = ChangePasswordForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1020,7 +1020,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ForgotPasswordForm = /** @class */ (function (_super) {
+        var ForgotPasswordForm = (function (_super) {
             __extends(ForgotPasswordForm, _super);
             function ForgotPasswordForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1034,9 +1034,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            ForgotPasswordForm.formKey = 'Membership.ForgotPassword';
             return ForgotPasswordForm;
         }(Serenity.PrefixedContext));
+        ForgotPasswordForm.formKey = 'Membership.ForgotPassword';
         Membership.ForgotPasswordForm = ForgotPasswordForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1044,7 +1044,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var LoginForm = /** @class */ (function (_super) {
+        var LoginForm = (function (_super) {
             __extends(LoginForm, _super);
             function LoginForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1060,9 +1060,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            LoginForm.formKey = 'Membership.Login';
             return LoginForm;
         }(Serenity.PrefixedContext));
+        LoginForm.formKey = 'Membership.Login';
         Membership.LoginForm = LoginForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1070,7 +1070,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ResetPasswordForm = /** @class */ (function (_super) {
+        var ResetPasswordForm = (function (_super) {
             __extends(ResetPasswordForm, _super);
             function ResetPasswordForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1085,9 +1085,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            ResetPasswordForm.formKey = 'Membership.ResetPassword';
             return ResetPasswordForm;
         }(Serenity.PrefixedContext));
+        ResetPasswordForm.formKey = 'Membership.ResetPassword';
         Membership.ResetPasswordForm = ResetPasswordForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1095,7 +1095,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var SignUpForm = /** @class */ (function (_super) {
+        var SignUpForm = (function (_super) {
             __extends(SignUpForm, _super);
             function SignUpForm(prefix) {
                 var _this = _super.call(this, prefix) || this;
@@ -1115,9 +1115,9 @@ var OnlineMonitoringWeb;
                 }
                 return _this;
             }
-            SignUpForm.formKey = 'Membership.SignUp';
             return SignUpForm;
         }(Serenity.PrefixedContext));
+        SignUpForm.formKey = 'Membership.SignUp';
         Membership.SignUpForm = SignUpForm;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1132,7 +1132,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var LanguageDialog = /** @class */ (function (_super) {
+        var LanguageDialog = (function (_super) {
             __extends(LanguageDialog, _super);
             function LanguageDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -1144,11 +1144,11 @@ var OnlineMonitoringWeb;
             LanguageDialog.prototype.getLocalTextPrefix = function () { return Administration.LanguageRow.localTextPrefix; };
             LanguageDialog.prototype.getNameProperty = function () { return Administration.LanguageRow.nameProperty; };
             LanguageDialog.prototype.getService = function () { return Administration.LanguageService.baseUrl; };
-            LanguageDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], LanguageDialog);
             return LanguageDialog;
         }(Serenity.EntityDialog));
+        LanguageDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], LanguageDialog);
         Administration.LanguageDialog = LanguageDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1156,7 +1156,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var LanguageGrid = /** @class */ (function (_super) {
+        var LanguageGrid = (function (_super) {
             __extends(LanguageGrid, _super);
             function LanguageGrid(container) {
                 return _super.call(this, container) || this;
@@ -1166,11 +1166,11 @@ var OnlineMonitoringWeb;
             LanguageGrid.prototype.getIdProperty = function () { return Administration.LanguageRow.idProperty; };
             LanguageGrid.prototype.getLocalTextPrefix = function () { return Administration.LanguageRow.localTextPrefix; };
             LanguageGrid.prototype.getService = function () { return Administration.LanguageService.baseUrl; };
-            LanguageGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], LanguageGrid);
             return LanguageGrid;
         }(Serenity.EntityGrid));
+        LanguageGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], LanguageGrid);
         Administration.LanguageGrid = LanguageGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1178,7 +1178,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleDialog = /** @class */ (function (_super) {
+        var RoleDialog = (function (_super) {
             __extends(RoleDialog, _super);
             function RoleDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -1210,11 +1210,11 @@ var OnlineMonitoringWeb;
                 _super.prototype.updateInterface.call(this);
                 this.toolbar.findButton("edit-permissions-button").toggleClass("disabled", this.isNewOrDeleted());
             };
-            RoleDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RoleDialog);
             return RoleDialog;
         }(Serenity.EntityDialog));
+        RoleDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RoleDialog);
         Administration.RoleDialog = RoleDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1222,7 +1222,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleGrid = /** @class */ (function (_super) {
+        var RoleGrid = (function (_super) {
             __extends(RoleGrid, _super);
             function RoleGrid(container) {
                 return _super.call(this, container) || this;
@@ -1232,11 +1232,11 @@ var OnlineMonitoringWeb;
             RoleGrid.prototype.getIdProperty = function () { return Administration.RoleRow.idProperty; };
             RoleGrid.prototype.getLocalTextPrefix = function () { return Administration.RoleRow.localTextPrefix; };
             RoleGrid.prototype.getService = function () { return Administration.RoleService.baseUrl; };
-            RoleGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RoleGrid);
             return RoleGrid;
         }(Serenity.EntityGrid));
+        RoleGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RoleGrid);
         Administration.RoleGrid = RoleGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1244,7 +1244,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RolePermissionDialog = /** @class */ (function (_super) {
+        var RolePermissionDialog = (function (_super) {
             __extends(RolePermissionDialog, _super);
             function RolePermissionDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -1289,11 +1289,11 @@ var OnlineMonitoringWeb;
             RolePermissionDialog.prototype.getTemplate = function () {
                 return '<div id="~_Permissions"></div>';
             };
-            RolePermissionDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RolePermissionDialog);
             return RolePermissionDialog;
         }(Serenity.TemplatedDialog));
+        RolePermissionDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RolePermissionDialog);
         Administration.RolePermissionDialog = RolePermissionDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1301,7 +1301,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var TranslationGrid = /** @class */ (function (_super) {
+        var TranslationGrid = (function (_super) {
             __extends(TranslationGrid, _super);
             function TranslationGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -1486,19 +1486,35 @@ var OnlineMonitoringWeb;
             TranslationGrid.prototype.usePager = function () {
                 return false;
             };
-            TranslationGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], TranslationGrid);
             return TranslationGrid;
         }(Serenity.EntityGrid));
+        TranslationGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], TranslationGrid);
         Administration.TranslationGrid = TranslationGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
+    var Authorization;
+    (function (Authorization) {
+        Object.defineProperty(Authorization, 'userDefinition', {
+            get: function () {
+                return Q.getRemoteData('UserData');
+            }
+        });
+        function hasPermission(permissionKey) {
+            var ud = Authorization.userDefinition;
+            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
+        }
+        Authorization.hasPermission = hasPermission;
+    })(Authorization = OnlineMonitoringWeb.Authorization || (OnlineMonitoringWeb.Authorization = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserDialog = /** @class */ (function (_super) {
+        var UserDialog = (function (_super) {
             __extends(UserDialog, _super);
             function UserDialog() {
                 var _this = _super.call(this) || this;
@@ -1559,11 +1575,11 @@ var OnlineMonitoringWeb;
                 this.form.PasswordConfirm.element.toggleClass('required', this.isNew())
                     .closest('.field').find('sup').toggle(this.isNew());
             };
-            UserDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], UserDialog);
             return UserDialog;
         }(Serenity.EntityDialog));
+        UserDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], UserDialog);
         Administration.UserDialog = UserDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1571,7 +1587,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserGrid = /** @class */ (function (_super) {
+        var UserGrid = (function (_super) {
             __extends(UserGrid, _super);
             function UserGrid(container) {
                 return _super.call(this, container) || this;
@@ -1582,35 +1598,19 @@ var OnlineMonitoringWeb;
             UserGrid.prototype.getIsActiveProperty = function () { return Administration.UserRow.isActiveProperty; };
             UserGrid.prototype.getLocalTextPrefix = function () { return Administration.UserRow.localTextPrefix; };
             UserGrid.prototype.getService = function () { return Administration.UserService.baseUrl; };
-            UserGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], UserGrid);
             return UserGrid;
         }(Serenity.EntityGrid));
+        UserGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], UserGrid);
         Administration.UserGrid = UserGrid;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
-    var Authorization;
-    (function (Authorization) {
-        Object.defineProperty(Authorization, 'userDefinition', {
-            get: function () {
-                return Q.getRemoteData('UserData');
-            }
-        });
-        function hasPermission(permissionKey) {
-            var ud = Authorization.userDefinition;
-            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
-        }
-        Authorization.hasPermission = hasPermission;
-    })(Authorization = OnlineMonitoringWeb.Authorization || (OnlineMonitoringWeb.Authorization = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var PermissionCheckEditor = /** @class */ (function (_super) {
+        var PermissionCheckEditor = (function (_super) {
             __extends(PermissionCheckEditor, _super);
             function PermissionCheckEditor(container, opt) {
                 var _this = _super.call(this, container, opt) || this;
@@ -1918,11 +1918,11 @@ var OnlineMonitoringWeb;
                 enumerable: true,
                 configurable: true
             });
-            PermissionCheckEditor = __decorate([
-                Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue])
-            ], PermissionCheckEditor);
             return PermissionCheckEditor;
         }(Serenity.DataGrid));
+        PermissionCheckEditor = __decorate([
+            Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue])
+        ], PermissionCheckEditor);
         Administration.PermissionCheckEditor = PermissionCheckEditor;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1930,7 +1930,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserPermissionDialog = /** @class */ (function (_super) {
+        var UserPermissionDialog = (function (_super) {
             __extends(UserPermissionDialog, _super);
             function UserPermissionDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -1982,11 +1982,11 @@ var OnlineMonitoringWeb;
             UserPermissionDialog.prototype.getTemplate = function () {
                 return '<div id="~_Permissions"></div>';
             };
-            UserPermissionDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], UserPermissionDialog);
             return UserPermissionDialog;
         }(Serenity.TemplatedDialog));
+        UserPermissionDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], UserPermissionDialog);
         Administration.UserPermissionDialog = UserPermissionDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -1994,7 +1994,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var RoleCheckEditor = /** @class */ (function (_super) {
+        var RoleCheckEditor = (function (_super) {
             __extends(RoleCheckEditor, _super);
             function RoleCheckEditor(div) {
                 return _super.call(this, div) || this;
@@ -2022,11 +2022,11 @@ var OnlineMonitoringWeb;
                         Select2.util.stripDiacritics(item.text || '')
                             .toUpperCase().indexOf(this.searchText) >= 0);
             };
-            RoleCheckEditor = __decorate([
-                Serenity.Decorators.registerEditor()
-            ], RoleCheckEditor);
             return RoleCheckEditor;
         }(Serenity.CheckTreeEditor));
+        RoleCheckEditor = __decorate([
+            Serenity.Decorators.registerEditor()
+        ], RoleCheckEditor);
         Administration.RoleCheckEditor = RoleCheckEditor;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2034,7 +2034,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Administration;
     (function (Administration) {
-        var UserRoleDialog = /** @class */ (function (_super) {
+        var UserRoleDialog = (function (_super) {
             __extends(UserRoleDialog, _super);
             function UserRoleDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -2070,49 +2070,17 @@ var OnlineMonitoringWeb;
             UserRoleDialog.prototype.getTemplate = function () {
                 return "<div id='~_Roles'></div>";
             };
-            UserRoleDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], UserRoleDialog);
             return UserRoleDialog;
         }(Serenity.TemplatedDialog));
+        UserRoleDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], UserRoleDialog);
         Administration.UserRoleDialog = UserRoleDialog;
     })(Administration = OnlineMonitoringWeb.Administration || (OnlineMonitoringWeb.Administration = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
-    var LanguageList;
-    (function (LanguageList) {
-        function getValue() {
-            var result = [];
-            for (var _i = 0, _a = OnlineMonitoringWeb.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
-                var k = _a[_i];
-                if (k.LanguageId !== 'en') {
-                    result.push([k.Id.toString(), k.LanguageName]);
-                }
-            }
-            return result;
-        }
-        LanguageList.getValue = getValue;
-    })(LanguageList = OnlineMonitoringWeb.LanguageList || (OnlineMonitoringWeb.LanguageList = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-/// <reference path="../Common/Helpers/LanguageList.ts" />
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
-    var ScriptInitialization;
-    (function (ScriptInitialization) {
-        Q.Config.responsiveDialogs = true;
-        Q.Config.rootNamespaces.push('OnlineMonitoringWeb');
-        Serenity.EntityDialog.defaultLanguageList = OnlineMonitoringWeb.LanguageList.getValue;
-        if ($.fn['colorbox']) {
-            $.fn['colorbox'].settings.maxWidth = "95%";
-            $.fn['colorbox'].settings.maxHeight = "95%";
-        }
-        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
-    })(ScriptInitialization = OnlineMonitoringWeb.ScriptInitialization || (OnlineMonitoringWeb.ScriptInitialization = {}));
-})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
-var OnlineMonitoringWeb;
-(function (OnlineMonitoringWeb) {
-    var BasicProgressDialog = /** @class */ (function (_super) {
+    var BasicProgressDialog = (function (_super) {
         __extends(BasicProgressDialog, _super);
         function BasicProgressDialog() {
             var _this = _super.call(this) || this;
@@ -2194,7 +2162,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var BulkServiceAction = /** @class */ (function () {
+        var BulkServiceAction = (function () {
             function BulkServiceAction() {
             }
             BulkServiceAction.prototype.createProgressDialog = function () {
@@ -2373,7 +2341,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var EnumSelectFormatter = /** @class */ (function () {
+        var EnumSelectFormatter = (function () {
             function EnumSelectFormatter() {
                 this.allowClear = true;
             }
@@ -2398,20 +2366,20 @@ var OnlineMonitoringWeb;
                 sb += "</select>";
                 return sb;
             };
-            __decorate([
-                Serenity.Decorators.option()
-            ], EnumSelectFormatter.prototype, "enumKey", void 0);
-            __decorate([
-                Serenity.Decorators.option()
-            ], EnumSelectFormatter.prototype, "allowClear", void 0);
-            __decorate([
-                Serenity.Decorators.option()
-            ], EnumSelectFormatter.prototype, "emptyItemText", void 0);
-            EnumSelectFormatter = __decorate([
-                Serenity.Decorators.registerFormatter()
-            ], EnumSelectFormatter);
             return EnumSelectFormatter;
         }());
+        __decorate([
+            Serenity.Decorators.option()
+        ], EnumSelectFormatter.prototype, "enumKey", void 0);
+        __decorate([
+            Serenity.Decorators.option()
+        ], EnumSelectFormatter.prototype, "allowClear", void 0);
+        __decorate([
+            Serenity.Decorators.option()
+        ], EnumSelectFormatter.prototype, "emptyItemText", void 0);
+        EnumSelectFormatter = __decorate([
+            Serenity.Decorators.registerFormatter()
+        ], EnumSelectFormatter);
         Common.EnumSelectFormatter = EnumSelectFormatter;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2457,7 +2425,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var GridEditorBase = /** @class */ (function (_super) {
+        var GridEditorBase = (function (_super) {
             __extends(GridEditorBase, _super);
             function GridEditorBase(container) {
                 var _this = _super.call(this, container) || this;
@@ -2581,13 +2549,13 @@ var OnlineMonitoringWeb;
             };
             GridEditorBase.prototype.createQuickSearchInput = function () {
             };
-            GridEditorBase = __decorate([
-                Serenity.Decorators.registerClass([Serenity.IGetEditValue, Serenity.ISetEditValue]),
-                Serenity.Decorators.editor(),
-                Serenity.Decorators.element("<div/>")
-            ], GridEditorBase);
             return GridEditorBase;
         }(Serenity.EntityGrid));
+        GridEditorBase = __decorate([
+            Serenity.Decorators.registerClass([Serenity.IGetEditValue, Serenity.ISetEditValue]),
+            Serenity.Decorators.editor(),
+            Serenity.Decorators.element("<div/>")
+        ], GridEditorBase);
         Common.GridEditorBase = GridEditorBase;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -2595,7 +2563,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var GridEditorDialog = /** @class */ (function (_super) {
+        var GridEditorDialog = (function (_super) {
             __extends(GridEditorDialog, _super);
             function GridEditorDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2619,13 +2587,30 @@ var OnlineMonitoringWeb;
             GridEditorDialog.prototype.deleteHandler = function (options, callback) {
                 this.onDelete && this.onDelete(options, callback);
             };
-            GridEditorDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], GridEditorDialog);
             return GridEditorDialog;
         }(Serenity.EntityDialog));
+        GridEditorDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], GridEditorDialog);
         Common.GridEditorDialog = GridEditorDialog;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
+    var LanguageList;
+    (function (LanguageList) {
+        function getValue() {
+            var result = [];
+            for (var _i = 0, _a = OnlineMonitoringWeb.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
+                var k = _a[_i];
+                if (k.LanguageId !== 'en') {
+                    result.push([k.Id.toString(), k.LanguageName]);
+                }
+            }
+            return result;
+        }
+        LanguageList.getValue = getValue;
+    })(LanguageList = OnlineMonitoringWeb.LanguageList || (OnlineMonitoringWeb.LanguageList = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
@@ -2633,7 +2618,7 @@ var OnlineMonitoringWeb;
      * This is an editor widget but it only displays a text, not edits it.
      *
      */
-    var StaticTextBlock = /** @class */ (function (_super) {
+    var StaticTextBlock = (function (_super) {
         __extends(StaticTextBlock, _super);
         function StaticTextBlock(container, options) {
             var _this = _super.call(this, container, options) || this;
@@ -2664,19 +2649,19 @@ var OnlineMonitoringWeb;
                 this.updateElementContent();
             }
         };
-        StaticTextBlock = __decorate([
-            Serenity.Decorators.element("<div/>"),
-            Serenity.Decorators.registerEditor([Serenity.ISetEditValue])
-        ], StaticTextBlock);
         return StaticTextBlock;
     }(Serenity.Widget));
+    StaticTextBlock = __decorate([
+        Serenity.Decorators.element("<div/>"),
+        Serenity.Decorators.registerEditor([Serenity.ISetEditValue])
+    ], StaticTextBlock);
     OnlineMonitoringWeb.StaticTextBlock = StaticTextBlock;
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var LanguageSelection = /** @class */ (function (_super) {
+        var LanguageSelection = (function (_super) {
             __extends(LanguageSelection, _super);
             function LanguageSelection(select, currentLanguage) {
                 var _this = _super.call(this, select) || this;
@@ -2718,7 +2703,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var SidebarSearch = /** @class */ (function (_super) {
+        var SidebarSearch = (function (_super) {
             __extends(SidebarSearch, _super);
             function SidebarSearch(input, menuUL) {
                 var _this = _super.call(this, input) || this;
@@ -2771,7 +2756,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var ThemeSelection = /** @class */ (function (_super) {
+        var ThemeSelection = (function (_super) {
             __extends(ThemeSelection, _super);
             function ThemeSelection(select) {
                 var _this = _super.call(this, select) || this;
@@ -3035,7 +3020,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var ReportDialog = /** @class */ (function (_super) {
+        var ReportDialog = (function (_super) {
             __extends(ReportDialog, _super);
             function ReportDialog(options) {
                 var _this = _super.call(this, options) || this;
@@ -3155,7 +3140,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var ReportPage = /** @class */ (function (_super) {
+        var ReportPage = (function (_super) {
             __extends(ReportPage, _super);
             function ReportPage(element) {
                 var _this = _super.call(this, element) || this;
@@ -3222,11 +3207,26 @@ var OnlineMonitoringWeb;
         Common.ReportPage = ReportPage;
     })(Common = OnlineMonitoringWeb.Common || (OnlineMonitoringWeb.Common = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
+/// <reference path="../Common/Helpers/LanguageList.ts" />
+var OnlineMonitoringWeb;
+(function (OnlineMonitoringWeb) {
+    var ScriptInitialization;
+    (function (ScriptInitialization) {
+        Q.Config.responsiveDialogs = true;
+        Q.Config.rootNamespaces.push('OnlineMonitoringWeb');
+        Serenity.EntityDialog.defaultLanguageList = OnlineMonitoringWeb.LanguageList.getValue;
+        if ($.fn['colorbox']) {
+            $.fn['colorbox'].settings.maxWidth = "95%";
+            $.fn['colorbox'].settings.maxHeight = "95%";
+        }
+        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
+    })(ScriptInitialization = OnlineMonitoringWeb.ScriptInitialization || (OnlineMonitoringWeb.ScriptInitialization = {}));
+})(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
 var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Common;
     (function (Common) {
-        var UserPreferenceStorage = /** @class */ (function () {
+        var UserPreferenceStorage = (function () {
             function UserPreferenceStorage() {
             }
             UserPreferenceStorage.prototype.getItem = function (key) {
@@ -3255,7 +3255,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var AreaDialog = /** @class */ (function (_super) {
+        var AreaDialog = (function (_super) {
             __extends(AreaDialog, _super);
             function AreaDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3270,11 +3270,11 @@ var OnlineMonitoringWeb;
             AreaDialog.prototype.getDeletePermission = function () { return Hierarchy.AreaRow.deletePermission; };
             AreaDialog.prototype.getInsertPermission = function () { return Hierarchy.AreaRow.insertPermission; };
             AreaDialog.prototype.getUpdatePermission = function () { return Hierarchy.AreaRow.updatePermission; };
-            AreaDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], AreaDialog);
             return AreaDialog;
         }(Serenity.EntityDialog));
+        AreaDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], AreaDialog);
         Hierarchy.AreaDialog = AreaDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3282,7 +3282,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var AreaGrid = /** @class */ (function (_super) {
+        var AreaGrid = (function (_super) {
             __extends(AreaGrid, _super);
             function AreaGrid(container) {
                 return _super.call(this, container) || this;
@@ -3293,11 +3293,11 @@ var OnlineMonitoringWeb;
             AreaGrid.prototype.getInsertPermission = function () { return Hierarchy.AreaRow.insertPermission; };
             AreaGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.AreaRow.localTextPrefix; };
             AreaGrid.prototype.getService = function () { return Hierarchy.AreaService.baseUrl; };
-            AreaGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], AreaGrid);
             return AreaGrid;
         }(Serenity.EntityGrid));
+        AreaGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], AreaGrid);
         Hierarchy.AreaGrid = AreaGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3305,7 +3305,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var DistributionDialog = /** @class */ (function (_super) {
+        var DistributionDialog = (function (_super) {
             __extends(DistributionDialog, _super);
             function DistributionDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3320,11 +3320,11 @@ var OnlineMonitoringWeb;
             DistributionDialog.prototype.getDeletePermission = function () { return Hierarchy.DistributionRow.deletePermission; };
             DistributionDialog.prototype.getInsertPermission = function () { return Hierarchy.DistributionRow.insertPermission; };
             DistributionDialog.prototype.getUpdatePermission = function () { return Hierarchy.DistributionRow.updatePermission; };
-            DistributionDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], DistributionDialog);
             return DistributionDialog;
         }(Serenity.EntityDialog));
+        DistributionDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], DistributionDialog);
         Hierarchy.DistributionDialog = DistributionDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3332,7 +3332,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var DistributionGrid = /** @class */ (function (_super) {
+        var DistributionGrid = (function (_super) {
             __extends(DistributionGrid, _super);
             function DistributionGrid(container) {
                 return _super.call(this, container) || this;
@@ -3343,11 +3343,11 @@ var OnlineMonitoringWeb;
             DistributionGrid.prototype.getInsertPermission = function () { return Hierarchy.DistributionRow.insertPermission; };
             DistributionGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.DistributionRow.localTextPrefix; };
             DistributionGrid.prototype.getService = function () { return Hierarchy.DistributionService.baseUrl; };
-            DistributionGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], DistributionGrid);
             return DistributionGrid;
         }(Serenity.EntityGrid));
+        DistributionGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], DistributionGrid);
         Hierarchy.DistributionGrid = DistributionGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3355,7 +3355,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var ProvinceDialog = /** @class */ (function (_super) {
+        var ProvinceDialog = (function (_super) {
             __extends(ProvinceDialog, _super);
             function ProvinceDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3370,11 +3370,11 @@ var OnlineMonitoringWeb;
             ProvinceDialog.prototype.getDeletePermission = function () { return Hierarchy.ProvinceRow.deletePermission; };
             ProvinceDialog.prototype.getInsertPermission = function () { return Hierarchy.ProvinceRow.insertPermission; };
             ProvinceDialog.prototype.getUpdatePermission = function () { return Hierarchy.ProvinceRow.updatePermission; };
-            ProvinceDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ProvinceDialog);
             return ProvinceDialog;
         }(Serenity.EntityDialog));
+        ProvinceDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ProvinceDialog);
         Hierarchy.ProvinceDialog = ProvinceDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3382,7 +3382,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var ProvinceGrid = /** @class */ (function (_super) {
+        var ProvinceGrid = (function (_super) {
             __extends(ProvinceGrid, _super);
             function ProvinceGrid(container) {
                 return _super.call(this, container) || this;
@@ -3393,11 +3393,11 @@ var OnlineMonitoringWeb;
             ProvinceGrid.prototype.getInsertPermission = function () { return Hierarchy.ProvinceRow.insertPermission; };
             ProvinceGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.ProvinceRow.localTextPrefix; };
             ProvinceGrid.prototype.getService = function () { return Hierarchy.ProvinceService.baseUrl; };
-            ProvinceGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ProvinceGrid);
             return ProvinceGrid;
         }(Serenity.EntityGrid));
+        ProvinceGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ProvinceGrid);
         Hierarchy.ProvinceGrid = ProvinceGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3405,7 +3405,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RankInHierarchyDialog = /** @class */ (function (_super) {
+        var RankInHierarchyDialog = (function (_super) {
             __extends(RankInHierarchyDialog, _super);
             function RankInHierarchyDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3419,11 +3419,11 @@ var OnlineMonitoringWeb;
             RankInHierarchyDialog.prototype.getDeletePermission = function () { return Hierarchy.RankInHierarchyRow.deletePermission; };
             RankInHierarchyDialog.prototype.getInsertPermission = function () { return Hierarchy.RankInHierarchyRow.insertPermission; };
             RankInHierarchyDialog.prototype.getUpdatePermission = function () { return Hierarchy.RankInHierarchyRow.updatePermission; };
-            RankInHierarchyDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RankInHierarchyDialog);
             return RankInHierarchyDialog;
         }(Serenity.EntityDialog));
+        RankInHierarchyDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RankInHierarchyDialog);
         Hierarchy.RankInHierarchyDialog = RankInHierarchyDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3431,7 +3431,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RankInHierarchyGrid = /** @class */ (function (_super) {
+        var RankInHierarchyGrid = (function (_super) {
             __extends(RankInHierarchyGrid, _super);
             function RankInHierarchyGrid(container) {
                 return _super.call(this, container) || this;
@@ -3442,11 +3442,11 @@ var OnlineMonitoringWeb;
             RankInHierarchyGrid.prototype.getInsertPermission = function () { return Hierarchy.RankInHierarchyRow.insertPermission; };
             RankInHierarchyGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.RankInHierarchyRow.localTextPrefix; };
             RankInHierarchyGrid.prototype.getService = function () { return Hierarchy.RankInHierarchyService.baseUrl; };
-            RankInHierarchyGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RankInHierarchyGrid);
             return RankInHierarchyGrid;
         }(Serenity.EntityGrid));
+        RankInHierarchyGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RankInHierarchyGrid);
         Hierarchy.RankInHierarchyGrid = RankInHierarchyGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3454,7 +3454,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RegionalDialog = /** @class */ (function (_super) {
+        var RegionalDialog = (function (_super) {
             __extends(RegionalDialog, _super);
             function RegionalDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3469,11 +3469,11 @@ var OnlineMonitoringWeb;
             RegionalDialog.prototype.getDeletePermission = function () { return Hierarchy.RegionalRow.deletePermission; };
             RegionalDialog.prototype.getInsertPermission = function () { return Hierarchy.RegionalRow.insertPermission; };
             RegionalDialog.prototype.getUpdatePermission = function () { return Hierarchy.RegionalRow.updatePermission; };
-            RegionalDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RegionalDialog);
             return RegionalDialog;
         }(Serenity.EntityDialog));
+        RegionalDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RegionalDialog);
         Hierarchy.RegionalDialog = RegionalDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3481,7 +3481,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var RegionalGrid = /** @class */ (function (_super) {
+        var RegionalGrid = (function (_super) {
             __extends(RegionalGrid, _super);
             function RegionalGrid(container) {
                 return _super.call(this, container) || this;
@@ -3492,11 +3492,11 @@ var OnlineMonitoringWeb;
             RegionalGrid.prototype.getInsertPermission = function () { return Hierarchy.RegionalRow.insertPermission; };
             RegionalGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.RegionalRow.localTextPrefix; };
             RegionalGrid.prototype.getService = function () { return Hierarchy.RegionalService.baseUrl; };
-            RegionalGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RegionalGrid);
             return RegionalGrid;
         }(Serenity.EntityGrid));
+        RegionalGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RegionalGrid);
         Hierarchy.RegionalGrid = RegionalGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3504,7 +3504,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var StationDialog = /** @class */ (function (_super) {
+        var StationDialog = (function (_super) {
             __extends(StationDialog, _super);
             function StationDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3519,11 +3519,11 @@ var OnlineMonitoringWeb;
             StationDialog.prototype.getDeletePermission = function () { return Hierarchy.StationRow.deletePermission; };
             StationDialog.prototype.getInsertPermission = function () { return Hierarchy.StationRow.insertPermission; };
             StationDialog.prototype.getUpdatePermission = function () { return Hierarchy.StationRow.updatePermission; };
-            StationDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], StationDialog);
             return StationDialog;
         }(Serenity.EntityDialog));
+        StationDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], StationDialog);
         Hierarchy.StationDialog = StationDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3531,7 +3531,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var StationGrid = /** @class */ (function (_super) {
+        var StationGrid = (function (_super) {
             __extends(StationGrid, _super);
             function StationGrid(container) {
                 return _super.call(this, container) || this;
@@ -3542,11 +3542,11 @@ var OnlineMonitoringWeb;
             StationGrid.prototype.getInsertPermission = function () { return Hierarchy.StationRow.insertPermission; };
             StationGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.StationRow.localTextPrefix; };
             StationGrid.prototype.getService = function () { return Hierarchy.StationService.baseUrl; };
-            StationGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], StationGrid);
             return StationGrid;
         }(Serenity.EntityGrid));
+        StationGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], StationGrid);
         Hierarchy.StationGrid = StationGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3554,7 +3554,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var UnitDialog = /** @class */ (function (_super) {
+        var UnitDialog = (function (_super) {
             __extends(UnitDialog, _super);
             function UnitDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3569,11 +3569,11 @@ var OnlineMonitoringWeb;
             UnitDialog.prototype.getDeletePermission = function () { return Hierarchy.UnitRow.deletePermission; };
             UnitDialog.prototype.getInsertPermission = function () { return Hierarchy.UnitRow.insertPermission; };
             UnitDialog.prototype.getUpdatePermission = function () { return Hierarchy.UnitRow.updatePermission; };
-            UnitDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], UnitDialog);
             return UnitDialog;
         }(Serenity.EntityDialog));
+        UnitDialog = __decorate([
+            Serenity.Decorators.registerClass()
+        ], UnitDialog);
         Hierarchy.UnitDialog = UnitDialog;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3581,7 +3581,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Hierarchy;
     (function (Hierarchy) {
-        var UnitGrid = /** @class */ (function (_super) {
+        var UnitGrid = (function (_super) {
             __extends(UnitGrid, _super);
             function UnitGrid(container) {
                 return _super.call(this, container) || this;
@@ -3592,11 +3592,11 @@ var OnlineMonitoringWeb;
             UnitGrid.prototype.getInsertPermission = function () { return Hierarchy.UnitRow.insertPermission; };
             UnitGrid.prototype.getLocalTextPrefix = function () { return Hierarchy.UnitRow.localTextPrefix; };
             UnitGrid.prototype.getService = function () { return Hierarchy.UnitService.baseUrl; };
-            UnitGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], UnitGrid);
             return UnitGrid;
         }(Serenity.EntityGrid));
+        UnitGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], UnitGrid);
         Hierarchy.UnitGrid = UnitGrid;
     })(Hierarchy = OnlineMonitoringWeb.Hierarchy || (OnlineMonitoringWeb.Hierarchy = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3604,7 +3604,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ChangePasswordPanel = /** @class */ (function (_super) {
+        var ChangePasswordPanel = (function (_super) {
             __extends(ChangePasswordPanel, _super);
             function ChangePasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3638,11 +3638,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             ChangePasswordPanel.prototype.getFormKey = function () { return Membership.ChangePasswordForm.formKey; };
-            ChangePasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ChangePasswordPanel);
             return ChangePasswordPanel;
         }(Serenity.PropertyPanel));
+        ChangePasswordPanel = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ChangePasswordPanel);
         Membership.ChangePasswordPanel = ChangePasswordPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3650,7 +3650,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ForgotPasswordPanel = /** @class */ (function (_super) {
+        var ForgotPasswordPanel = (function (_super) {
             __extends(ForgotPasswordPanel, _super);
             function ForgotPasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3674,11 +3674,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             ForgotPasswordPanel.prototype.getFormKey = function () { return Membership.ForgotPasswordForm.formKey; };
-            ForgotPasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ForgotPasswordPanel);
             return ForgotPasswordPanel;
         }(Serenity.PropertyPanel));
+        ForgotPasswordPanel = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ForgotPasswordPanel);
         Membership.ForgotPasswordPanel = ForgotPasswordPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3686,7 +3686,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var ResetPasswordPanel = /** @class */ (function (_super) {
+        var ResetPasswordPanel = (function (_super) {
             __extends(ResetPasswordPanel, _super);
             function ResetPasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3721,11 +3721,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             ResetPasswordPanel.prototype.getFormKey = function () { return Membership.ResetPasswordForm.formKey; };
-            ResetPasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ResetPasswordPanel);
             return ResetPasswordPanel;
         }(Serenity.PropertyPanel));
+        ResetPasswordPanel = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ResetPasswordPanel);
         Membership.ResetPasswordPanel = ResetPasswordPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));
@@ -3733,7 +3733,7 @@ var OnlineMonitoringWeb;
 (function (OnlineMonitoringWeb) {
     var Membership;
     (function (Membership) {
-        var SignUpPanel = /** @class */ (function (_super) {
+        var SignUpPanel = (function (_super) {
             __extends(SignUpPanel, _super);
             function SignUpPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3770,11 +3770,11 @@ var OnlineMonitoringWeb;
                 return _this;
             }
             SignUpPanel.prototype.getFormKey = function () { return Membership.SignUpForm.formKey; };
-            SignUpPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SignUpPanel);
             return SignUpPanel;
         }(Serenity.PropertyPanel));
+        SignUpPanel = __decorate([
+            Serenity.Decorators.registerClass()
+        ], SignUpPanel);
         Membership.SignUpPanel = SignUpPanel;
     })(Membership = OnlineMonitoringWeb.Membership || (OnlineMonitoringWeb.Membership = {}));
 })(OnlineMonitoringWeb || (OnlineMonitoringWeb = {}));

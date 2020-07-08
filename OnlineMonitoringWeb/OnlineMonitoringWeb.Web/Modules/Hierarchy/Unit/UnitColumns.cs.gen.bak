@@ -19,5 +19,7 @@ namespace OnlineMonitoringWeb.Hierarchy.Columns
         public String Name { get; set; }
         public String StationName { get; set; }
         public Int32 Capacity { get; set; }
+        public Int32 Type { get; set; }
+        public String StringIp { get; set; }
     }
 }

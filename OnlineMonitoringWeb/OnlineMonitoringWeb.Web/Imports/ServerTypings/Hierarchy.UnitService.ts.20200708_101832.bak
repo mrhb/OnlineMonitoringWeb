@@ -1,5 +1,4 @@
-﻿
-namespace OnlineMonitoringWeb.Hierarchy {
+﻿namespace OnlineMonitoringWeb.Hierarchy {
     export namespace UnitService {
         export const baseUrl = 'Hierarchy/Unit';
 
@@ -9,12 +8,12 @@ namespace OnlineMonitoringWeb.Hierarchy {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UnitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Hierarchy/Unit/Create",
+            Update = "Hierarchy/Unit/Update",
+            Delete = "Hierarchy/Unit/Delete",
+            Retrieve = "Hierarchy/Unit/Retrieve",
+            List = "Hierarchy/Unit/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace OnlineMonitoringWeb.Hierarchy {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>UnitService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>UnitService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

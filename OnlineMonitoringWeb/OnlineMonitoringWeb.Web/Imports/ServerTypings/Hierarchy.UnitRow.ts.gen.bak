@@ -5,6 +5,8 @@ namespace OnlineMonitoringWeb.Hierarchy {
         Name?: string;
         StationId?: number;
         Capacity?: number;
+        Type?: number;
+        StringIp?: string;
         StationName?: string;
         StationAreaId?: number;
     }
@@ -23,6 +25,8 @@ namespace OnlineMonitoringWeb.Hierarchy {
             export declare const Name;
             export declare const StationId;
             export declare const Capacity;
+            export declare const Type;
+            export declare const StringIp;
             export declare const StationName;
             export declare const StationAreaId;
         }
@@ -32,6 +36,8 @@ namespace OnlineMonitoringWeb.Hierarchy {
             'Name',
             'StationId',
             'Capacity',
+            'Type',
+            'StringIp',
             'StationName',
             'StationAreaId'
         ].forEach(x => (<any>Fields)[x] = x);

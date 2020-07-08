@@ -45,6 +45,20 @@ namespace OnlineMonitoringWeb.Hierarchy.Entities
             set { Fields.Capacity[this] = value; }
         }
 
+        [DisplayName("Type"), NotNull]
+        public Int32? Type
+        {
+            get { return Fields.Type[this]; }
+            set { Fields.Type[this] = value; }
+        }
+
+        [DisplayName("String Ip"), Size(15)]
+        public String StringIp
+        {
+            get { return Fields.StringIp[this]; }
+            set { Fields.StringIp[this] = value; }
+        }
+
         [DisplayName("Station Name"), Expression("jStation.[Name]")]
         public String StationName
         {
@@ -80,8 +94,10 @@ namespace OnlineMonitoringWeb.Hierarchy.Entities
         {
             public Int32Field UnitId;
             public StringField Name;
-            public Int32Field Capacity;
             public Int32Field StationId;
+            public Int32Field Capacity;
+            public Int32Field Type;
+            public StringField StringIp;
 
             public StringField StationName;
             public Int32Field StationAreaId;

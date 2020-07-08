@@ -1,9 +1,12 @@
-﻿namespace OnlineMonitoringWeb.Hierarchy {
+﻿
+namespace OnlineMonitoringWeb.Hierarchy {
     export interface UnitRow {
         UnitId?: number;
         Name?: string;
-        Capacity?: number;
         StationId?: number;
+        Capacity?: number;
+        Type?: number;
+        StringIp?: string;
         StationName?: string;
         StationAreaId?: number;
     }
@@ -12,24 +15,31 @@
         export const idProperty = 'UnitId';
         export const nameProperty = 'Name';
         export const localTextPrefix = 'Hierarchy.Unit';
-        export const lookupKey = 'Default.Unit';
-
-        export function getLookup(): Q.Lookup<UnitRow> {
-            return Q.getLookup<UnitRow>('Default.Unit');
-        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export declare const enum Fields {
-            UnitId = "UnitId",
-            Name = "Name",
-            Capacity = "Capacity",
-            StationId = "StationId",
-            StationName = "StationName",
-            StationAreaId = "StationAreaId"
+        export namespace Fields {
+            export declare const UnitId;
+            export declare const Name;
+            export declare const StationId;
+            export declare const Capacity;
+            export declare const Type;
+            export declare const StringIp;
+            export declare const StationName;
+            export declare const StationAreaId;
         }
+
+        [
+            'UnitId',
+            'Name',
+            'StationId',
+            'Capacity',
+            'Type',
+            'StringIp',
+            'StationName',
+            'StationAreaId'
+        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
-

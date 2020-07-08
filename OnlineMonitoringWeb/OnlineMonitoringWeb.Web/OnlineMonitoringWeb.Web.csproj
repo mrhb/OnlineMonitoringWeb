@@ -1740,7 +1740,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\DefaultDB\Hierarchy\DefaultDB_20200405_160500_AddCapacityField.cs" />
+    <Compile Include="Migrations\DefaultDB\Hierarchy\DefaultDB_20200708_094000_AddTypAndIp_Unit.cs" />
+    <Compile Include="Migrations\DefaultDB\Hierarchy\DefaultDB_20200405_160500_AddCapacityField_Unit.cs" />
     <Compile Include="Migrations\DefaultDB\Hierarchy\DefaultDB_20200405_080500_DataInitialization.cs" />
     <Compile Include="Migrations\DefaultDB\Hierarchy\DefaultDB_20200404_080500_Regional.cs" />
     <Compile Include="Migrations\DefaultDB\Hierarchy\DefaultDB_20200404_111700_Province.cs" />
@@ -2043,6 +2044,12 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Common\Reporting\PdfExportHelper.ts" />
     <TypeScriptCompile Include="Scripts\typings\jspdf\jspdf.autotable.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\OnlineMonitoringWeb.DAL\OnlineMonitoringWeb.DAL.csproj">
+      <Project>{eb804621-6b69-4e76-a5de-e515890b6bd4}</Project>
+      <Name>OnlineMonitoringWeb.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
