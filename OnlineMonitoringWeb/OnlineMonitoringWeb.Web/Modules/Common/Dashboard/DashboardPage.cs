@@ -10,6 +10,8 @@ namespace OnlineMonitoringWeb.Common.Pages
     using System.Linq;
     using System.Collections.Generic;
     using AdysTech.InfluxDB.Client.Net;
+    using DAL;
+    using DAL.MngDashboard;
 
     [RoutePrefix("Dashboard"), Route("{action=index}")]
     public class DashboardController : Controller
@@ -38,44 +40,22 @@ namespace OnlineMonitoringWeb.Common.Pages
             return View(MVC.Views.Common.Dashboard.DashboardIndex, model);
         }
         [Authorize, HttpGet, Route("~/dbnames")]
-        public async System.Threading.Tasks.Task<ActionResult> dbNames()
+        public async System.Threading.Tasks.Task<ActionResult> TodayPowerData()
         {
-            var users =new List< data>();
+           var sdf = await MnDashboard.PowerData( DateTime.Now.AddDays(-1), DateTime.Now);
 
-            InfluxDBClient client = new InfluxDBClient("http://localhost:8086", "", "");
-            //List<String> dbNames = await client.GetInfluxDBNamesAsync();
-            string sadf = "SELECT mean(\"Context_Switches_persec\") AS \"dadd\" FROM \"telegraf\".\"autogen\".\"win_system\" WHERE time > now() - 5m GROUP BY time(2500ms) FILL(null)";
-            //sadf="SHOW STATS";
-            var query = await client.QueryMultiSeriesAsync("telegraf", sadf);
-            
-            foreach(var entry in query.FirstOrDefault().Entries)
-            {
-               
-                try
-                {
-                    if (entry.Dadd != null)
-                    {
-                        var i1 = Convert.ToDouble(entry.Dadd);
-                        DateTime time = entry.Time;
-                        users.Add(new data() { y = time, item1 = (int)i1 });
-                    }
-                }
-                catch
-                { }
-                  
-                   
-               
-            }
-
-            return Json(users, JsonRequestBehavior.AllowGet);
+            return Json(sdf.series, JsonRequestBehavior.AllowGet);
         }
 
-        class data
+
+        [Authorize, HttpGet, Route("~/dbnames2")]
+        public async System.Threading.Tasks.Task<ActionResult> ThisWeekPowerData()
         {
-            public   DateTime y;
-            public int item1;
-            public int item2;
+            var sdf = await MnDashboard.PowerData(DateTime.Now.Subtract(DateTime.Now.TimeOfDay).AddDays(-7), DateTime.Now);
+
+            return Json(sdf.series, JsonRequestBehavior.AllowGet);
         }
+
 
     }
 

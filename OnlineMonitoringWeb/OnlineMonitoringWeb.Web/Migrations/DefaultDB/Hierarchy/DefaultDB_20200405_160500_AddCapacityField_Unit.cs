@@ -4,7 +4,7 @@ using System.Text;
 namespace OnlineMonitoringWeb.Migrations.DefaultDB
 {
         [Migration(20200405160500)]
-        public class DefaultDB_20200405_160500_AddCapacityField : AutoReversingMigration
+        public class DefaultDB_20200405_160500_AddCapacityField_Unit : AutoReversingMigration
         {
             public override void Up()
             {

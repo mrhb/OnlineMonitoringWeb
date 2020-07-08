@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Author: Abdullah A Almsaeed
  * Date: 4 Jan 2014
  * Description:
@@ -200,7 +200,7 @@ $(function () {
 
   
     /* Morris.js Charts */
-    // Sales chart
+    // RecentDay chart
     var area = new Morris.Area({
                             element: 'revenue-chart',
                             resize: true,
@@ -227,10 +227,9 @@ $(function () {
 
                                 var jsonDate =  x.label;
                                 var d = new Date(parseInt(jsonDate.substr(6)));
-
-                                return weekdays[d.getDay()] + '-' +
-                                        ("0" + (d.getMonth() + 1)).slice(-2) + '-' +
-                                        ("0" + (d.getDate())).slice(-2);
+                                return ("0" + d.getHours()).slice(-2) + ':' + ("0" + d.getMinutes()).slice(-2);
+                                //return ("0" + (d.getHours() + 1)).slice(-2) + ':' +
+                                //        ("0" + (d.getMinutes())).slice(-2);
                             }
                            
                         });
@@ -279,18 +278,52 @@ $(function () {
         gridTextSize: 10
     });
 
-    //Donut Chart
-    var donut = new Morris.Donut({
+    //Recentweek Chart
+    var area2 = new Morris.Area({
         element: 'sales-chart',
         resize: true,
-        colors: ["#3c8dbc", "#f56954", "#00a65a"],
-        data: [
-          { label: "Download Sales", value: 12 },
-          { label: "In-Store Sales", value: 30 },
-          { label: "Mail-Order Sales", value: 20 }
-        ],
-        hideHover: 'auto'
+        data: [],
+        xkey: 'y',
+        ykeys: ['item1', 'item2'],
+        labels: ['Power', 'Energy'],
+        lineColors: ['#a0d0e0', '#3c8dbc'],
+        parseTime: false,
+        hideHover: 'auto',
+
+        xLabels: 'day',
+        xLabelAngle: 45,
+        xLabelFormat: function (x) {
+
+            var weekdays = new Array(7);
+            weekdays[0] = "یکشنبه";
+            weekdays[1] = "دوشنبه";
+            weekdays[2] = "سه شنبه";
+            weekdays[3] = "چهارشنبه";
+            weekdays[4] = "پنج شنبه";
+            weekdays[5] = "جمعه";
+            weekdays[6] = "شنبه";
+
+            var jsonDate = x.label;
+            var d = new Date(parseInt(jsonDate.substr(6)));
+
+            return (weekdays[d.getDay()]);
+        }
+
     });
+    Refreshweekly();
+    function Refreshweekly() {
+        $.ajax({
+            url: 'dbnames2',
+            dataType: 'json',
+            success: function (dataFromUrl2) {
+                area2.setData(dataFromUrl2);
+                setTimeout(function () {
+                    Refreshweekly();
+                }, 10000);
+            }
+        });
+
+    }
 
     //Fix for charts under tabs
     $('.box ul.nav a').on('shown.bs.tab', function () {
