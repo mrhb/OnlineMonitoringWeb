@@ -52,6 +52,7 @@ namespace OnlineMonitoringWeb.Hierarchy.Entities
             set { Fields.Type[this] = value; }
         }
 
+
         [DisplayName("String Ip"), Size(15)]
         public String StringIp
         {
@@ -102,5 +103,8 @@ namespace OnlineMonitoringWeb.Hierarchy.Entities
             public StringField StationName;
             public Int32Field StationAreaId;
         }
+
+   
+
     }
 }

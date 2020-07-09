@@ -16,12 +16,13 @@ namespace OnlineMonitoringWeb.Common.Pages
     [RoutePrefix("Dashboard"), Route("{action=index}")]
     public class DashboardController : Controller
     {
-     
-        [Authorize, HttpGet, Route("~/")]
+        hierarchyInfo hierarchyInfo;
+
+         [Authorize, HttpGet, Route("~/")]
         public ActionResult Index()
         {
 
-            hierarchyInfo hierarchyInfo = new hierarchyInfo(Authorization.UserId);
+             hierarchyInfo = new hierarchyInfo(Authorization.UserId);
 
             return Overview(hierarchyInfo);
         }
@@ -42,7 +43,9 @@ namespace OnlineMonitoringWeb.Common.Pages
         [Authorize, HttpGet, Route("~/dbnames")]
         public async System.Threading.Tasks.Task<ActionResult> TodayPowerData()
         {
-           var sdf = await MnDashboard.PowerData( DateTime.Now.AddDays(-1), DateTime.Now);
+            hierarchyInfo = new hierarchyInfo(Authorization.UserId);
+
+            var sdf = await MnDashboard.PowerData( DateTime.Now.AddDays(-1), DateTime.Now, hierarchyInfo.TopSection);
 
             return Json(sdf.series, JsonRequestBehavior.AllowGet);
         }
@@ -51,7 +54,8 @@ namespace OnlineMonitoringWeb.Common.Pages
         [Authorize, HttpGet, Route("~/dbnames2")]
         public async System.Threading.Tasks.Task<ActionResult> ThisWeekPowerData()
         {
-            var sdf = await MnDashboard.PowerData(DateTime.Now.Subtract(DateTime.Now.TimeOfDay).AddDays(-7), DateTime.Now);
+            hierarchyInfo = new hierarchyInfo(Authorization.UserId);
+            var sdf = await MnDashboard.PowerData(DateTime.Now.Subtract(DateTime.Now.TimeOfDay).AddDays(-7), DateTime.Now, hierarchyInfo.TopSection);
 
             return Json(sdf.series, JsonRequestBehavior.AllowGet);
         }
@@ -73,6 +77,13 @@ namespace OnlineMonitoringWeb.Common.Pages
             {
                 var mm = RankInHierarchyRow.Fields;
                 var RankRow = conn.First<RankInHierarchyRow>(mm.UserId == userId);
+                Subdivisions = new List<section>();
+              if(RankRow.RegionalId !=null) Subdivisions.Add(new section() { id= (int)RankRow.RegionalId ,type=Hierarchy.Regional});
+              if (RankRow.DistributionId != null) Subdivisions.Add(new section() { id = (int)RankRow.DistributionId, type = Hierarchy.Distribution });
+              if (RankRow.AreaId != null) Subdivisions.Add(new section() { id = (int)RankRow.AreaId, type = Hierarchy.Area });
+              if (RankRow.StationId != null) Subdivisions.Add(new section() { id = (int)RankRow.StationId, type = Hierarchy.Station });
+
+
 
 
 
@@ -98,25 +109,19 @@ namespace OnlineMonitoringWeb.Common.Pages
                     query.Where(r.RegionalId == (int)RankRow.RegionalId);
 
                 SubdivisionUnits = conn.Query<UnitRow>(query).ToList();
-
-                sectionId = RankRow.DistributionId ?? -1;
-                section = Hierarchy.Area;
-
-
+              
 
             }
         }
-        public int sectionId { get; set; }
-        public Hierarchy section { get; set; }
+        public section TopSection {
+            get
+            {
+                return Subdivisions.OrderByDescending(item => item.type).FirstOrDefault();
+            }
+            }
 
-        public enum Hierarchy
-        {
-            Regional = 0,
-            Distribution = 1,
-            Area = 2,
-            Station = 3,
-            Unit = 4,
-        }
+        public List<section> Subdivisions { get; set; }
+
 
         public string UnitSelectionQuery()
         {

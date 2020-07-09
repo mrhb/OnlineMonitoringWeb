@@ -11,17 +11,19 @@ namespace OnlineMonitoringWeb.DAL
     public class MnDashboard
     {
         static string InfluxUrl = "http://localhost:8086";
-        public static async Task<IChartData> PowerData(DateTime start,DateTime End)
+        public static async Task<IChartData> PowerData(DateTime start,DateTime End,section Section)
         {
             var users = new IChartData();
 
             InfluxDBClient client = new InfluxDBClient(InfluxUrl, "", "");
             //List<String> dbNames = await client.GetInfluxDBNamesAsync();
-            string sadf = "SELECT mean(\"Context_Switches_persec\") AS \"dadd\" FROM \"telegraf\".\"autogen\".\"win_system\" WHERE time >'"+ start.ToString("yyyy-MM-dd HH:mm:ss")+ "' - 270m  AND time <'" + End.ToString("yyyy-MM-dd HH:mm:ss") + "' - 270m GROUP BY time(1800000ms) FILL(previous)";
+           //string sadf = "SELECT mean(\"Context_Switches_persec\") AS \"dadd\" FROM \"telegraf\".\"autogen\".\"win_system\" WHERE  time >'" + start.ToString("yyyy-MM-dd HH:mm:ss")+ "' - 270m  AND time <'" + End.ToString("yyyy-MM-dd HH:mm:ss") + "' - 270m GROUP BY time(1800000ms) FILL(previous)";
+           string measurmentQuery = "SELECT sum(\"ElecPower\") AS \"dadd\" FROM \"OnlineMonitoringDb\".\"autogen\".\"ModbusLogger\" WHERE \"AreaID\"='3' AND time >'" + start.ToString("yyyy-MM-dd HH:mm:ss")+ "' - 270m  AND time <'" + End.ToString("yyyy-MM-dd HH:mm:ss") + "' - 270m GROUP BY time(1800000ms) FILL(previous)";
             //sadf="SHOW STATS";
-            var query = await client.QueryMultiSeriesAsync("telegraf", sadf);
+            measurmentQuery.Replace("WHERE", Section.Criteria());
+            var Series = await client.QueryMultiSeriesAsync("telegraf", measurmentQuery);
 
-            foreach (var entry in query.FirstOrDefault().Entries)
+            foreach (var entry in Series.FirstOrDefault().Entries)
             {
                 try
                 {

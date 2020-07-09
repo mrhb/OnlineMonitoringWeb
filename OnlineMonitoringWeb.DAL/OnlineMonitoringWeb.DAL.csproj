@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MngDashboard\HierarchyEnum.cs" />
     <Compile Include="MngDashboard\MnDashboard.cs" />
     <Compile Include="MngDashboard\IChartData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
