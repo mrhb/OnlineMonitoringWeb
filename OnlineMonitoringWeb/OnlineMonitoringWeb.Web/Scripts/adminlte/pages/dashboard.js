@@ -196,8 +196,113 @@ $(function () {
     $('#chat-box').slimScroll({
         height: '250px'
     });
+    /* *****************ChartJs**********************/
+ 
+    var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var config = {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: window.chartColors.red,
+                borderColor: window.chartColors.red,
+                data: [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor()
+                ],
+                fill: false,
+            }, {
+                label: 'My Second dataset',
+                fill: false,
+                backgroundColor: window.chartColors.blue,
+                borderColor: window.chartColors.blue,
+                data: [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor()
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Chart.js Line Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Month'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Value'
+                    }
+                }]
+            }
+        }
+    };
+ 
+    window.onload = function () {
+        var ctx = document.getElementById('chart1').getContext('2d');
+        var chart = new Chart(ctx, config);
+   
 
+    Refreshq();
+    function Refreshq() {
+        $.ajax({
+            url: 'dbnames',
+            dataType: 'json',
+            success: function (dataFromUrl) {
+               
+                var i = 0;
+                var qqq = [];
+                var ttt = [];
+                for ( i = 0; i < dataFromUrl.length; i++)
+                {
+                    qqq[i] = dataFromUrl[i].item1;
+                    ttt[i] = dataFromUrl[i].y;
+                }
 
+                var dataset = chart.config.data.datasets[0];
+                var labels = chart.config.data.labels;
+                dataset.data = qqq;
+                labels = ttt;
+                chart.update();
+
+                setTimeout(function () {
+                    Refreshq();
+                }, 10000);
+            }
+        });
+
+    }
+
+    };
+///////*************CHartJs*****************
   
     /* Morris.js Charts */
     // RecentDay chart

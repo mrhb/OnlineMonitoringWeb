@@ -63,6 +63,12 @@
   "Pages/Dashboard": [
     "~/Scripts/raphael/raphael-min.js",
     "~/Scripts/morris/morris.min.js",
+    "~/Scripts/chartjs/samples/utils.js",
+    "~/Scripts/chartjs/Chart.min.js",
+
+
+    
+
     "~/Scripts/sparkline/jquery.sparkline.min.js",
 
     "~/Scripts/jvectormap/jquery-jvectormap.js",
