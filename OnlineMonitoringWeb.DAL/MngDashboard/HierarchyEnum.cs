@@ -31,18 +31,18 @@ namespace OnlineMonitoringWeb.DAL.MngDashboard
                     critera = "StationID";
                     break;
                 case Hierarchy.Area:
-                    critera = "StationID";
+                    critera = "AreaID";
                     break;
                 case Hierarchy.Distribution:
-                    critera = "StationID";
+                    critera = "DistributionID";
                     break;
                 case Hierarchy.Regional:
-                    critera = "StationID";
+                    critera = "RegionalId";
                     break;
 
             }
             // \"AreaID\"='3' 
-            return " \""+critera +"\"='"+id.ToString()+ "' AND ";
+            return "WHERE \"" + critera +"\"='"+id.ToString()+ "' AND ";
         }
     }
 
