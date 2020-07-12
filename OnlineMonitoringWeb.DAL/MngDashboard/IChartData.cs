@@ -14,7 +14,7 @@ namespace OnlineMonitoringWeb.DAL.MngDashboard
     public class data
         {
             public DateTime y;
-            public int item1;
-            public int item2;
+            public int? item1;
+            public int? item2;
         }
 }

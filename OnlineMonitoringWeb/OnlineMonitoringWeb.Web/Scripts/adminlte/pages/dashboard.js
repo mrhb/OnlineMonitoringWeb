@@ -196,80 +196,113 @@ $(function () {
     $('#chat-box').slimScroll({
         height: '250px'
     });
-    /* *****************ChartJs**********************/
- 
-    var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    var config = {
-        type: 'line',
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: window.chartColors.red,
-                borderColor: window.chartColors.red,
-                data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor()
-                ],
-                fill: false,
-            }, {
-                label: 'My Second dataset',
-                fill: false,
-                backgroundColor: window.chartColors.blue,
-                borderColor: window.chartColors.blue,
-                data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor()
-                ],
+   
+  
+
+    /* *****************ChartJs هفتگی**********************/
+    var timeFormat = 'MM/DD/YYYY HH:mm:ss';
+
+    function newDate(days) {
+        return moment().add(days, 'd').toDate();
+        }
+
+    function newDateString(days) {
+        return moment().add(days, 'd').format(timeFormat);
+        }
+var color = Chart.helpers.color;
+
+     var configb = {
+            type: 'line',
+          data: {
+              labels: [newDate(-1),
+                      newDate()],
+          datasets: [{
+          label: 'Dataset with point data',
+          backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
+          borderColor: window.chartColors.green,
+                    fill: false,
+                    data: [],
+                }]
+                },
+                        options : {
+                    title: {
+                    text: 'Chart.js Time Scale'
+                },
+                        scales: {
+                    xAxes: [{
+                        type: 'time',
+                    time: {
+                    parser: timeFormat,
+                    //round: 'day',
+                    tooltipFormat: 'll HH:mm'
+                },
+                    scaleLabel: {
+                    display: true,
+                    labelString: 'Time'
+                    }
+                    }],
+                    yAxes: [{
+                        scaleLabel : {
+                        display : true,
+                    labelString: 'Power(Kw)'
+                }
+                }]
+                },
+                }
+                };
+
+
+
+                        ///////*************CHartJs هفتگی*****************
+
+
+
+    /* *****************ChartJs روزانه**********************/
+var config = {
+    type: 'line',
+    data: {
+        labels: [newDate(-1),
+                newDate()],
+        datasets: [{
+            label: 'Dataset with point data',
+            backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
+            borderColor: window.chartColors.green,
+            fill: false,
+            data: [],
+        }]
+    },
+    options: {
+        title: {
+            text: 'Chart.js Time Scale'
+        },
+        scales: {
+            xAxes: [{
+                type: 'time',
+                time: {
+                    parser: timeFormat,
+                    // round: 'day'
+                    tooltipFormat: 'll HH:mm:ss'
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Time'
+                }
+            }],
+            yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Power(Kw)'
+                }
             }]
         },
-        options: {
-            responsive: true,
-            title: {
-                display: true,
-                text: 'Chart.js Line Chart'
-            },
-            tooltips: {
-                mode: 'index',
-                intersect: false,
-            },
-            hover: {
-                mode: 'nearest',
-                intersect: true
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Month'
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Value'
-                    }
-                }]
-            }
-        }
-    };
- 
-    window.onload = function () {
-        var ctx = document.getElementById('chart1').getContext('2d');
-        var chart = new Chart(ctx, config);
-   
+    }
+};
+
+window.onload = function () {
+    var ctx = document.getElementById('chart1').getContext('2d');
+    var charta = new Chart(ctx, config);
+
+
 
     Refreshq();
     function Refreshq() {
@@ -277,159 +310,66 @@ $(function () {
             url: 'dbnames',
             dataType: 'json',
             success: function (dataFromUrl) {
-               
+                var dataset = charta.config.data.datasets[0];
                 var i = 0;
-                var qqq = [];
-                var ttt = [];
-                for ( i = 0; i < dataFromUrl.length; i++)
-                {
-                    qqq[i] = dataFromUrl[i].item1;
-                    ttt[i] = dataFromUrl[i].y;
+                dataset.data = [];
+                for (i = 0; i < dataFromUrl.length; i++) {
+                    var obj = {
+                        x: moment(dataFromUrl[i].y).format(timeFormat),
+                        y: dataFromUrl[i].item1
+                    };
+                    dataset.data.push(obj);
                 }
 
-                var dataset = chart.config.data.datasets[0];
-                var labels = chart.config.data.labels;
-                dataset.data = qqq;
-                labels = ttt;
-                chart.update();
+                charta.update();
 
                 setTimeout(function () {
                     Refreshq();
-                }, 10000);
+                }, 20000);
             }
         });
 
-    }
 
-    };
-///////*************CHartJs*****************
-  
-    /* Morris.js Charts */
-    // RecentDay chart
-    var area = new Morris.Area({
-                            element: 'revenue-chart',
-                            resize: true,
-                            data: [],
-                            xkey: 'y',
-                            ykeys: ['item1', 'item2'],
-                            labels: ['Power', 'Energy'],
-                            lineColors: ['#a0d0e0', '#3c8dbc'],
-                            parseTime: false,
-                            hideHover: 'auto',
 
-                            xLabels: 'minute',
-                            xLabelAngle: 45,
-                            xLabelFormat: function (x) {
-                             
-                                var weekdays = new Array(7);
-                                weekdays[0] = "SUN";
-                                weekdays[1] = "MON";
-                                weekdays[2] = "TUE";
-                                weekdays[3] = "WED";
-                                weekdays[4] = "THU";
-                                weekdays[5] = "FRI";
-                                weekdays[6] = "SAT";
+        var ctxb = document.getElementById('chart2').getContext('2d');
+        var chartb = new Chart(ctxb, configb);
 
-                                var jsonDate =  x.label;
-                                var d = new Date(parseInt(jsonDate.substr(6)));
-                                return ("0" + d.getHours()).slice(-2) + ':' + ("0" + d.getMinutes()).slice(-2);
-                                //return ("0" + (d.getHours() + 1)).slice(-2) + ':' +
-                                //        ("0" + (d.getMinutes())).slice(-2);
-                            }
-                           
-                        });
-    Refresh();
-    function Refresh(){
-        $.ajax({
-            url: 'dbnames',
-            dataType: 'json',
-            success: function (dataFromUrl) {
-                area.setData(dataFromUrl);
-        setTimeout(function () {
-            Refresh();
-        }, 10000);
-            }
-        });
 
-    }
-   
-    var line = new Morris.Line({
-        element: 'line-chart',
-        resize: true,
-        data: [
-          { y: '2011 Q1', item1: 2666 },
-          { y: '2011 Q2', item1: 2778 },
-          { y: '2011 Q3', item1: 4912 },
-          { y: '2011 Q4', item1: 3767 },
-          { y: '2012 Q1', item1: 6810 },
-          { y: '2012 Q2', item1: 5670 },
-          { y: '2012 Q3', item1: 4820 },
-          { y: '2012 Q4', item1: 15073 },
-          { y: '2013 Q1', item1: 10687 },
-          { y: '2013 Q2', item1: 8432 }
-        ],
-        xkey: 'y',
-        ykeys: ['item1'],
-        labels: ['Item 1'],
-        lineColors: ['#efefef'],
-        lineWidth: 2,
-        hideHover: 'auto',
-        gridTextColor: "#fff",
-        gridStrokeWidth: 0.4,
-        pointSize: 4,
-        pointStrokeColors: ["#efefef"],
-        gridLineColor: "#efefef",
-        gridTextFamily: "Open Sans",
-        gridTextSize: 10
-    });
 
-    //Recentweek Chart
-    var area2 = new Morris.Area({
-        element: 'sales-chart',
-        resize: true,
-        data: [],
-        xkey: 'y',
-        ykeys: ['item1', 'item2'],
-        labels: ['Power', 'Energy'],
-        lineColors: ['#a0d0e0', '#3c8dbc'],
-        parseTime: false,
-        hideHover: 'auto',
+        Refreshb();
+        function Refreshb() {
+            $.ajax({
+                url: 'dbnames2',
+                dataType: 'json',
+                success: function (dataFromUrlb) {
+                    var datasetb = chartb.config.data.datasets[0];
+                    var i = 0;
+                    datasetb.data = [];
+                    for (i = 0; i < dataFromUrlb.length; i++) {
+                        var obj = {
+                            x: moment(dataFromUrlb[i].y).format(timeFormat),
+                            y: dataFromUrlb[i].item1
+                        };
+                        datasetb.data.push(obj);
+                    }
 
-        xLabels: 'day',
-        xLabelAngle: 45,
-        xLabelFormat: function (x) {
+                    chartb.update();
 
-            var weekdays = new Array(7);
-            weekdays[0] = "یکشنبه";
-            weekdays[1] = "دوشنبه";
-            weekdays[2] = "سه شنبه";
-            weekdays[3] = "چهارشنبه";
-            weekdays[4] = "پنج شنبه";
-            weekdays[5] = "جمعه";
-            weekdays[6] = "شنبه";
+                    setTimeout(function () {
+                        Refreshb();
+                    }, 20000);
+                }
+            });
 
-            var jsonDate = x.label;
-            var d = new Date(parseInt(jsonDate.substr(6)));
-
-            return (weekdays[d.getDay()]);
         }
 
-    });
-    Refreshweekly();
-    function Refreshweekly() {
-        $.ajax({
-            url: 'dbnames2',
-            dataType: 'json',
-            success: function (dataFromUrl2) {
-                area2.setData(dataFromUrl2);
-                setTimeout(function () {
-                    Refreshweekly();
-                }, 10000);
-            }
-        });
 
     }
+};
 
+    ///////*************CHartJs*****************
+
+ 
     //Fix for charts under tabs
     $('.box ul.nav a').on('shown.bs.tab', function () {
         area.redraw();

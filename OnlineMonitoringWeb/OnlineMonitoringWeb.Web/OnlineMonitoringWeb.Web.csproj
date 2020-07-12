@@ -583,10 +583,9 @@
     <Content Include="Scripts\chartjs\Chart.bundle.min.js" />
     <Content Include="Scripts\chartjs\Chart.css" />
     <Content Include="Scripts\chartjs\Chart.min.css" />
-    <Content Include="Scripts\chartjs\chartjs-plugin-streaming.js" />
-    <Content Include="Scripts\chartjs\chartjs-plugin-streaming.min.js" />
-    <Content Include="Scripts\chartjs\moment.js" />
-    <Content Include="Scripts\chartjs\moment.min.js" />
+    <Content Include="Scripts\chartjs\line.html" />
+    <Content Include="Scripts\chartjs\line_formatDate.html" />
+    <Content Include="Scripts\chartjs\utils.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />

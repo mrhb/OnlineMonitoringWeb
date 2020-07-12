@@ -18,7 +18,7 @@ namespace OnlineMonitoringWeb.DAL
             InfluxDBClient client = new InfluxDBClient(InfluxUrl, "", "");
             //List<String> dbNames = await client.GetInfluxDBNamesAsync();
            //string sadf = "SELECT mean(\"Context_Switches_persec\") AS \"dadd\" FROM \"telegraf\".\"autogen\".\"win_system\" WHERE  time >'" + start.ToString("yyyy-MM-dd HH:mm:ss")+ "' - 270m  AND time <'" + End.ToString("yyyy-MM-dd HH:mm:ss") + "' - 270m GROUP BY time(1800000ms) FILL(previous)";
-           string measurmentQuery = "SELECT sum(\"ElecPower\") AS \"dadd\" FROM \"OnlineMonitoringDb\".\"autogen\".\"ModbusLogger\" WHERE   time >'" + start.ToString("yyyy-MM-dd HH:mm:ss")+ "' - 270m  AND time <'" + End.ToString("yyyy-MM-dd HH:mm:ss") + "' - 270m GROUP BY time(1800000ms) FILL(null)";
+           string measurmentQuery = "SELECT sum(\"ElecPower\") AS \"dadd\" FROM \"OnlineMonitoringDb\".\"autogen\".\"ModbusLogger\" WHERE   time >'" + start.ToString("yyyy-MM-dd HH:mm:ss")+ "' - 270m  AND time <'" + End.ToString("yyyy-MM-dd HH:mm:ss") + "' - 270m GROUP BY time(900000ms) FILL(null)";
             //sadf="SHOW STATS";
             measurmentQuery=measurmentQuery.Replace("WHERE", Section.Criteria());
             var Series = await client.QueryMultiSeriesAsync("telegraf", measurmentQuery);
@@ -31,10 +31,10 @@ namespace OnlineMonitoringWeb.DAL
                     if (entry.Dadd != null)
                     {
                         i1=Convert.ToDouble(entry.Dadd);
-                    }
-                    DateTime time = entry.Time;
-                        users.series.Add(new data() { y = time, item1 = (int)i1 });
                 }
+                    DateTime time = entry.Time;
+                        users.series.Add(new data() { y = time, item1 = (entry.Dadd==null)? null:(int?)i1 });
+                    }
                 catch
                 { }
 
