@@ -217,21 +217,31 @@ var color = Chart.helpers.color;
               labels: [newDate(-1),
                       newDate()],
           datasets: [{
-          label: 'Dataset with point data',
+          label: 'Power',
           backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
           borderColor: window.chartColors.green,
                     fill: false,
                     data: [],
                 }]
                 },
-                        options : {
+          options: {
+              tooltips: {
+                  mode: 'index',
+                  intersect: false,
+              },
+              hover: {
+                  mode: 'index',
+                  intersect: false
+              },
+
                     title: {
                     text: 'Chart.js Time Scale'
                 },
                         scales: {
                     xAxes: [{
                         type: 'time',
-                    time: {
+                        time: {
+                            unit: 'day',
                     parser: timeFormat,
                     //round: 'day',
                     tooltipFormat: 'll HH:mm'
@@ -264,7 +274,7 @@ var config = {
         labels: [newDate(-1),
                 newDate()],
         datasets: [{
-            label: 'Dataset with point data',
+            label: 'Power',
             backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
             borderColor: window.chartColors.green,
             fill: false,
@@ -275,11 +285,19 @@ var config = {
         title: {
             text: 'Chart.js Time Scale'
         },
-        scales: {
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+        },
+        hover: {
+            mode: 'index',
+            intersect: false
+        },
+            scales: {
             xAxes: [{
                 type: 'time',
                 time: {
-                    parser: timeFormat,
+                   parser: timeFormat,
                     // round: 'day'
                     tooltipFormat: 'll HH:mm:ss'
                 },

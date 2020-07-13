@@ -63,7 +63,7 @@
   "Pages/Dashboard": [
     "~/Scripts/raphael/raphael-min.js",
     "~/Scripts/morris/morris.min.js",
-    "~/Scripts/chartjs/samples/utils.js",
+    "~/Scripts/chartjs/utils.js",
     "~/Scripts/chartjs/moment.min.js",
     "~/Scripts/chartjs/Chart.min.js",
 
