@@ -66,6 +66,8 @@
     "~/Scripts/chartjs/utils.js",
     "~/Scripts/chartjs/moment.min.js",
     "~/Scripts/chartjs/Chart.min.js",
+    "~/Scripts/chartjs/chartjs-plugin-zoom.min.js",
+    "~/Scripts/chartjs/hammer.min.js",
 
 
     
