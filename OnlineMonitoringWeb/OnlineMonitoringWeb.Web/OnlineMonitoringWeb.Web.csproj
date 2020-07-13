@@ -175,6 +175,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
     <Content Include="Content\colorbox\images\border.png" />
     <Content Include="Content\colorbox\images\controls.png" />
     <Content Include="Content\colorbox\images\loading.gif" />
@@ -579,13 +581,18 @@
     <Content Include="Readme.CodeGenerator.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\chartjs\Chart.bundle.js" />
     <Content Include="Scripts\chartjs\Chart.bundle.min.js" />
     <Content Include="Scripts\chartjs\Chart.css" />
     <Content Include="Scripts\chartjs\Chart.min.css" />
+    <Content Include="Scripts\chartjs\hammer.min.js" />
     <Content Include="Scripts\chartjs\line.html" />
     <Content Include="Scripts\chartjs\line_formatDate.html" />
+    <Content Include="Scripts\chartjs\moment.min.js" />
     <Content Include="Scripts\chartjs\utils.js" />
+    <Content Include="Scripts\chartjs\Zoom.html" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />

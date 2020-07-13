@@ -210,7 +210,9 @@ $(function () {
         return moment().add(days, 'd').format(timeFormat);
         }
 var color = Chart.helpers.color;
-
+var dragOptions = {
+    animationDuration: 1000
+};
      var configb = {
             type: 'line',
           data: {
@@ -225,49 +227,70 @@ var color = Chart.helpers.color;
                 }]
                 },
           options: {
+              responsive: true,
+              title: {
+                  display: true,
+                  text: 'Chart.js Time Scale'
+              },
               tooltips: {
                   mode: 'index',
                   intersect: false,
               },
-              hover: {
-                  mode: 'index',
-                  intersect: false
+              scales: {
+                  xAxes: [{
+                      type: 'time',
+                      time: {
+                          parser: timeFormat,
+                          // round: 'day'
+                          tooltipFormat: 'll HH:mm'
+                      },
+                      scaleLabel: {
+                          display: true,
+                          labelString: 'Date'
+                      },
+                      ticks: {
+                          maxRotation: 0
+                      }
+                  }],
+                  yAxes: [{
+                      scaleLabel: {
+                          display: true,
+                          labelString: 'value'
+                      }
+                  }]
               },
+              plugins: {
+                  zoom: {
+                      zoom: {
+                          enabled: true,
+                          drag: false,
+                          mode: 'x',
+                          speed: 0.1
+                      }
+                  }
+              }
+          }
+     };
 
-                    title: {
-                    text: 'Chart.js Time Scale'
-                },
-                        scales: {
-                    xAxes: [{
-                        type: 'time',
-                        time: {
-                            unit: 'day',
-                    parser: timeFormat,
-                    //round: 'day',
-                    tooltipFormat: 'll HH:mm'
-                },
-                    scaleLabel: {
-                    display: true,
-                    labelString: 'Time'
-                    }
-                    }],
-                    yAxes: [{
-                        scaleLabel : {
-                        display : true,
-                    labelString: 'Power(Kw)'
-                }
-                }]
-                },
-                }
-                };
-
-
+     configb.data.datasets.forEach(function (dataset) {
+         dataset.borderColor = randomColor(0.4);
+         dataset.backgroundColor = randomColor(0.5);
+         dataset.pointBorderColor = randomColor(0);
+         dataset.pointBackgroundColor = randomColor(0.7);
+         dataset.pointBorderWidth = 0.1;
+     });
 
                         ///////*************CHartJs هفتگی*****************
 
 
 
     /* *****************ChartJs روزانه**********************/
+     function randomColorFactor() {
+         return Math.round(Math.random() * 255);
+     }
+     function randomColor(opacity) {
+         return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+     }
 var config = {
     type: 'line',
     data: {
@@ -277,7 +300,7 @@ var config = {
             label: 'Power',
             backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
             borderColor: window.chartColors.green,
-            fill: false,
+            fill: true,
             data: [],
         }]
     },
@@ -312,9 +335,30 @@ var config = {
                     labelString: 'Power(Kw)'
                 }
             }]
-        },
+            },
+            plugins: {
+                zoom: {
+                    zoom: {
+                        enabled: true,
+                        drag: false,
+                        mode: 'x',
+                        speed: 0.05
+                    }
+                }
+            }
     }
+
+
+
 };
+
+config.data.datasets.forEach(function (dataset) {
+    dataset.borderColor = randomColor(0.4);
+    dataset.backgroundColor = randomColor(0.5);
+    dataset.pointBorderColor = randomColor(0.7);
+    dataset.pointBackgroundColor = randomColor(0.5);
+    dataset.pointBorderWidth = 1;
+});
 
 window.onload = function () {
     var ctx = document.getElementById('chart1').getContext('2d');
