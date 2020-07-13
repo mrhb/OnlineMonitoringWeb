@@ -246,7 +246,7 @@ var dragOptions = {
                       },
                       scaleLabel: {
                           display: true,
-                          labelString: 'Date'
+                          labelString: ''
                       },
                       ticks: {
                           maxRotation: 0
@@ -255,7 +255,7 @@ var dragOptions = {
                   yAxes: [{
                       scaleLabel: {
                           display: true,
-                          labelString: 'value'
+                          labelString: '(Power(Kw'
                       }
                   }]
               },
@@ -326,13 +326,13 @@ var config = {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Time'
+                    labelString: ''
                 }
             }],
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Power(Kw)'
+                    labelString: '(Power(Kw'
                 }
             }]
             },
