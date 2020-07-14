@@ -577,6 +577,8 @@
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <Content Include="Readme.CodeGenerator.txt" />
+    <Content Include="Scripts\adminlte\pages\Dashboard_Chart.js" />
+    <Content Include="Scripts\adminlte\pages\Dashborad_Map.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\chartjs\Chart.bundle.js" />
