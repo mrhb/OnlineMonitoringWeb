@@ -41,6 +41,16 @@ namespace MVC
             }
         }
 
+        public static class Dashboards
+        {
+            public static class UnitDashboard
+            {
+                public const string UnitDashboardIndex = "~/Modules/Dashboards/UnitDashboard/UnitDashboardIndex.cshtml";
+            }
+
+          
+        }
+
         public static class Errors
         {
             public const string AccessDenied = "~/Views/Errors/AccessDenied.cshtml";

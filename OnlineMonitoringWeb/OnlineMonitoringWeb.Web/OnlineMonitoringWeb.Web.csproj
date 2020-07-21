@@ -577,6 +577,7 @@
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <Content Include="Readme.CodeGenerator.txt" />
+    <Content Include="Scripts\adminlte\dashboards\UnitDashboard.js" />
     <Content Include="Scripts\adminlte\pages\Dashboard_Chart.js" />
     <Content Include="Scripts\adminlte\pages\Dashborad_Map.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -889,6 +890,7 @@
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="fonts\IRAN Sans.ttf" />
     <Content Include="fonts\IRAN Sans Bold.ttf" />
+    <Content Include="Modules\Dashboards\UnitDashboard\UnitDashboardIndex.cshtml" />
     <None Include="Properties\PublishProfiles\local2.pubxml" />
     <Content Include="Scripts\chartjs\LICENSE.md" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1826,6 +1828,8 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\Dashboards\UnitDashboard\UnitDashboardPage.cs" />
+    <Compile Include="Modules\Dashboards\UnitDashboard\UnitDashboardPageModel.cs" />
     <Compile Include="Modules\Hierarchy\HierarchyPermissionKeys.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />

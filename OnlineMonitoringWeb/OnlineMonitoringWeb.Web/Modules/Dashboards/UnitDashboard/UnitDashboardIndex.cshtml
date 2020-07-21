@@ -1,12 +1,13 @@
-﻿@model OnlineMonitoringWeb.Common.DashboardPageModel
+﻿@model OnlineMonitoringWeb.Dashboards.UnitDashboardPageModel
 @{
-    ViewData["Title"] = "Dashboard";
-    ViewData["PageId"] = "Dashboard";
+    ViewData["Title"] = "UnitDashboard";
+    ViewData["PageId"] = "UnitDashboard";
 }
 
 @section Head {
 @Html.StyleBundle("Pages/Dashboard")
-@Html.ScriptBundle("Pages/Dashboard")
+@Html.ScriptBundle("dashboards/UnitDashboard")
+@*@Html.ScriptBundle("Pages/Dashboard")*@
 }
 
 
@@ -15,7 +16,28 @@
 @section ContentHeader {
     <h1>@LocalText.Get("Navigation.Dashboard")<small>@Html.Raw(Texts.Site.Dashboard.ContentDescription)</small>
         <small>_ @Model.UserDisplayName</small>
-    </h1>
+        <select name="number" id="number">
+            <option>1</option>
+            <option selected="selected">2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+        </select>
+        </h1>
 }
 
 

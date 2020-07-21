@@ -39,7 +39,7 @@
                     }
                 },
                 onRegionTipShow: function (e, el, code) {
-                    el.html(el.html() + "<img src=\"Content/site/slides/slide1.jpg\"  height=\"42\" width=\"42\"><br>"
+                    el.html(el.html() + "<img src=\"/Content/site/slides/slide1.jpg\"  height=\"42\" width=\"42\"><br>"
                         + "salam");
                 },
 
@@ -60,9 +60,9 @@
                     markers: [{
                         attribute: 'image',
                         scale: {
-                            'closed': 'Content/map/icon-np-1.png',
-                            'activeUntil2018': 'Content/map/icon-np-2.png',
-                            'activeUntil2022': 'Content/map/icon-np-3.png'
+                            'closed': '/Content/map/icon-np-1.png',
+                            'activeUntil2018': '/Content/map/icon-np-2.png',
+                            'activeUntil2022': '/Content/map/icon-np-3.png'
                         },
                         values: plants.reduce(function (p, c, i) { p[i] = c.status; return p }, {}),
                     }]

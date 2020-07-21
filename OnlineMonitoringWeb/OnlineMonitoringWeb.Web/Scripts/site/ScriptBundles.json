@@ -71,7 +71,7 @@
     "~/Scripts/adminlte/pages/Dashboard_Chart.js",
 
 
-    
+
 
     "~/Scripts/sparkline/jquery.sparkline.min.js",
 
@@ -79,46 +79,46 @@
 
     "~/Scripts/jvectormap//lib/jquery-mousewheel.js",
 
-  "~/Scripts/jvectormap/src/jvectormap.js",
+    "~/Scripts/jvectormap/src/jvectormap.js",
 
-  "~/Scripts/jvectormap/src/abstract-element.js",
-  "~/Scripts/jvectormap/src/abstract-canvas-element.js",
-  "~/Scripts/jvectormap/src/abstract-shape-element.js",
+    "~/Scripts/jvectormap/src/abstract-element.js",
+    "~/Scripts/jvectormap/src/abstract-canvas-element.js",
+    "~/Scripts/jvectormap/src/abstract-shape-element.js",
 
-  "~/Scripts/jvectormap/src/svg-element.js",
-  "~/Scripts/jvectormap/src/svg-group-element.js",
-  "~/Scripts/jvectormap/src/svg-canvas-element.js",
-  "~/Scripts/jvectormap/src/svg-shape-element.js",
-  "~/Scripts/jvectormap/src/svg-path-element.js",
-  "~/Scripts/jvectormap/src/svg-circle-element.js",
-  "~/Scripts/jvectormap/src/svg-image-element.js",
-  "~/Scripts/jvectormap/src/svg-text-element.js",
+    "~/Scripts/jvectormap/src/svg-element.js",
+    "~/Scripts/jvectormap/src/svg-group-element.js",
+    "~/Scripts/jvectormap/src/svg-canvas-element.js",
+    "~/Scripts/jvectormap/src/svg-shape-element.js",
+    "~/Scripts/jvectormap/src/svg-path-element.js",
+    "~/Scripts/jvectormap/src/svg-circle-element.js",
+    "~/Scripts/jvectormap/src/svg-image-element.js",
+    "~/Scripts/jvectormap/src/svg-text-element.js",
 
-  "~/Scripts/jvectormap/src/vml-element.js",
-  "~/Scripts/jvectormap/src/vml-group-element.js",
-  "~/Scripts/jvectormap/src/vml-canvas-element.js",
-  "~/Scripts/jvectormap/src/vml-shape-element.js",
-  "~/Scripts/jvectormap/src/vml-path-element.js",
-  "~/Scripts/jvectormap/src/vml-circle-element.js",
+    "~/Scripts/jvectormap/src/vml-element.js",
+    "~/Scripts/jvectormap/src/vml-group-element.js",
+    "~/Scripts/jvectormap/src/vml-canvas-element.js",
+    "~/Scripts/jvectormap/src/vml-shape-element.js",
+    "~/Scripts/jvectormap/src/vml-path-element.js",
+    "~/Scripts/jvectormap/src/vml-circle-element.js",
 
-  "~/Scripts/jvectormap/src/map-object.js",
-  "~/Scripts/jvectormap/src/region.js",
-  "~/Scripts/jvectormap/src/marker.js",
+    "~/Scripts/jvectormap/src/map-object.js",
+    "~/Scripts/jvectormap/src/region.js",
+    "~/Scripts/jvectormap/src/marker.js",
 
-  "~/Scripts/jvectormap/src/vector-canvas.js",
-  "~/Scripts/jvectormap/src/simple-scale.js",
-  "~/Scripts/jvectormap/src/numeric-scale.js",
-  "~/Scripts/jvectormap/src/ordinal-scale.js",
-  "~/Scripts/jvectormap/src/color-scale.js",
-  "~/Scripts/jvectormap/src/data-series.js",
-  "~/Scripts/jvectormap/src/proj.js",
-  "~/Scripts/jvectormap/src/map.js",
-  "~/Scripts/jvectormap/src/multimap.js",
+    "~/Scripts/jvectormap/src/vector-canvas.js",
+    "~/Scripts/jvectormap/src/simple-scale.js",
+    "~/Scripts/jvectormap/src/numeric-scale.js",
+    "~/Scripts/jvectormap/src/ordinal-scale.js",
+    "~/Scripts/jvectormap/src/color-scale.js",
+    "~/Scripts/jvectormap/src/data-series.js",
+    "~/Scripts/jvectormap/src/proj.js",
+    "~/Scripts/jvectormap/src/map.js",
+    "~/Scripts/jvectormap/src/multimap.js",
 
     "~/Scripts/jvectormap/GeoRef_iran_map.js",
-        "~/Scripts/adminlte/pages/Dashborad_Map.js",
+    "~/Scripts/adminlte/pages/Dashborad_Map.js",
 
-    
+
 
 
 
@@ -129,5 +129,74 @@
     "~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
     "~/Scripts/adminlte/pages/dashboard.js",
     "~/Scripts/adminlte/demo.js"
+  ],
+  "dashboards/UnitDashboard": [
+    "~/Scripts/raphael/raphael-min.js",
+    "~/Scripts/morris/morris.min.js",
+    "~/Scripts/chartjs/utils.js",
+    "~/Scripts/chartjs/moment.min.js",
+    "~/Scripts/chartjs/Chart.min.js",
+    "~/Scripts/chartjs/chartjs-plugin-zoom.min.js",
+    "~/Scripts/chartjs/hammer.min.js",
+    "~/Scripts/adminlte/pages/Dashboard_Chart.js",
+
+
+
+
+    "~/Scripts/sparkline/jquery.sparkline.min.js",
+
+    "~/Scripts/jvectormap/jquery-jvectormap.js",
+
+    "~/Scripts/jvectormap//lib/jquery-mousewheel.js",
+
+    "~/Scripts/jvectormap/src/jvectormap.js",
+
+    "~/Scripts/jvectormap/src/abstract-element.js",
+    "~/Scripts/jvectormap/src/abstract-canvas-element.js",
+    "~/Scripts/jvectormap/src/abstract-shape-element.js",
+
+    "~/Scripts/jvectormap/src/svg-element.js",
+    "~/Scripts/jvectormap/src/svg-group-element.js",
+    "~/Scripts/jvectormap/src/svg-canvas-element.js",
+    "~/Scripts/jvectormap/src/svg-shape-element.js",
+    "~/Scripts/jvectormap/src/svg-path-element.js",
+    "~/Scripts/jvectormap/src/svg-circle-element.js",
+    "~/Scripts/jvectormap/src/svg-image-element.js",
+    "~/Scripts/jvectormap/src/svg-text-element.js",
+
+    "~/Scripts/jvectormap/src/vml-element.js",
+    "~/Scripts/jvectormap/src/vml-group-element.js",
+    "~/Scripts/jvectormap/src/vml-canvas-element.js",
+    "~/Scripts/jvectormap/src/vml-shape-element.js",
+    "~/Scripts/jvectormap/src/vml-path-element.js",
+    "~/Scripts/jvectormap/src/vml-circle-element.js",
+
+    "~/Scripts/jvectormap/src/map-object.js",
+    "~/Scripts/jvectormap/src/region.js",
+    "~/Scripts/jvectormap/src/marker.js",
+
+    "~/Scripts/jvectormap/src/vector-canvas.js",
+    "~/Scripts/jvectormap/src/simple-scale.js",
+    "~/Scripts/jvectormap/src/numeric-scale.js",
+    "~/Scripts/jvectormap/src/ordinal-scale.js",
+    "~/Scripts/jvectormap/src/color-scale.js",
+    "~/Scripts/jvectormap/src/data-series.js",
+    "~/Scripts/jvectormap/src/proj.js",
+    "~/Scripts/jvectormap/src/map.js",
+    "~/Scripts/jvectormap/src/multimap.js",
+
+    "~/Scripts/jvectormap/GeoRef_iran_map.js",
+    "~/Scripts/adminlte/pages/Dashborad_Map.js",
+
+
+
+    "~/Scripts/knob/jquery.knob.js",
+    "~/Scripts/daterangepicker/moment.min.js",
+    "~/Scripts/daterangepicker/daterangepicker.js",
+    "~/Scripts/datepicker/bootstrap-datepicker.js",
+    "~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
+    "~/Scripts/adminlte/dashboards/UnitDashboard.js",
+    "~/Scripts/adminlte/demo.js"
   ]
+
 }
