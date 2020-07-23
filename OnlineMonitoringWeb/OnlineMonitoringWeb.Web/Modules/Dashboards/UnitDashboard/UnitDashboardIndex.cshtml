@@ -18,39 +18,30 @@
 @*@Html.ScriptBundle("Pages/Dashboard")*@
 }
 
-
-
-<select id="UnitsSelector" >
-    @*<option value="option1" selected>option 1</option>
-    <option value="option2">option 2</option>
-    <option value="option3">option 3</option>
-    <option value="option4">option 4</option>*@
-</select>
-
-
-
-
 @section ContentHeader {
-    <h1>@LocalText.Get("Navigation.Dashboard")<small>@Html.Raw(Texts.Site.Dashboard.ContentDescription)</small>
-        <small>_ @Model.UserDisplayName</small>
+    <h1>@LocalText.Get("Navigation.Dashboard")
+    <small>_ @Model.UserDisplayName</small>
       </h1>
+    <p>  </p>
+      <p class="align_right">
+        <select id="UnitsSelector" class="select2-chosen">
+            @*<option value="option1" selected>option 1</option>
+                <option value="option2">option 2</option>
+                <option value="option3">option 3</option>
+                <option value="option4">option 4</option>*@
+        </select>
+          </p>
 }
 
-
-
-<!-- Small boxes (Stat box) -->
+<!-- Small boxes (Gauges) -->
 <div class="row">
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div class="small-box bg-aqua">
             <div class="inner">
-                <h3>@Model.OperatingUnitsCapacity<sup style="font-size: 20px">kw</sup></h3>
-                <p>ظرفیت واحدهای فعال</p>
+                <h3>@Model.OperatingUnitsCapacity<sup style="font-size: 20px">kw</sup></h3><p>ظرفیت واحدهای فعال</p>
             </div>
-            <div class="icon">
-                <i class="ion ion-bag"></i>
-            </div>
-            <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <canvas id="chart" class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
     <div class="col-lg-3 col-xs-6">
@@ -60,10 +51,7 @@
                 <h3>@Model.TotalUnitsCapacity<sup style="font-size: 20px">kw</sup></h3>
                 <p>ظرفیت کل</p>
             </div>
-            <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <canvas id="chart" class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
     <div class="col-lg-3 col-xs-6">
@@ -73,10 +61,7 @@
                 <h3>@Model.OperatingUnitCount</h3>
                 <p>تعداد واحدهای فعال</p>
             </div>
-            <div class="icon">
-                <i class="ion ion-person-add"></i>
-            </div>
-            <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <canvas id="chart" class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
     <div class="col-lg-3 col-xs-6">
@@ -86,13 +71,12 @@
                 <h3>@Model.TotalUnitsCount</h3>
                 <p>تعداد کل واحدها</p>
             </div>
-            <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <canvas id="chart" class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
 </div><!-- /.row -->
+<button id="randomizeData">Randomize Data</button>
+
 <!-- Main row -->
 <div class="row">
     <!-- Left col -->
@@ -101,7 +85,7 @@
         <div class="nav-tabs-custom">
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-right">
-                <li ><a href="#Weekly" data-toggle="tab"> هفتگی</a></li>
+                <li><a href="#Weekly" data-toggle="tab"> هفتگی</a></li>
                 <li class="active"><a href="#JS-chart" data-toggle="tab"> روزانه</a></li>
                 <li class="pull-left header"><i class="fa fa-inbox"></i> توان</li>
             </ul>
@@ -112,13 +96,13 @@
                     <canvas id="chart2" class="chartjs-render-monitor"></canvas>
                 </div>
 
-                 <div class="chart tab-pane active"  id="JS-chart"  style="position: relative; height: 300px;">
-                  <canvas id="chart1"  class="chartjs-render-monitor"></canvas>
+                <div class="chart tab-pane active" id="JS-chart" style="position: relative; height: 300px;">
+                    <canvas id="chart3" class="chartjs-render-monitor"></canvas>
                 </div>
 
-             </div>
+            </div>
         </div><!-- /.nav-tabs-custom -->
-        <!-- Chat box -->
+   <!-- Chat box -->
         <div class="box box-success">
             <div class="box-header">
                 <i class="fa fa-comments-o"></i>

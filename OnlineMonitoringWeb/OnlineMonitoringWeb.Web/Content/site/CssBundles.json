@@ -22,5 +22,14 @@
     "~/Scripts/datepicker/datepicker3.css",
     "~/Scripts/daterangepicker/daterangepicker-bs3.css",
     "~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
+  ],
+    "dashboards/UnitDashboard": [
+    "~/Content/iCheck/flat/blue.css",
+    "~/Scripts/morris/morris.css",
+    "~/Scripts/jvectormap/jquery-jvectormap.css",
+    "~/Scripts/datepicker/datepicker3.css",
+    "~/Scripts/daterangepicker/daterangepicker-bs3.css",
+    //"~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
+    "~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
   ]
 }

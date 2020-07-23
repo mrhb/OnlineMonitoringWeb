@@ -58,12 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OnlineMonitoringWeb\OnlineMonitoringWeb.Web\OnlineMonitoringWeb.Web.csproj">
-      <Project>{e298dc33-d240-4585-ac47-775575246780}</Project>
-      <Name>OnlineMonitoringWeb.Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <Choose>

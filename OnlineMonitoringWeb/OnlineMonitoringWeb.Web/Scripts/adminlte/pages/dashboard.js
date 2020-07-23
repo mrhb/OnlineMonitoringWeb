@@ -12,6 +12,8 @@ $(function () {
     if (!$('#s-DashboardPage').length)
         return;
 
+
+    window.RefreshChart();
     //Make the dashboard widgets sortable Using jquery UI
     $(".connectedSortable").sortable({
         placeholder: "sort-highlight",

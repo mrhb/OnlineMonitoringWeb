@@ -92,7 +92,7 @@ function randomColorFactor() {
 function randomColor(opacity) {
     return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
 }
-var config = {
+var configa = {
     type: 'line',
     data: {
         labels: [newDate(-1),
@@ -153,7 +153,7 @@ var config = {
 
 };
 
-config.data.datasets.forEach(function (dataset) {
+configa.data.datasets.forEach(function (dataset) {
     dataset.borderColor = randomColor(0.4);
     dataset.backgroundColor = randomColor(0.5);
     dataset.pointBorderColor = randomColor(0.7);
@@ -161,9 +161,9 @@ config.data.datasets.forEach(function (dataset) {
     dataset.pointBorderWidth = 1;
 });
 
-window.onload = function () {
-    var ctx = document.getElementById('chart1').getContext('2d');
-    var charta = new Chart(ctx, config);
+window.RefreshChart = function () {
+    var ctx = document.getElementById('chart3').getContext('2d');
+    var charta = new Chart(ctx, configa);
 
 
 
