@@ -131,6 +131,9 @@
     "~/Scripts/adminlte/demo.js"
   ],
   "dashboards/UnitDashboard": [
+
+
+
     "~/Scripts/raphael/raphael-min.js",
     "~/Scripts/morris/morris.min.js",
     "~/Scripts/chartjs/utils.js",
@@ -195,8 +198,9 @@
     "~/Scripts/daterangepicker/daterangepicker.js",
     "~/Scripts/datepicker/bootstrap-datepicker.js",
     "~/Scripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
-    "~/Scripts/adminlte/dashboards/UnitDashboard.js",
-    "~/Scripts/adminlte/demo.js"
+    "~/Scripts/adminlte/demo.js",
+
+    "~/Scripts/adminlte/dashboards/UnitDashboard.js"
   ]
 
 }

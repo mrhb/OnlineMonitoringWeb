@@ -39,6 +39,8 @@ namespace OnlineMonitoringWeb.Dashboards.Pages
             model.OperatingUnitsCapacity = model.TotalUnitsCapacity;
             model.OperatingUnitCount = model.TotalUnitsCount;
             model.UserDisplayName = Authorization.UserDefinition.DisplayName;
+            model.ActiveSection = HierarchyInfo.TopSection;
+            model.Subdivisions = hierarchyInfo.Subdivisions;
           
             return View(MVC.Views.Dashboards.UnitDashboard.UnitDashboardIndex, model);
         }

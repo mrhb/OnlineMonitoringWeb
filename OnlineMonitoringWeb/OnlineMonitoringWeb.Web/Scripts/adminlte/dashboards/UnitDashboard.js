@@ -5,142 +5,162 @@
  *      This is a demo file used only for the main dashboard (index.html)
  **/
 
-$(function () {
 
-    "use strict";
-
-    if (!$('#s-DashboardPage').length)
-        return;
-
-    //Make the dashboard widgets sortable Using jquery UI
-    $(".connectedSortable").sortable({
-        placeholder: "sort-highlight",
-        connectWith: ".connectedSortable",
-        handle: ".box-header, .nav-tabs",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-    });
-    $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
-
-    //jQuery UI sortable for the todo list
-    $(".todo-list").sortable({
-        placeholder: "sort-highlight",
-        handle: ".handle",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-    });
-
-    //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
-
-    $('.daterange').daterangepicker({
-        ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate: moment()
-    }, function (start, end) {
-        window.alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-    });
+$(function () {  
 
 
-    /* Unit Dropdown selection */
-   //var colors = new serenity.DataSource({
-   //    data: [{ id: 1, text: "Red" }, { id: 2, text: "Blue" }, { id: 2, text: "Green" }]
-   //});
- 
-   // $("#dropdownlist").serenityDropdownlist({
-   //     valueField: "id", 
-   //     textField: "text", 
-   //     dataSource: colors
-   // });
-    
-   // $("#dropdownlist").serenityDropdownlist({
-   //     dataSource: [
-   //       { id: 1, text: "Item 1" },
-   //       { id: 2, text: "Item 2" }
-   //     ],
-   //     valueField: "id",
-   //     textField: "text",
-   //     itemTemplate: Handlebars.compile("<span style='font-style:italic;'>{{text}}</span>")
-   // })
+    var a = '';
+    a = a + '<optGroup label = Units >';
+    for (var i = 0; i < datasss.length; i++) {
 
-    /* jQueryKnob */
-    $(".knob").knob();
+        if (datasss[i].type == 2) {
+            a = a + '<option>' +'Unit_'+ datasss[i].id + '</option>'
+        }
+        console.log(a)
+    };
+    a = a + '<optGroup label = Sites >';
+    for (var i = 0; i < datasss.length; i++) {
 
-    //jvectormap data
-    var visitorsData = {
-        "US": 398, //USA
-        "SA": 400, //Saudi Arabia
-        "CA": 1000, //Canada
-        "DE": 500, //Germany
-        "FR": 760, //France
-        "CN": 300, //China
-        "AU": 700, //Australia
-        "BR": 600, //Brazil
-        "IN": 800, //India
-        "GB": 320, //Great Britain
-        "RU": 3000 //Russia
+        if (datasss[i].type == 0) {
+            a = a + '<option>' + datasss[i].id + '</option>'
+        }
+        console.log(a)
     };
 
-    //Sparkline charts
-    var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
-    $('#sparkline-1').sparkline(myvalues, {
-        type: 'line',
-        lineColor: '#92c1dc',
-        fillColor: "#ebf4f9",
-        height: '50',
-        width: '80'
-    });
-    myvalues = [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921];
-    $('#sparkline-2').sparkline(myvalues, {
-        type: 'line',
-        lineColor: '#92c1dc',
-        fillColor: "#ebf4f9",
-        height: '50',
-        width: '80'
-    });
-    myvalues = [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21];
-    $('#sparkline-3').sparkline(myvalues, {
-        type: 'line',
-        lineColor: '#92c1dc',
-        fillColor: "#ebf4f9",
-        height: '50',
-        width: '80'
-    });
+    $('#UnitsSelector').append(a)
+    //var $cont = $('select');
+    //var json1 = { "Regular": ["S", "XS", "M"], "Small": ["em"] };
+    //for (var i = 0; i < Object.keys(json1).length; i++) {
+    //    var a = '<optGroup label = ' + Object.keys(json1)[i] + '>';
+    //    for (var j = 0; j < json1[Object.keys(json1)[i]].length; j++) {
+    //        a = a + '<option>' + json1[Object.keys(json1)[i]][j] + '</option>'
+    //    }
+    //    $(a).appendTo($cont)
+    //}
 
-    //The Calender
-    $("#calendar").datepicker();
 
-    //SLIMSCROLL FOR CHAT WIDGET
-    $('#chat-box').slimScroll({
-        height: '250px'
-    });
+    $("#UnitsSelector").on('change', function () {
+
+        alert(this.value + "    " + ActiveSection + "  " + datasss);
+        });
+    })
+    
+//$(function () {
+
+//    "use strict";
+
+//    //if (!$('#s-DashboardPage').length)
+//    //    return;
 
 
 
-    //Fix for charts under tabs
-    $('.box ul.nav a').on('shown.bs.tab', function () {
-        area.redraw();
-        donut.redraw();
-        line.redraw();
-    });
+//    //Make the dashboard widgets sortable Using jquery UI
+//    $(".connectedSortable").sortable({
+//        placeholder: "sort-highlight",
+//        connectWith: ".connectedSortable",
+//        handle: ".box-header, .nav-tabs",
+//        forcePlaceholderSize: true,
+//        zIndex: 999999
+//    });
+//    $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
 
-    /* The todo list plugin */
-    $(".todo-list").todolist({
-        onCheck: function (ele) {
-            window.console.log("The element has been checked");
-            return ele;
-        },
-        onUncheck: function (ele) {
-            window.console.log("The element has been unchecked");
-            return ele;
-        }
-    });
+//    //jQuery UI sortable for the todo list
+//    $(".todo-list").sortable({
+//        placeholder: "sort-highlight",
+//        handle: ".handle",
+//        forcePlaceholderSize: true,
+//        zIndex: 999999
+//    });
 
-});
+//    //bootstrap WYSIHTML5 - text editor
+//    $(".textarea").wysihtml5();
+
+//    $('.daterange').daterangepicker({
+//        ranges: {
+//            'Today': [moment(), moment()],
+//            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+//            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+//            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+//            'This Month': [moment().startOf('month'), moment().endOf('month')],
+//            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+//        },
+//        startDate: moment().subtract(29, 'days'),
+//        endDate: moment()
+//    }, function (start, end) {
+//        window.alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+//    });
+
+//    /* jQueryKnob */
+//    $(".knob").knob();
+
+//    //jvectormap data
+//    var visitorsData = {
+//        "US": 398, //USA
+//        "SA": 400, //Saudi Arabia
+//        "CA": 1000, //Canada
+//        "DE": 500, //Germany
+//        "FR": 760, //France
+//        "CN": 300, //China
+//        "AU": 700, //Australia
+//        "BR": 600, //Brazil
+//        "IN": 800, //India
+//        "GB": 320, //Great Britain
+//        "RU": 3000 //Russia
+//    };
+
+//    //Sparkline charts
+//    var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
+//    $('#sparkline-1').sparkline(myvalues, {
+//        type: 'line',
+//        lineColor: '#92c1dc',
+//        fillColor: "#ebf4f9",
+//        height: '50',
+//        width: '80'
+//    });
+//    myvalues = [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921];
+//    $('#sparkline-2').sparkline(myvalues, {
+//        type: 'line',
+//        lineColor: '#92c1dc',
+//        fillColor: "#ebf4f9",
+//        height: '50',
+//        width: '80'
+//    });
+//    myvalues = [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21];
+//    $('#sparkline-3').sparkline(myvalues, {
+//        type: 'line',
+//        lineColor: '#92c1dc',
+//        fillColor: "#ebf4f9",
+//        height: '50',
+//        width: '80'
+//    });
+
+//    //The Calender
+//    $("#calendar").datepicker();
+
+//    //SLIMSCROLL FOR CHAT WIDGET
+//    $('#chat-box').slimScroll({
+//        height: '250px'
+//    });
+
+
+
+//    //Fix for charts under tabs
+//    $('.box ul.nav a').on('shown.bs.tab', function () {
+//        area.redraw();
+//        donut.redraw();
+//        line.redraw();
+//    });
+
+//    /* The todo list plugin */
+//    $(".todo-list").todolist({
+//        onCheck: function (ele) {
+//            window.console.log("The element has been checked");
+//            return ele;
+//        },
+//        onUncheck: function (ele) {
+//            window.console.log("The element has been unchecked");
+//            return ele;
+//        }
+//    });
+
+//});

@@ -4,6 +4,14 @@
     ViewData["PageId"] = "UnitDashboard";
 }
 
+<script>
+
+    var datasss =@(new HtmlString(Json.Encode(Model.Subdivisions)))
+
+    var Subdivisions = '@Model.Subdivisions'
+    var ActiveSection ='@Model.ActiveSection'
+</script>
+
 @section Head {
 @Html.StyleBundle("Pages/Dashboard")
 @Html.ScriptBundle("dashboards/UnitDashboard")
@@ -12,32 +20,20 @@
 
 
 
+<select id="UnitsSelector" >
+    @*<option value="option1" selected>option 1</option>
+    <option value="option2">option 2</option>
+    <option value="option3">option 3</option>
+    <option value="option4">option 4</option>*@
+</select>
+
+
+
 
 @section ContentHeader {
     <h1>@LocalText.Get("Navigation.Dashboard")<small>@Html.Raw(Texts.Site.Dashboard.ContentDescription)</small>
         <small>_ @Model.UserDisplayName</small>
-        <select name="number" id="number">
-            <option>1</option>
-            <option selected="selected">2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-        </select>
-        </h1>
+      </h1>
 }
 
 
@@ -111,11 +107,11 @@
             </ul>
             <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->
-             
+
                 <div class="chart tab-pane " id="Weekly" style="position: relative; height: 300px;">
                     <canvas id="chart2" class="chartjs-render-monitor"></canvas>
                 </div>
-              
+
                  <div class="chart tab-pane active"  id="JS-chart"  style="position: relative; height: 300px;">
                   <canvas id="chart1"  class="chartjs-render-monitor"></canvas>
                 </div>
