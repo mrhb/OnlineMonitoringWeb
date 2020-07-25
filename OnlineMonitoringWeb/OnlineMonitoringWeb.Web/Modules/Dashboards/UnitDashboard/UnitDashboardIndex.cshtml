@@ -6,9 +6,9 @@
 
 <script>
 
-    var datasss =@(new HtmlString(Json.Encode(Model.Subdivisions)))
+    var Subdivisions =@(new HtmlString(Json.Encode(Model.Subdivisions)))
 
-    var Subdivisions = '@Model.Subdivisions'
+   @*var Subdivisions = '@Model.Subdivisions'*@
     var ActiveSection ='@Model.ActiveSection'
 </script>
 
@@ -75,7 +75,7 @@
         </div>
     </div><!-- ./col -->
 </div><!-- /.row -->
-<button id="randomizeData">Randomize Data</button>
+
 
 <!-- Main row -->
 <div class="row">
@@ -85,19 +85,19 @@
         <div class="nav-tabs-custom">
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-right">
-                <li><a href="#Weekly" data-toggle="tab"> هفتگی</a></li>
-                <li class="active"><a href="#JS-chart" data-toggle="tab"> روزانه</a></li>
+                <li  class="active"><a href="#Weekly" data-toggle="tab"> هفتگی</a></li>
+                <li><a href="#JS-chart" data-toggle="tab"> روزانه</a></li>
                 <li class="pull-left header"><i class="fa fa-inbox"></i> توان</li>
             </ul>
             <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->
 
-                <div class="chart tab-pane " id="Weekly" style="position: relative; height: 300px;">
-                    <canvas id="chart2" class="chartjs-render-monitor"></canvas>
+                <div class="chart tab-pane active" id="Weekly" style="position: relative; height: 300px;">
+                    <canvas id="chart1" data-api='TimeseriesAPI'  class="chartjs-render-monitor time-series-chart "></canvas>
                 </div>
 
-                <div class="chart tab-pane active" id="JS-chart" style="position: relative; height: 300px;">
-                    <canvas id="chart3" class="chartjs-render-monitor"></canvas>
+                <div class="chart tab-pane " id="JS-chart" style="position: relative; height: 300px;">
+                    <canvas id="chart2" data-api='TimeseriesAPI'  class="chartjs-render-monitor time-series-chart"></canvas>
                 </div>
 
             </div>

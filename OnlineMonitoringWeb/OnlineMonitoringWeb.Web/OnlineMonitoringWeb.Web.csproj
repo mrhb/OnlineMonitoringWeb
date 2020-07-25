@@ -577,7 +577,7 @@
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <Content Include="Readme.CodeGenerator.txt" />
-    <Content Include="Scripts\adminlte\dashboards\Dashboard_Chart.js" />
+    <Content Include="Scripts\adminlte\dashboards\Dashboard_TimeSeriesChart.js" />
     <Content Include="Scripts\adminlte\dashboards\Dashborad_Gauge.js" />
     <Content Include="Scripts\adminlte\dashboards\UnitDashboard.js" />
     <Content Include="Scripts\adminlte\pages\Dashboard_Chart.js" />

@@ -1,7 +1,4 @@
-﻿$(function () {
-
-     window.nxs = [];
-     window.randomData = function () {
+﻿     randomData = function () {
         return [
           randomScalingFactor(),
           randomScalingFactor(),
@@ -13,14 +10,14 @@
         return Math.round(Math.random() * 100);
     };
 
-    window.randomValue = function (data) {
+    randomValue = function (data) {
         return Math.max.apply(null, data) * Math.random();
     };
 
     var data = randomData();
     var value = randomValue(data);
 
-     window.config = {
+     config = {
         type: 'gauge',
         data: {
             labels: ['Success', 'Warning', 'Warning', 'Fail'],
@@ -76,35 +73,33 @@
         }
     };
 
+    var  cnxs = [];
     window.onload = function () {
         //var ctx = document.getElementById('chart').getContext('2d');
-        window.cnxs = $(".Gauge");// document.getElementById('chart').getContext('2d');
-      
+        //window.cnxs = $(".Gauge");// document.getElementById('chart').getContext('2d');
         $(".Gauge").each(function (index) {
             console.log(index + ": " + $(this).text());
-            window.cnxs[index]= new Chart($(this),  window.config);
+            cnxs[index]= new Chart($(this),  config);
         });
+      
 
         window.RefreshGauge();
     };
 
-    document.getElementById('randomizeData').addEventListener('click', function () {
-        window.RefreshGauge();
-    });
+
 
 
     window.RefreshGauge = function () {
 
-        window.config.data.datasets.forEach(function (dataset) {
+        config.data.datasets.forEach(function (dataset) {
             dataset.data = randomData();
             dataset.value = randomValue(dataset.data);
         });
 
         $(".Gauge").each(function (index) {
             console.log(index + ": " + $(this).text());
-            window.cnxs[index].update();
+            cnxs[index].update();
 
         });
     };
 
-});

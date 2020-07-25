@@ -53,6 +53,15 @@ namespace OnlineMonitoringWeb.Dashboards.Pages
 
             return Json(sdf.series, JsonRequestBehavior.AllowGet);
         }
+        [Authorize, HttpGet, Route("~/Dashboards/TimeseriesAPI/id={id}")]
+        public async System.Threading.Tasks.Task<ActionResult> TimeseriesAPI(int id)
+        {
+            hierarchyInfo = new hierarchyInfo(Authorization.UserId);
+
+            var sdf = await MnDashboard.PowerData(DateTime.Now.Subtract(DateTime.Now.TimeOfDay).AddDays(-7), DateTime.Now, hierarchyInfo.TopSection);
+
+            return Json(sdf.series, JsonRequestBehavior.AllowGet);
+        }
 
 
         [Authorize, HttpGet, Route("~/Dashboards/dbnames2")]

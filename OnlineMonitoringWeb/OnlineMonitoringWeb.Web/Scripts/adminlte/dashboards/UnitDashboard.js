@@ -11,18 +11,18 @@ $(function () {
     //***Add Selectable sibdevisions********
     var a = '';
     a = a + '<optGroup label = Units >';
-    for (var i = 0; i < datasss.length; i++) {
+    for (var i = 0; i < Subdivisions.length; i++) {
 
-        if (datasss[i].type == 2) {
-            a = a + '<option>' +'Unit_'+ datasss[i].id + '</option>'
+        if (Subdivisions[i].type == 2) {
+            a = a + '<option>' + Subdivisions[i].id + '</option>'
         }
         console.log(a)
     };
     a = a + '<optGroup label = Sites >';
-    for (var i = 0; i < datasss.length; i++) {
+    for (var i = 0; i < Subdivisions.length; i++) {
 
-        if (datasss[i].type == 0) {
-            a = a + '<option>' + datasss[i].id + '</option>'
+        if (Subdivisions[i].type == 0) {
+            a = a + '<option>' + Subdivisions[i].id + '</option>'
         }
         console.log(a)
     };
@@ -30,13 +30,14 @@ $(function () {
     //***Add Selectable sibdevisions********/////
 
     $("#UnitsSelector").on('change', function () {
-        //   alert(this.value + "    " + ActiveSection + "  " + datasss);
-        window.RefreshGauge();   
+        //alert(this.value + "    " + ActiveSection + "  " + Subdivisions[0]);
+        window.RefreshGauge();
+        window.RefreshChart(this.value);
+        
     });
 
 
-    window.RefreshChart();
-
+    window.RefreshChart(Subdivisions);
     ////    })
     
     //$(function () {

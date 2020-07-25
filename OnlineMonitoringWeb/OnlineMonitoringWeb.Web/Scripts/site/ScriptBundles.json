@@ -142,10 +142,10 @@
     "~/Scripts/chartjs/chartjs-plugin-zoom.min.js",
     "~/Scripts/chartjs/hammer.min.js",
     "~/Scripts/chartjs/chartjs-gauge.js",
-    "~/Scripts/adminlte/pages/Dashboard_Chart.js",
 
 
     "~/Scripts/adminlte/dashboards/Dashborad_Gauge.js",
+    "~/Scripts/adminlte/dashboards/Dashboard_TimeSeriesChart.js",
 
 
     "~/Scripts/sparkline/jquery.sparkline.min.js",
