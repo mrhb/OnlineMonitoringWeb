@@ -16,64 +16,8 @@
         return Math.max.apply(null, data) * Math.random();
     };
 
-    var data = randomData();
-    var value = randomValue(data);
-
-     config = {
-        type: 'gauge',
-        data: {
-            labels: ['Success', 'Warning', 'Warning', 'Fail'],
-            datasets: [{
-                data: data,
-                value: value,
-                backgroundColor: ['green', 'yellow', 'orange', 'red'],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            title: {
-                display: true,
-                text: 'Power'
-            },
-            layout: {
-                padding: {
-                    bottom: 30
-                }
-            },
-            needle: {
-                // Needle circle radius as the percentage of the chart area width
-                radiusPercentage: 2,
-                // Needle width as the percentage of the chart area width
-                widthPercentage: 2.2,
-                // Needle length as the percentage of the interval between inner radius (0%) and outer radius (100%) of the arc
-                lengthPercentage: 20,
-                // The color of the needle
-                color: 'rgba(0, 0, 155, 1)'
-            },
-            valueLabel: {
-                display: false
-            },
-            plugins: {
-                datalabels: {
-                    display: true,
-                    formatter: function (value, context) {
-                        return context.chart.data.labels[context.dataIndex];
-                    },
-                    //color: function (context) {
-                    //  return context.dataset.backgroundColor;
-                    //},
-                    color: 'rgba(0, 0, 0, 1.0)',
-                    //color: 'rgba(255, 255, 255, 1.0)',
-                    backgroundColor: null,
-                    font: {
-                        size: 20,
-                        weight: 'bold'
-                    }
-                }
-            }
-        }
-    };
+    //var data = randomData();
+    //var value = randomValue(data);
 
 
     window.onload = function () {
@@ -90,16 +34,73 @@
     window.RefreshGauge = function (ActiveSection) {
         var cnxs = [];
         var GaugerefreshAjax = [];
+        var Gaugeconfigs=[]
 
-        config.data.datasets.forEach(function (dataset) {
-            dataset.data = randomData();
-            dataset.value = randomValue(dataset.data);
-        });
+        $(".Gauge").each(function (index) {
+
+            var Gaugeconfig = {
+                type: 'gauge',
+                data: {
+                    labels: ['Success', 'Warning', 'Warning', 'Fail'],
+                    datasets: [{
+                        data: [],
+                        value: 0,
+                        backgroundColor: ['','green', 'yellow', 'red'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Power'
+                    },
+                    layout: {
+                        padding: {
+                            bottom: 30
+                        }
+                    },
+                    needle: {
+                        // Needle circle radius as the percentage of the chart area width
+                        radiusPercentage: 2,
+                        // Needle width as the percentage of the chart area width
+                        widthPercentage: 2.2,
+                        // Needle length as the percentage of the interval between inner radius (0%) and outer radius (100%) of the arc
+                        lengthPercentage: 20,
+                        // The color of the needle
+                        color: 'rgba(0, 0, 155, 1)'
+                    },
+                    valueLabel: {
+                        display: false
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: true,
+                            formatter: function (value, context) {
+                                return context.chart.data.labels[context.dataIndex];
+                            },
+                            //color: function (context) {
+                            //  return context.dataset.backgroundColor;
+                            //},
+                            color: 'rgba(0, 0, 0, 1.0)',
+                            //color: 'rgba(255, 255, 255, 1.0)',
+                            backgroundColor: null,
+                            font: {
+                                size: 20,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            };
+            Gaugeconfig.data.datasets.forEach(function (dataset) {
+                dataset.data = randomData();
+                dataset.value = randomValue(dataset.data);
+            });
 
 
-        $(".Gaugee").each(function (index) {
             console.log(index + ": " + $(this).text());
-            cnxs[index] = new Chart($(this), config);
+            cnxs[index] = new Chart($(this), Gaugeconfig);
 
             api = $(this).data('api');
              GaugerefreshAjax[index] = GaugeRefreshAjax(cnxs[index], api);
@@ -114,7 +115,15 @@
             contentType: "application/json",
             dataType: 'json',
             success: function (dataFromUrl) {
-                var dataset = cnxs.config.data.datasets[0];
+
+
+
+               var dataset0 = cnxs.config.data.datasets[0];
+
+
+                dataset0.value = dataFromUrl.value,
+                dataset0.data = [dataFromUrl.min, dataFromUrl.warning, dataFromUrl.alarm, dataFromUrl.max],
+                cnxs.config.options.title.text = dataFromUrl.value,
                 //var i = 0;
                 //dataset.data = [];
                 //for (i = 0; i < dataFromUrl.length; i++) {
@@ -125,16 +134,16 @@
                 //    dataset.data.push(obj);
                 //}
 
-                config.data.datasets.forEach(function (dataset) {
-                    dataset.data = randomData();
-                    dataset.value = randomValue(dataset.data);
-                });
+                //Gaugeconfig.data.datasets.forEach(function (dataset) {
+                //    dataset.data = randomData();
+                //    dataset.value = randomValue(dataset.data);
+                //});
 
 
                 cnxs.update();
 
                 setTimeout(function () {
-                //    GaugeRefreshAjax(cnxs, api);
+                    GaugeRefreshAjax(cnxs, api);
                 }, 5000);
             }
         });

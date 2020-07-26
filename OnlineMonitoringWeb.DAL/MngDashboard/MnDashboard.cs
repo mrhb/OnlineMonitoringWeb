@@ -50,8 +50,6 @@ namespace OnlineMonitoringWeb.DAL
             }
 
             return users;
-        }
-
-      
+        }      
     }
 }

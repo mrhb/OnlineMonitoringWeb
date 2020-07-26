@@ -82,9 +82,9 @@ namespace OnlineMonitoringWeb.Dashboards.Pages
         {
             hierarchyInfo = new hierarchyInfo(Authorization.UserId);
 
-            var sdf = await MnDashboard.PowerData(DateTime.Now.Subtract(DateTime.Now.TimeOfDay).AddDays(-7), DateTime.Now, hierarchyInfo.TopSection);
+            var data = await GaugeDataReader.GaugeDataRead(DateTime.Now.Subtract(DateTime.Now.TimeOfDay).AddDays(-7), DateTime.Now, hierarchyInfo.TopSection);
 
-            return Json(sdf.series, JsonRequestBehavior.AllowGet);
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
 
 
