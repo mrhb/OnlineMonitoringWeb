@@ -1,4 +1,6 @@
-﻿     randomData = function () {
+﻿
+///////*************تمنظیمات کلی*****************
+    randomData = function () {
         return [
           randomScalingFactor(),
           randomScalingFactor(),
@@ -73,33 +75,67 @@
         }
     };
 
-    var  cnxs = [];
+
     window.onload = function () {
         //var ctx = document.getElementById('chart').getContext('2d');
         //window.cnxs = $(".Gauge");// document.getElementById('chart').getContext('2d');
-        $(".Gauge").each(function (index) {
-            console.log(index + ": " + $(this).text());
-            cnxs[index]= new Chart($(this),  config);
-        });
-      
+
 
         window.RefreshGauge();
     };
 
+/* *****************تنظیمات کلی**********************/
 
 
-
-    window.RefreshGauge = function () {
+    window.RefreshGauge = function (ActiveSection) {
+        var cnxs = [];
+        var GaugerefreshAjax = [];
 
         config.data.datasets.forEach(function (dataset) {
             dataset.data = randomData();
             dataset.value = randomValue(dataset.data);
         });
 
-        $(".Gauge").each(function (index) {
-            console.log(index + ": " + $(this).text());
-            cnxs[index].update();
 
+        $(".Gaugee").each(function (index) {
+            console.log(index + ": " + $(this).text());
+            cnxs[index] = new Chart($(this), config);
+
+            api = $(this).data('api');
+             GaugerefreshAjax[index] = GaugeRefreshAjax(cnxs[index], api);
         });
     };
 
+
+    function GaugeRefreshAjax(cnxs, api) {
+        $.ajax({
+            type: "GET",
+            url: api + '/id=' + Subdivisions[0].id,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (dataFromUrl) {
+                var dataset = cnxs.config.data.datasets[0];
+                //var i = 0;
+                //dataset.data = [];
+                //for (i = 0; i < dataFromUrl.length; i++) {
+                //    var obj = {
+                //        x: moment(dataFromUrl[i].y).format(timeFormat),
+                //        y: dataFromUrl[i].item1
+                //    };
+                //    dataset.data.push(obj);
+                //}
+
+                config.data.datasets.forEach(function (dataset) {
+                    dataset.data = randomData();
+                    dataset.value = randomValue(dataset.data);
+                });
+
+
+                cnxs.update();
+
+                setTimeout(function () {
+                //    GaugeRefreshAjax(cnxs, api);
+                }, 5000);
+            }
+        });
+    }

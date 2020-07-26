@@ -7,9 +7,9 @@
 <script>
 
     var Subdivisions =@(new HtmlString(Json.Encode(Model.Subdivisions)))
-
+    var ActiveSection =@(new HtmlString(Json.Encode(Model.ActiveSection)))
    @*var Subdivisions = '@Model.Subdivisions'*@
-    var ActiveSection ='@Model.ActiveSection'
+    @*var ActiveSection ='@Model.ActiveSection'*@
 </script>
 
 @section Head {
@@ -32,16 +32,19 @@
         </select>
           </p>
 }
-
+         </div>
+<canvas id="chart" data-api='UnitGaugeAPI' class="Gaugee"></canvas>
+        </div>
 <!-- Small boxes (Gauges) -->
 <div class="row">
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div class="small-box bg-aqua">
             <div class="inner">
-                <h3>@Model.OperatingUnitsCapacity<sup style="font-size: 20px">kw</sup></h3><p>ظرفیت واحدهای فعال</p>
+                <h3>@Model.OperatingUnitsCapacity<sup style="font-size: 20px">kw</sup></h3>
+                <p>ظرفیت واحدهای فعال</p>
             </div>
-            <canvas id="chart" class="Gauge"></canvas>
+            <canvas id="chart"  data-api='UnitGaugeAPI'  class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
     <div class="col-lg-3 col-xs-6">
@@ -51,7 +54,7 @@
                 <h3>@Model.TotalUnitsCapacity<sup style="font-size: 20px">kw</sup></h3>
                 <p>ظرفیت کل</p>
             </div>
-            <canvas id="chart" class="Gauge"></canvas>
+            <canvas id="chart" data-api='UnitGaugeAPI'  class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
     <div class="col-lg-3 col-xs-6">
@@ -61,7 +64,7 @@
                 <h3>@Model.OperatingUnitCount</h3>
                 <p>تعداد واحدهای فعال</p>
             </div>
-            <canvas id="chart" class="Gauge"></canvas>
+            <canvas id="chart"  data-api='UnitGaugeAPI' class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
     <div class="col-lg-3 col-xs-6">
@@ -71,7 +74,7 @@
                 <h3>@Model.TotalUnitsCount</h3>
                 <p>تعداد کل واحدها</p>
             </div>
-            <canvas id="chart" class="Gauge"></canvas>
+            <canvas id="chart"   data-api='UnitGaugeAPI' class="Gauge"></canvas>
         </div>
     </div><!-- ./col -->
 </div><!-- /.row -->

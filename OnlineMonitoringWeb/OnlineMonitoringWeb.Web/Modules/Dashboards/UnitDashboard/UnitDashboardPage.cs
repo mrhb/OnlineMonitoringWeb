@@ -74,6 +74,21 @@ namespace OnlineMonitoringWeb.Dashboards.Pages
         }
 
 
+
+
+
+        [Authorize, HttpGet, Route("~/Dashboards/UnitGaugeAPI/id={id}")]
+        public async System.Threading.Tasks.Task<ActionResult> UnitGaugeAPI(int id)
+        {
+            hierarchyInfo = new hierarchyInfo(Authorization.UserId);
+
+            var sdf = await MnDashboard.PowerData(DateTime.Now.Subtract(DateTime.Now.TimeOfDay).AddDays(-7), DateTime.Now, hierarchyInfo.TopSection);
+
+            return Json(sdf.series, JsonRequestBehavior.AllowGet);
+        }
+
+
+
     }
   
 }

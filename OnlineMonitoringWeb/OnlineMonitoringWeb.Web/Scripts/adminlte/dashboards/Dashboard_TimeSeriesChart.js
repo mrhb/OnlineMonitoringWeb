@@ -23,7 +23,7 @@ function randomColor(opacity) {
 ///////*************تمنظیمات کلی*****************
 
 
-window.RefreshChart = function (Subdivisions) {
+window.RefreshChart = function (ActiveSection) {
     var cnxs = [];
     var refreshAjax = [];
     $(".time-series-chart").each(function (index) {
@@ -94,7 +94,8 @@ window.RefreshChart = function (Subdivisions) {
         });
         console.log(index + ": " + $(this).text());
         cnxs[index] = new Chart($(this), Chartconfig);
-        api=$(this).data('api');
+        api =  $(this).data('api');
+        api = api + '/id=' + ActiveSection.id
         refreshAjax[index] = RefreshAjax(cnxs[index],api); 
     });
     }
@@ -102,7 +103,7 @@ window.RefreshChart = function (Subdivisions) {
     function RefreshAjax(cnxs,api) {
         $.ajax({
             type: "GET",
-            url: api + '/id='+Subdivisions[0].id ,
+            url: api ,
             contentType: "application/json",
             dataType: 'json',
             success: function (dataFromUrl) {
@@ -121,7 +122,7 @@ window.RefreshChart = function (Subdivisions) {
 
                 setTimeout(function () {
                     RefreshAjax(cnxs,api);
-                }, 5000);
+                }, 10000);
             }
         });
     }

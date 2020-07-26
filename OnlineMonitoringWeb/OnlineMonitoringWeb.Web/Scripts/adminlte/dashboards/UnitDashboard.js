@@ -14,7 +14,7 @@ $(function () {
     for (var i = 0; i < Subdivisions.length; i++) {
 
         if (Subdivisions[i].type == 2) {
-            a = a + '<option>' + Subdivisions[i].id + '</option>'
+            a = a +'<option value="'+Subdivisions[i]+'">'+ Subdivisions[i].id + '</option>'
         }
         console.log(a)
     };
@@ -22,7 +22,7 @@ $(function () {
     for (var i = 0; i < Subdivisions.length; i++) {
 
         if (Subdivisions[i].type == 0) {
-            a = a + '<option>' + Subdivisions[i].id + '</option>'
+            a = a +'<option value="'+Subdivisions[i]+'">'+ Subdivisions[i].id + '</option>'
         }
         console.log(a)
     };
@@ -31,13 +31,13 @@ $(function () {
 
     $("#UnitsSelector").on('change', function () {
         //alert(this.value + "    " + ActiveSection + "  " + Subdivisions[0]);
-        window.RefreshGauge();
-        window.RefreshChart(this.value);
+        window.RefreshGauge(this.value);
+        window.RefreshChart(this.value); //Send selected:ActiveSection
         
     });
 
-
-    window.RefreshChart(Subdivisions);
+    window.RefreshGauge(ActiveSection);
+    window.RefreshChart(ActiveSection);
     ////    })
     
     //$(function () {
